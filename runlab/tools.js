@@ -1,0 +1,1 @@
+function fill(id,a,b,s){let e=document.getElementById(id);for(let i=a;i<=b;i++){let o=document.createElement('option');o.value=i;o.textContent=i;if(i===s)o.selected=true;e.appendChild(o)}}
