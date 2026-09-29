@@ -9,3 +9,7 @@
 .sliderbox input[type=range]{height:24px;cursor:pointer}
 .segment{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.segment input{position:absolute;opacity:0;pointer-events:none}.segment label{margin:0;padding:13px 8px;border:1px solid #464a4d;border-radius:12px;background:#101214;color:#ddd;text-align:center;font-size:12px;letter-spacing:0;cursor:pointer}.segment input:checked+label{background:var(--o);border-color:var(--o);color:#fff}
 @media(max-width:720px){.segment{grid-template-columns:repeat(3,1fr)}}
+
+/* Chrome/iOS radio reset */
+.choice input[type="radio"],.segment input[type="radio"]{position:fixed!important;left:-10000px!important;top:auto!important;width:1px!important;height:1px!important;margin:0!important;padding:0!important;opacity:0!important;-webkit-appearance:none!important;appearance:none!important}
+.choice label,.segment label{-webkit-appearance:none;appearance:none;display:flex;align-items:center;justify-content:center;min-height:44px;width:100%;user-select:none;-webkit-user-select:none}
