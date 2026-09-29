@@ -13,3 +13,37 @@
 /* Chrome/iOS radio reset */
 .choice input[type="radio"],.segment input[type="radio"]{position:fixed!important;left:-10000px!important;top:auto!important;width:1px!important;height:1px!important;margin:0!important;padding:0!important;opacity:0!important;-webkit-appearance:none!important;appearance:none!important}
 .choice label,.segment label{-webkit-appearance:none;appearance:none;display:flex;align-items:center;justify-content:center;min-height:44px;width:100%;user-select:none;-webkit-user-select:none}
+
+/* Mobile slider ergonomics */
+.sliderbox input[type="range"]{
+  -webkit-appearance:none!important;appearance:none!important;
+  width:100%;height:44px!important;margin:0!important;padding:0!important;
+  background:transparent!important;border:0!important;outline:0!important;
+  accent-color:transparent!important;touch-action:pan-x;
+}
+.sliderbox input[type="range"]::-webkit-slider-runnable-track{
+  height:8px;border:0;border-radius:999px;background:#4a4d4f;
+}
+.sliderbox input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none!important;appearance:none!important;
+  width:26px;height:26px;margin-top:-9px;border:0!important;outline:0!important;
+  border-radius:50%;background:var(--o);box-shadow:none!important;
+}
+.sliderbox input[type="range"]::-moz-range-track{
+  height:8px;border:0;border-radius:999px;background:#4a4d4f;
+}
+.sliderbox input[type="range"]::-moz-range-progress{
+  height:8px;border:0;border-radius:999px;background:var(--o);
+}
+.sliderbox input[type="range"]::-moz-range-thumb{
+  width:26px;height:26px;border:0!important;border-radius:50%;
+  background:var(--o);box-shadow:none!important;
+}
+@media(max-width:720px){
+  .sliderbox{padding:12px 14px 10px}
+  .sliderbox input[type="range"]{height:52px!important}
+  .sliderbox input[type="range"]::-webkit-slider-runnable-track{height:10px}
+  .sliderbox input[type="range"]::-webkit-slider-thumb{width:30px;height:30px;margin-top:-10px}
+  .sliderbox input[type="range"]::-moz-range-track,.sliderbox input[type="range"]::-moz-range-progress{height:10px}
+  .sliderbox input[type="range"]::-moz-range-thumb{width:30px;height:30px}
+}
