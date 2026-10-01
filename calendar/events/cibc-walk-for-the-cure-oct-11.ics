@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//WRC Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:20261011T063000-cibc-walk-for-the-cure-oct-11.ics@wadadarunclub.com
+DTSTAMP:20261001T150000Z
+DTSTART;TZID=America/Jamaica:20261011T063000
+DTEND;TZID=America/Jamaica:20261011T080000
+SUMMARY:CIBC Walk For The Cure
+DESCRIPTION:Register via Running Events Jamaica. Check official event information for final details.
+END:VEVENT
+END:VCALENDAR
