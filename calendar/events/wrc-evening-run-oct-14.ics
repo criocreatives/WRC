@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//WRC Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:20261014T181500-wrc-evening-run-oct-14.ics@wadadarunclub.com
+DTSTAMP:20261001T150000Z
+DTSTART;TZID=America/Jamaica:20261014T181500
+DTEND;TZID=America/Jamaica:20261014T194500
+SUMMARY:WRC — Evening Run
+LOCATION:Palisadoes, Kingston, Jamaica
+DESCRIPTION:Wadada Run Club. Beginner-friendly run focused on time spent in activity, not pace.
+END:VEVENT
+END:VCALENDAR
