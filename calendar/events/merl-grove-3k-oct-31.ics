@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//WRC Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:20261031T060000-merl-grove-3k-oct-31.ics@wadadarunclub.com
+DTSTAMP:20261001T150000Z
+DTSTART;TZID=America/Jamaica:20261031T060000
+DTEND;TZID=America/Jamaica:20261031T080000
+SUMMARY:Merl Grove 3K Fun Run & Walk
+LOCATION:Merl Grove High School, 77-79 Constant Spring Road, Kingston, Jamaica
+DESCRIPTION:Warm-up 6:00 AM. Race start 6:30 AM. Medals for male and female age-group categories.
+END:VEVENT
+END:VCALENDAR
