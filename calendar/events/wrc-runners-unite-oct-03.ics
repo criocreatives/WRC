@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//WRC Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:20261003T050000-wrc-runners-unite-oct-03.ics@wadadarunclub.com
+DTSTAMP:20261001T150000Z
+DTSTART;TZID=America/Jamaica:20261003T050000
+DTEND;TZID=America/Jamaica:20261003T063000
+SUMMARY:WRC — Runners Unite
+LOCATION:Scotiabank, Downtown, Kingston, Jamaica
+DESCRIPTION:Wadada Run Club. $1,000 cover charge — pay at location.
+END:VEVENT
+END:VCALENDAR
