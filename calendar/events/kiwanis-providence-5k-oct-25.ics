@@ -5,10 +5,16 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:20261025T060000-kiwanis-providence-5k-oct-25.ics@wadadarunclub.com
-DTSTAMP:20261001T150000Z
+DTSTAMP:20261002T160000Z
 DTSTART;TZID=America/Jamaica:20261025T060000
 DTEND;TZID=America/Jamaica:20261025T073000
 SUMMARY:Kiwanis Providence-Montego Bay Breast Cancer Awareness 5K Run/Walk/Wheelchair
-LOCATION:Fairview Office Park, Montego Bay, Jamaica
+LOCATION:Fairview Office Park\, Montego Bay\, Jamaica
+DESCRIPTION:Race start: 6:00 AM\\n\\nRegister: https://kiwanisprovidencembj.com/registration/\\n\\nCheck official event information for final details.
+BEGIN:VALARM
+TRIGGER:-PT12H
+ACTION:DISPLAY
+DESCRIPTION:Kiwanis Providence-Montego Bay Breast Cancer Awareness 5K Run/Walk/Wheelchair in 12 hours
+END:VALARM
 END:VEVENT
 END:VCALENDAR
