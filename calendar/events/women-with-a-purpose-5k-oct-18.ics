@@ -10,11 +10,16 @@ DTSTART;TZID=America/Jamaica:20261018T063000
 DTEND;TZID=America/Jamaica:20261018T080000
 SUMMARY:Women With A Purpose Breast Cancer 5K Run/Walk
 LOCATION:Island Time Bar & Grill\, Treasure Beach\, Jamaica
-DESCRIPTION:Race start: 6:30 AM\\n\\nRegister: https://my.raceresult.com/420704/\\n\\nCheck official event information for final details.
+DESCRIPTION:Race start: 6:30 AM\n\nRegister: https://my.raceresult.com/420704/\n\nCheck official event information for final details.
 BEGIN:VALARM
-TRIGGER:-PT12H
+TRIGGER:-PT16H
 ACTION:DISPLAY
-DESCRIPTION:Women With A Purpose Breast Cancer 5K Run/Walk in 12 hours
+DESCRIPTION:WRC event reminder
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT9H
+ACTION:DISPLAY
+DESCRIPTION:WRC event reminder
 END:VALARM
 END:VEVENT
 END:VCALENDAR
