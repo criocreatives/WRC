@@ -10,11 +10,16 @@ DTSTART;TZID=America/Jamaica:20261014T181500
 DTEND;TZID=America/Jamaica:20261014T194500
 SUMMARY:WRC — Evening Run
 LOCATION:Palisadoes\, Kingston\, Jamaica
-DESCRIPTION:Wadada Run Club — Evening Run.\\n\\nMeet up: 6:15 PM\\n\\nBefore the run:\\n• Arrive 10–15 minutes early\\n• Bring water / hydration\\n• Wear appropriate running shoes\\n\\nBeginner friendly. Focus on time spent in activity\, not pace.\\n\\nWRC — Show Up • Put In The Work • Run Together
+DESCRIPTION:Wadada Run Club — Evening Run.\n\nMeet up: 6:15 PM\n\nBefore the run:\n• Arrive 10–15 minutes early\n• Bring water / hydration\n• Wear appropriate running shoes\n\nBeginner friendly. Focus on time spent in activity\, not pace.\n\nWRC — Show Up • Put In The Work • Run Together
 BEGIN:VALARM
-TRIGGER:-PT12H
+TRIGGER:-PT16H
 ACTION:DISPLAY
-DESCRIPTION:WRC — Evening Run in 12 hours
+DESCRIPTION:WRC event reminder
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT9H
+ACTION:DISPLAY
+DESCRIPTION:WRC event reminder
 END:VALARM
 END:VEVENT
 END:VCALENDAR
