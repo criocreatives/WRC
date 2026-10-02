@@ -5,11 +5,16 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:20261007T050000-wrc-morning-run-oct-07.ics@wadadarunclub.com
-DTSTAMP:20261001T150000Z
+DTSTAMP:20261002T160000Z
 DTSTART;TZID=America/Jamaica:20261007T050000
 DTEND;TZID=America/Jamaica:20261007T063000
 SUMMARY:WRC — Morning Run
-LOCATION:Emancipation Park, Kingston, Jamaica
-DESCRIPTION:Wadada Run Club. Beginner-friendly run focused on time spent in activity, not pace.
+LOCATION:Emancipation Park\, Kingston\, Jamaica
+DESCRIPTION:Wadada Run Club — Morning Run.\\n\\nMeet up: 5:00 AM\\n\\nBefore the run:\\n• Arrive 10–15 minutes early\\n• Bring water / hydration\\n• Wear appropriate running shoes\\n\\nBeginner friendly. Focus on time spent in activity\, not pace.\\n\\nWRC — Show Up • Put In The Work • Run Together
+BEGIN:VALARM
+TRIGGER:-PT12H
+ACTION:DISPLAY
+DESCRIPTION:WRC — Morning Run in 12 hours
+END:VALARM
 END:VEVENT
 END:VCALENDAR
