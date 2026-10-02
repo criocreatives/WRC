@@ -10,11 +10,16 @@ DTSTART;TZID=America/Jamaica:20261025T063000
 DTEND;TZID=America/Jamaica:20261025T080000
 SUMMARY:Jamaica Reach To Recovery Pink Run 5K
 LOCATION:Emancipation Park\, Kingston\, Jamaica
-DESCRIPTION:Race start: 6:30 AM\\n\\nRegister: https://www.pinkrunjm.com/register-here\\n\\nCheck official event information for final details.
+DESCRIPTION:Race start: 6:30 AM\n\nRegister: https://www.pinkrunjm.com/register-here\n\nCheck official event information for final details.
 BEGIN:VALARM
-TRIGGER:-PT12H
+TRIGGER:-PT16H
 ACTION:DISPLAY
-DESCRIPTION:Jamaica Reach To Recovery Pink Run 5K in 12 hours
+DESCRIPTION:WRC event reminder
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT9H
+ACTION:DISPLAY
+DESCRIPTION:WRC event reminder
 END:VALARM
 END:VEVENT
 END:VCALENDAR
