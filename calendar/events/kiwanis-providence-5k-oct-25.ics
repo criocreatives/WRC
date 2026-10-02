@@ -10,11 +10,16 @@ DTSTART;TZID=America/Jamaica:20261025T060000
 DTEND;TZID=America/Jamaica:20261025T073000
 SUMMARY:Kiwanis Providence-Montego Bay Breast Cancer Awareness 5K Run/Walk/Wheelchair
 LOCATION:Fairview Office Park\, Montego Bay\, Jamaica
-DESCRIPTION:Race start: 6:00 AM\\n\\nRegister: https://kiwanisprovidencembj.com/registration/\\n\\nCheck official event information for final details.
+DESCRIPTION:Race start: 6:00 AM\n\nRegister: https://kiwanisprovidencembj.com/registration/\n\nCheck official event information for final details.
 BEGIN:VALARM
-TRIGGER:-PT12H
+TRIGGER:-PT16H
 ACTION:DISPLAY
-DESCRIPTION:Kiwanis Providence-Montego Bay Breast Cancer Awareness 5K Run/Walk/Wheelchair in 12 hours
+DESCRIPTION:WRC event reminder
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT9H
+ACTION:DISPLAY
+DESCRIPTION:WRC event reminder
 END:VALARM
 END:VEVENT
 END:VCALENDAR
