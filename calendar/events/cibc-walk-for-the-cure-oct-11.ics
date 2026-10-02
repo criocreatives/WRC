@@ -5,10 +5,15 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:20261011T063000-cibc-walk-for-the-cure-oct-11.ics@wadadarunclub.com
-DTSTAMP:20261001T150000Z
+DTSTAMP:20261002T160000Z
 DTSTART;TZID=America/Jamaica:20261011T063000
 DTEND;TZID=America/Jamaica:20261011T080000
-SUMMARY:CIBC Walk For The Cure
-DESCRIPTION:Register via Running Events Jamaica. Check official event information for final details.
+SUMMARY:CIBC Walk For The Cure 5K
+DESCRIPTION:Race start: 6:30 AM\\n\\nInfo: https://www.cibccaribbean.com/about-us/community-relations/walk-for-the-cure\\nRegister: https://www.runningeventsja.com/registration/\\n\\nCheck official event information for final details.
+BEGIN:VALARM
+TRIGGER:-PT12H
+ACTION:DISPLAY
+DESCRIPTION:CIBC Walk For The Cure 5K in 12 hours
+END:VALARM
 END:VEVENT
 END:VCALENDAR
