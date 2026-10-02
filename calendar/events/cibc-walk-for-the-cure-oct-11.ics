@@ -9,11 +9,16 @@ DTSTAMP:20261002T160000Z
 DTSTART;TZID=America/Jamaica:20261011T063000
 DTEND;TZID=America/Jamaica:20261011T080000
 SUMMARY:CIBC Walk For The Cure 5K
-DESCRIPTION:Race start: 6:30 AM\\n\\nInfo: https://www.cibccaribbean.com/about-us/community-relations/walk-for-the-cure\\nRegister: https://www.runningeventsja.com/registration/\\n\\nCheck official event information for final details.
+DESCRIPTION:Race start: 6:30 AM\n\nInfo: https://www.cibccaribbean.com/about-us/community-relations/walk-for-the-cure\nRegister: https://www.runningeventsja.com/registration/\n\nCheck official event information for final details.
 BEGIN:VALARM
-TRIGGER:-PT12H
+TRIGGER:-PT16H
 ACTION:DISPLAY
-DESCRIPTION:CIBC Walk For The Cure 5K in 12 hours
+DESCRIPTION:WRC event reminder
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT9H
+ACTION:DISPLAY
+DESCRIPTION:WRC event reminder
 END:VALARM
 END:VEVENT
 END:VCALENDAR
