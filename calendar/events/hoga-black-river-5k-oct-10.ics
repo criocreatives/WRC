@@ -1,0 +1,12 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//Calendar//EN
+BEGIN:VEVENT
+UID:20261010-hoga@wadadarunclub.com
+DTSTART;VALUE=DATE:20261010
+DTEND;VALUE=DATE:20261011
+SUMMARY:HOGA / Black River Hospital Road Race 5K
+LOCATION:Black River\, St. Elizabeth\, Jamaica
+DESCRIPTION:Race time TBC. Check official event information for final details.
+END:VEVENT
+END:VCALENDAR
