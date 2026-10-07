@@ -1,0 +1,12 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//Calendar//EN
+BEGIN:VEVENT
+UID:20261025-hike@wadadarunclub.com
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261026
+SUMMARY:WRC — Sunday Hike: Gordon Town to RafJam
+LOCATION:Gordon Town to RafJam\, Jamaica
+DESCRIPTION:Details and meet-up time TBC. Check the WRC calendar for updated details.
+END:VEVENT
+END:VCALENDAR
