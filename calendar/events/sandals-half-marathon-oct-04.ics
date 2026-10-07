@@ -1,0 +1,12 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//Calendar//EN
+BEGIN:VEVENT
+UID:20261004-sandals-half@wadadarunclub.com
+DTSTART;TZID=America/Jamaica:20261004T060000
+DTEND;TZID=America/Jamaica:20261004T100000
+SUMMARY:Sandals Half Marathon
+LOCATION:Falmouth\, Jamaica
+DESCRIPTION:RUNLAB ONLY. Confirm final start time and event details before race day.
+END:VEVENT
+END:VCALENDAR
