@@ -1,0 +1,11 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//Calendar//EN
+BEGIN:VEVENT
+UID:20261017-social@wadadarunclub.com
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261018
+SUMMARY:WRC — Saturday Social Run
+DESCRIPTION:Location and time TBC. Check the WRC calendar for updated details.
+END:VEVENT
+END:VCALENDAR
