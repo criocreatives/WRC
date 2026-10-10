@@ -336,6 +336,7 @@ function build() {
   }
   $('res').innerHTML=html;
   $('res').classList.add('on');
+  document.dispatchEvent(new CustomEvent('runlab:planready'));
   $('res').scrollIntoView({behavior:'smooth',block:'start'});
 }
 $('buildPlanBtn').addEventListener('click',build);
