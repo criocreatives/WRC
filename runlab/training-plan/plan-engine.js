@@ -57,7 +57,7 @@ document.querySelectorAll('input[name="bench"]').forEach(el=>el.addEventListener
 syncBenchmark();
 function session(title,amount,paceLabel,detail,estimate) {
   return '<div class="run"><div class="session-top"><strong>'+title+
-    '</strong><span>'+amount+'</span></div><div class="session-pace">'+paceLabel+
+    '</strong><span>'+amount+'</span></div><div class="session-pace"><span class="pace-label">PACE / EFFORT · </span>'+paceLabel+
     (estimate?' <span class="session-time"> · '+estimate+'</span>':'')+
     '</div><p class="session-detail">'+detail+'</p></div>';
 }
@@ -187,7 +187,7 @@ function build() {
   if(weekly<8||longest<3)days=Math.min(days,3);
   else if(weekly<12)days=Math.min(days,4);
   else if(weekly<20)days=Math.min(days,5);
-  if(weekly>0)days=Math.max(1,Math.min(days,Math.max(1,Math.floor(weekly/1.5))));
+  if(weekly>=3)days=Math.max(1,Math.min(days,Math.max(1,Math.floor(weekly/1.5))));
   const newRunner=weekly<3||longest===0;
   const novice=weekly<8||longest<3||(days>=3&&weekly/days<2);
   const required=readiness(target,weekly,longest,days);
@@ -260,9 +260,9 @@ function build() {
         runs+=runSlot(++runNo,day.toUpperCase(),body);
       }
       const label=raceDate.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'}).toUpperCase();
-      if(shortWindow){
+      if(shortWindow||newRunner){
         runs+='<div class="race-advisory"><b>RACE DATE · REASSESS</b><p>Your current training window may be insufficient for '+km(target)+
-          '. This plan does not prescribe racing that distance. Consider postponing or entering a shorter event; do not make up lost mileage.</p></div>';
+          '. This plan does not prescribe racing that distance for a runner without an established base or sufficient preparation. Consider postponing or entering a shorter event; do not make up lost mileage.</p></div>';
       }else{
         const rough=hasBenchmark?seconds*Math.pow(target/benchmark,1.06)/target:null;
         const raceEffort=rough?paceFormat(rough*.98)+'–'+paceFormat(rough*1.05)+'/km (rough estimate)':'Start controlled and use effort rather than pace';
