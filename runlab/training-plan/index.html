@@ -1,30 +1,259 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Training Plan · RUNLAB</title><link rel="icon" type="image/png" href="../../assets/runlab/WRC Runlabfavicon.png"><link rel="stylesheet" href="../style.css"></head><body><div class="wrap"><header><a href="../"><img class="logo-sub" src="../../assets/runlab/WRC Runlab TXT orng.svg" alt="RUNLAB"></a></header><main><a class="backbtn" href="../">← RUNLAB</a><div class="eyebrow">RUNLAB · 01</div><h1>TRAINING<br>PLAN.</h1><p>Build a race plan around your current fitness, weekly running and race date.</p><section class="tool"><div class="formgrid"><div><label>TARGET RACE</label><div class="choice"><input id="t5" type="radio" name="target" value="5" checked><label for="t5">5K</label><input id="t10" type="radio" name="target" value="10"><label for="t10">10K</label><input id="th" type="radio" name="target" value="21.0975"><label for="th">HALF</label><input id="tm" type="radio" name="target" value="42.195"><label for="tm">MARATHON</label></div></div><div><label>RACE DATE</label><div class="datebox"><input id="date" type="date"></div></div><div><label>RECENT RACE / BENCHMARK</label><div class="choice"><input id="bn" type="radio" name="bench" value="none"><label for="bn">NONE</label><input id="b3" type="radio" name="bench" value="3"><label for="b3">3K</label><input id="b5" type="radio" name="bench" value="5" checked><label for="b5">5K</label><input id="b10" type="radio" name="bench" value="10"><label for="b10">10K</label></div></div><div id="benchmarkTimeField"><label>BENCHMARK TIME</label><div class="timepick"><div><select id="bh"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option></select><small>HOURS</small></div><div><select id="bm"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25" selected>25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><small>MIN</small></div><div><select id="bs"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><small>SEC</small></div></div></div><div id="targetTimeField"><label>TARGET TIME <span style="font-weight:300;opacity:.65">· OPTIONAL</span></label><div class="timepick"><div><select id="thh"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option></select><small>HOURS</small></div><div><select id="tmm"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><small>MIN</small></div><div><select id="tss"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><small>SEC</small></div></div><small style="display:block;margin-top:7px;color:#8f9496">Leave at 00:00:00 for no time goal.</small></div><div><label>RUNS / WEEK</label><div class="sliderbox"><div class="sliderhead"><span>1 — 7</span><b class="rangevalue" id="daysOut">3 / WK</b></div><input id="days" type="range" min="1" max="7" value="3"></div></div><div><label>KM / WEEK</label><div class="sliderbox"><div class="sliderhead"><span>0 — 200 KM</span><b class="rangevalue" id="kmOut">15 KM</b></div><input id="km" type="range" min="0" max="200" value="15"></div></div><div><label>LONGEST RECENT RUN</label><div class="sliderbox"><div class="sliderhead"><span>0 — 50 KM</span><b class="rangevalue" id="longOut">7 KM</b></div><input id="long" type="range" min="0" max="50" step=".5" value="7"></div></div></div><p><button id="buildPlanBtn" type="button">BUILD MY PLAN</button></p><div id="res" class="result"></div><div id="exports" class="exportbar"></div></section></main><footer><div class="footlinks"><a href="../"><img class="runlab-pill" src="../../assets/runlab/WRC Runlab TXT orng.svg" alt="RUNLAB"></a><a href="/"><img class="wrc-home" src="../../assets/logos/WRC Logo Stack.png" alt="WRC Home"></a></div></footer></div><script>
-(function(){
-const $=id=>document.getElementById(id);
-function wireRange(id,out,suffix){const el=$(id),label=$(out);const update=()=>{label.textContent=el.value+suffix};el.addEventListener('input',update,{passive:true});el.addEventListener('change',update);update()}
-wireRange('days','daysOut',' / WK');wireRange('km','kmOut',' KM');wireRange('long','longOut',' KM');
-const dateEl=$('date');if(!dateEl.value){const d=new Date();d.setDate(d.getDate()+56);dateEl.value=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
-function syncBenchmark(){const b=document.querySelector('input[name="bench"]:checked');$('benchmarkTimeField').style.display=b&&b.value==='none'?'none':'block'}
-document.querySelectorAll('input[name="bench"]').forEach(el=>el.addEventListener('change',syncBenchmark));syncBenchmark();
-function buildPlan(){
- const rd=new Date(dateEl.value+'T12:00:00'), now=new Date();now.setHours(0,0,0,0);
- let W=Math.ceil((rd-now)/604800000),D=Number($('days').value),K=Number($('km').value),L=Number($('long').value);
- const t=document.querySelector('input[name="target"]:checked');const T=t?Number(t.value):5;
- if(!dateEl.value||isNaN(rd.getTime())||rd<=now){alert('Choose a race date after today.');return}
- W=Math.min(32,Math.max(1,W));
- const maxLong=T>=42?32:T>20?22:T===10?14:11;
- let h='<div class="stats"><div class="stat"><small>TRAINING WINDOW</small><b>'+W+' weeks</b></div><div class="stat"><small>RUNS</small><b>'+D+'/week</b></div><div class="stat"><small>STARTING VOLUME</small><b>'+K+' km</b></div></div>';
- for(let w=1;w<=W;w++){
-  const race=w===W,taper=!race&&w>=W-2,rec=w%4===0&&!taper&&!race;
-  let vol=K*Math.min(1.4,1+(w-1)*.035);if(rec)vol*=.82;if(taper)vol*=.78;if(race)vol*=.55;
-  let lr=Math.min(maxLong,Math.max(L,L+(w-1)*(T>=42?1:T>20?.7:.4)));if(taper)lr*=.75;if(race)lr=T;
-  let a=D===1?['Long easy · '+lr.toFixed(1)+' km']:D===2?['Easy aerobic','Long easy · '+lr.toFixed(1)+' km']:['Quality · '+(race?'Short controlled strides':'tempo / intervals'),'Easy aerobic','Long easy · '+lr.toFixed(1)+' km'];
-  for(let x=3;x<D;x++)a.splice(a.length-1,0,'Easy / recovery run');
-  h+='<div class="week"><h3>WEEK '+w+' · '+(race?'RACE WEEK':taper?'TAPER':rec?'RECOVERY':'BUILD')+'</h3><p>Target volume ~'+Math.round(vol)+' km</p>'+a.map(v=>'<div class="run">'+v+'</div>').join('')+'</div>';
- }
- $('res').innerHTML=h;$('res').classList.add('on');$('res').scrollIntoView({behavior:'smooth',block:'start'});
-}
-$('buildPlanBtn').addEventListener('click',buildPlan);
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Training Plan · RUNLAB</title><link rel="icon" type="image/png" href="../../assets/runlab/WRC Runlabfavicon.png"><link rel="stylesheet" href="../style.css"><style>
+.pace-guide{margin:12px 0;padding:15px;border:1px solid #47403c;border-radius:14px;background:#211c1a}
+.pace-guide>b{color:#ee4823;font-size:12px;letter-spacing:.08em}
+.pace-guide p{font-size:12px;margin:10px 0 0;color:#babdc0}
+.pace-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:12px}
+.pace-grid>div{background:#121415;border:1px solid #33383a;padding:10px;border-radius:10px}
+.pace-grid small{display:block;font-size:10px;color:#a6a8aa;margin-bottom:5px}
+.pace-grid strong{display:block;font-size:15px}
+.week-volume{font-size:12px;color:#b8bec0;margin:0 0 12px}
+.run{padding:13px 0}
+.session-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.session-top strong{font-size:14px}
+.session-top span{white-space:nowrap;color:#fff;background:#34302e;border-radius:8px;padding:6px 8px;font-size:12px;font-weight:700}
+.session-pace{color:#f68a6a;font-size:12px;font-weight:700;margin:7px 0}
+.session-time{color:#b5b8ba;font-weight:400}
+.session-detail{margin:6px 0 0!important;font-size:12px!important;line-height:1.65!important;color:#ced0d1!important}
+@media(max-width:650px){.pace-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.session-top strong{font-size:13px}.session-pace{line-height:1.6}}
+@media print{header,.backbtn,.formgrid,#buildPlanBtn,.exportbar,footer,.eyebrow,h1,main>p{display:none!important}.wrap{width:100%}.tool{border:0;padding:0}.result{display:block!important}.week{break-inside:avoid;page-break-inside:avoid}body,html{background:#fff!important;color:#111!important}.week,.run,.pace-guide,.stat{background:#fff!important;color:#111!important;border-color:#aaa!important}.session-detail,.week-volume,.pace-grid strong{color:#111!important}}
+</style></head><body><div class="wrap"><header><a href="../"><img class="logo-sub" src="../../assets/runlab/WRC Runlab TXT orng.svg" alt="RUNLAB"></a></header><main><a class="backbtn" href="../">← RUNLAB</a><div class="eyebrow">RUNLAB · 01</div><h1>TRAINING<br>PLAN.</h1><p>Build a race plan around your current fitness, weekly running and race date.</p><section class="tool"><div class="formgrid"><div><label>TARGET RACE</label><div class="choice"><input id="t5" type="radio" name="target" value="5" checked><label for="t5">5K</label><input id="t10" type="radio" name="target" value="10"><label for="t10">10K</label><input id="th" type="radio" name="target" value="21.0975"><label for="th">HALF</label><input id="tm" type="radio" name="target" value="42.195"><label for="tm">MARATHON</label></div></div><div><label>RACE DATE</label><div class="datebox"><input id="date" type="date"></div></div><div><label>RECENT RACE / BENCHMARK</label><div class="choice"><input id="bn" type="radio" name="bench" value="none"><label for="bn">NONE</label><input id="b3" type="radio" name="bench" value="3"><label for="b3">3K</label><input id="b5" type="radio" name="bench" value="5" checked><label for="b5">5K</label><input id="b10" type="radio" name="bench" value="10"><label for="b10">10K</label></div></div><div id="benchmarkTimeField"><label>BENCHMARK TIME</label><div class="timepick"><div><select id="bh"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option></select><small>HOURS</small></div><div><select id="bm"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25" selected>25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><small>MIN</small></div><div><select id="bs"><option value="0" selected>00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><small>SEC</small></div></div></div><div id="targetTimeField"><label>TARGET TIME <span style="font-weight:300;opacity:.65">· OPTIONAL</span></label><div class="timepick"><div><select id="thh"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option></select><small>HOURS</small></div><div><select id="tmm"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><small>MIN</small></div><div><select id="tss"><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select><small>SEC</small></div></div><small style="display:block;margin-top:7px;color:#8f9496">Leave at 00:00:00 for no time goal.</small></div><div><label>RUNS / WEEK</label><div class="sliderbox"><div class="sliderhead"><span>1 — 7</span><b class="rangevalue" id="daysOut">3 / WK</b></div><input id="days" type="range" min="1" max="7" value="3"></div></div><div><label>KM / WEEK</label><div class="sliderbox"><div class="sliderhead"><span>0 — 200 KM</span><b class="rangevalue" id="kmOut">15 KM</b></div><input id="km" type="range" min="0" max="200" value="15"></div></div><div><label>LONGEST RECENT RUN</label><div class="sliderbox"><div class="sliderhead"><span>0 — 50 KM</span><b class="rangevalue" id="longOut">7 KM</b></div><input id="long" type="range" min="0" max="50" step=".5" value="7"></div></div></div><p><button id="buildPlanBtn" type="button">BUILD MY PLAN</button></p><div id="res" class="result"></div><div id="exports" class="exportbar"></div></section></main><footer><div class="footlinks"><a href="../"><img class="runlab-pill" src="../../assets/runlab/WRC Runlab TXT orng.svg" alt="RUNLAB"></a><a href="/"><img class="wrc-home" src="../../assets/logos/WRC Logo Stack.png" alt="WRC Home"></a></div></footer></div><script>
+(function () {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const round = (n, p = 1) => Math.round(n * 10 ** p) / 10 ** p;
+  const km = n => round(n).toFixed(1) + ' km';
+  const minutes = n => Math.max(1, Math.round(n)) + ' min';
+  const fmtPace = seconds => {
+    const total = Math.max(1, Math.round(seconds / 5) * 5);
+    return Math.floor(total / 60) + ':' + String(total % 60).padStart(2, '0');
+  };
+  const paceText = (base, type) => {
+    if (!base) {
+      const efforts = { easy:'conversational · RPE 3–4/10', long:'comfortable conversation · RPE 3–4/10',
+        recovery:'very relaxed · RPE 2–3/10', tempo:'comfortably hard · RPE 6–7/10',
+        intervals:'strong, controlled · RPE 7–8/10', race:'race effort (start controlled)' };
+      return efforts[type];
+    }
+    const ranges = { easy:[1.23,1.43],long:[1.27,1.49],recovery:[1.36,1.60],
+      tempo:[1.08,1.15],intervals:[0.98,1.06] };
+    const band = ranges[type] || ranges.easy;
+    return fmtPace(base * band[0]) + '–' + fmtPace(base * band[1]) + '/km';
+  };
+  const timeEstimate = (distance, base, type) => {
+    if (!base) return '';
+    const ranges = { easy:[1.23,1.43],long:[1.27,1.49],recovery:[1.36,1.60] };
+    const band = ranges[type] || ranges.easy;
+    const low = Math.floor(distance * base * band[0] / 60);
+    const high = Math.ceil(distance * base * band[1] / 60);
+    return 'Approx. ' + low + '–' + high + ' min';
+  };
+  function wireRange(id, output, suffix) {
+    const el = $(id), label = $(output);
+    function sync() { label.textContent = el.value + suffix; }
+    el.addEventListener('input', sync, { passive: true });
+    el.addEventListener('change', sync);
+    sync();
+  }
+  wireRange('days','daysOut',' / WK');
+  wireRange('km','kmOut',' KM');
+  wireRange('long','longOut',' KM');
+
+  const dateEl = $('date');
+  if (!dateEl.value) {
+    const d = new Date();
+    d.setDate(d.getDate() + 56);
+    dateEl.value = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') +
+      '-' + String(d.getDate()).padStart(2,'0');
+  }
+  function syncBenchmark() {
+    const benchmark = document.querySelector('input[name="bench"]:checked');
+    $('benchmarkTimeField').style.display = benchmark && benchmark.value === 'none' ? 'none' : 'block';
+  }
+  document.querySelectorAll('input[name="bench"]').forEach(el =>
+    el.addEventListener('change', syncBenchmark));
+  syncBenchmark();
+
+  function readClock(h, m, s) {
+    return Number($(h).value) * 3600 + Number($(m).value) * 60 + Number($(s).value);
+  }
+  function session(title, distance, effort, instruction, base, type) {
+    const duration = timeEstimate(distance, base, type || 'easy');
+    return '<div class="run"><div class="session-top"><strong>' + title + '</strong><span>' +
+      km(distance) + '</span></div><div class="session-pace">PACE / EFFORT · ' + effort +
+      (duration ? ' <span class="session-time">· ' + duration + '</span>' : '') +
+      '</div><p class="session-detail">' + instruction + '</p></div>';
+  }
+  function easyRun(d, base, variant) {
+    const recovery = variant === 'recovery', longer = variant === 'long';
+    const type = recovery ? 'recovery' : longer ? 'long' : 'easy';
+    const effort = paceText(base, type);
+    const detail = longer
+      ? 'Run ' + km(d) + ' continuously at a comfortable, sustainable pace. Keep breathing under control; walk briefly if needed. Carry water on longer outings.'
+      : recovery
+      ? 'Run or jog ' + km(d) + ' gently. This is an easy recovery day, not a fitness test; slow down or add walking breaks if tired.'
+      : 'Run ' + km(d) + ' at an easy, conversational effort. You should be able to speak in full sentences. Start slowly and settle into rhythm.';
+    return session(longer ? 'LONG RUN' : recovery ? 'RECOVERY RUN' : 'EASY AEROBIC',
+      d, effort, detail, base, type);
+  }
+  function strideRun(d, base, taper) {
+    const effort = paceText(base, 'easy');
+    const detail = 'Run ' + km(d) + ' easy, including 4 × 20 seconds of quick but relaxed strides near the end. Walk or jog 60–90 seconds between strides. Keep the total distance at ' +
+      km(d) + '; strides are not all-out sprints.' +
+      (taper ? ' Finish feeling fresh for race day.' : '');
+    return session(taper ? 'EASY + STRIDES' : 'FORM / STRIDES', d, effort, detail, base, 'easy');
+  }
+  function tempoRun(d, base) {
+    const warm = round(Math.max(0.8, Math.min(1.5, d * 0.25)));
+    const cool = round(Math.max(0.8, Math.min(1.2, d * 0.2)));
+    const work = round(d - warm - cool);
+    if (work < 1.5) return strideRun(d,base,false);
+    const detail = 'Warm up ' + km(warm) + ' at ' + paceText(base,'easy') +
+      '. Run ' + km(work) + ' continuously at ' + paceText(base,'tempo') +
+      ' (comfortably hard, controlled breathing). Cool down ' + km(cool) + ' easy. Total: ' + km(d) + '.';
+    return session('TEMPO RUN', d, paceText(base,'tempo') + ' for work segment',
+      detail, base, 'easy');
+  }
+  function intervalRun(d, base, target) {
+    const repDistance = target >= 10 ? 0.6 : 0.4;
+    let reps = d >= 7.5 ? 5 : 4;
+    const warm = 1.2, jog = 0.2;
+    while (reps > 2 && d - warm - reps * repDistance - (reps - 1) * jog < 0.8) reps--;
+    const cool = round(d - warm - reps * repDistance - (reps - 1) * jog);
+    if (cool < 0.8) return tempoRun(d,base);
+    const detail = 'Warm up ' + km(warm) + ' easy at ' + paceText(base,'easy') +
+      '. Then ' + reps + ' × ' + Math.round(repDistance * 1000) + ' m at ' + paceText(base,'intervals') +
+      ', with ' + Math.round(jog * 1000) + ' m very easy jogging between repetitions. Cool down ' +
+      km(cool) + ' easy. Total: ' + km(d) + '. Keep reps controlled, not sprint efforts.';
+    return session('INTERVAL SESSION', d, paceText(base,'intervals') + ' for repetitions',
+      detail, base, 'easy');
+  }
+  function raceRun(target, base, benchmarkDistance, benchmarkSeconds) {
+    const predicted = base && benchmarkDistance && benchmarkSeconds
+      ? benchmarkSeconds * Math.pow(target / benchmarkDistance, 1.06) / target : null;
+    const effort = predicted
+      ? fmtPace(predicted * 0.98) + '–' + fmtPace(predicted * 1.05) + '/km (rough projection)'
+      : 'Start controlled; build effort only if feeling strong';
+    const detail = 'Race ' + km(target) +
+      '. Warm up gently before the start. Settle in conservatively, especially on hills or in heat, and adjust to effort. The projected pace is indicative, not a required target.';
+    return session('RACE DAY', target, effort, detail, null, 'race');
+  }
+  function beginnerSession(w, long, race, target) {
+    if (race) {
+      return session('RACE DAY · CHECK READINESS', target, 'Effort-based; no pace target',
+        'Your current running volume is below 3 km per week. A ' + km(target) +
+        ' race may be unsafe without more preparation; consider postponing or switching to a shorter event. Do not attempt to make up missed training.', null, 'race');
+    }
+    const duration = Math.min(40,(long ? 25 : 20) + Math.floor((w-1) / 2) * 3);
+    const work = w <= 3 ? '1 min easy jog / 2 min walk' : w <= 6 ? '2 min easy jog / 2 min walk' : '3 min easy jog / 1 min walk';
+    return '<div class="run"><div class="session-top"><strong>' +
+      (long ? 'LONG RUN / WALK' : 'EASY RUN / WALK') + '</strong><span>' + minutes(duration) +
+      '</span></div><div class="session-pace">EFFORT · easy conversation / RPE 2–4 of 10</div>' +
+      '<p class="session-detail">Walk 5 min to warm up, alternate ' + work + ' for ' +
+      Math.max(5,duration-10) + ' min, then walk 5 min to cool down. Total: ' +
+      minutes(duration) + '. Progress only if comfortable.</p></div>';
+  }
+  function generate() {
+    const rd = new Date(dateEl.value+'T12:00:00'), now = new Date();
+    now.setHours(0,0,0,0);
+    if (!dateEl.value || Number.isNaN(rd.getTime()) || rd <= now) {
+      alert('Choose a future race date.'); return;
+    }
+    const T = Number(document.querySelector('input[name="target"]:checked').value);
+    const selectedBench = document.querySelector('input[name="bench"]:checked');
+    const benchDistance = selectedBench ? Number(selectedBench.value) : 5;
+    const noBench = !selectedBench || selectedBench.value === 'none';
+    const benchmarkSeconds = noBench ? 0 : readClock('bh','bm','bs');
+    if (!noBench && benchmarkSeconds <= 0) {
+      alert('Enter a recent benchmark time, or select NONE for effort-based guidance.'); return;
+    }
+    const goalSeconds = readClock('thh','tmm','tss');
+    const D = Number($('days').value), K = Number($('km').value), L = Number($('long').value);
+    const weeks = Math.min(32,Math.max(1,Math.ceil((rd-now)/604800000)));
+    const basePace = !noBench ? benchmarkSeconds * Math.pow(5/benchDistance,1.06) / 5 : null;
+    const lowBase = K < 3;
+    const maxLong = T >= 42 ? 32 : T > 20 ? 22 : T === 10 ? 16 : 12;
+    const warnings = [];
+    if (noBench) warnings.push('No benchmark selected: paces are prescribed by effort and talk test. Add a recent race or time trial to calculate personal min/km ranges.');
+    if (lowBase) warnings.push('With fewer than 3 km currently run per week, the plan starts with short run/walk sessions. Do not treat the race distance as a safe training target.');
+    if (D > 1 && !lowBase && K / D < 2.5) warnings.push('Your current weekly distance is low for ' + D + ' runs per week. Consider fewer run days or gently building a consistent base first.');
+    if (T >= 21 && (K < (T >= 42 ? 30 : 15) || L < (T >= 42 ? 12 : 7)))
+      warnings.push('Your current longest run or weekly mileage is limited for this race distance. This plan cannot guarantee readiness; consider a longer buildup or shorter target.');
+    if (weeks < (T >= 42 ? 16 : T >= 21 ? 10 : 6))
+      warnings.push('The training window is short for this distance. Avoid trying to catch up by adding sudden mileage.');
+    if (goalSeconds && benchmarkSeconds) warnings.push('Workout pace ranges use current benchmark fitness, not an aspirational race goal.');
+    let html = '<div class="stats"><div class="stat"><small>TRAINING WINDOW</small><b>' + weeks +
+      ' weeks</b></div><div class="stat"><small>RUNS / WEEK</small><b>' + D +
+      '</b></div><div class="stat"><small>RECENT VOLUME</small><b>' + K + ' km</b></div></div>';
+    if (basePace) {
+      html += '<div class="pace-guide"><b>PERSONAL TRAINING PACES</b><div class="pace-grid">' +
+        [['Easy','easy'],['Long run','long'],['Recovery','recovery'],['Tempo','tempo'],['Intervals','intervals']]
+        .map(([name,type])=>'<div><small>'+name+'</small><strong>'+paceText(basePace,type)+'</strong></div>').join('') +
+        '</div><p>Ranges are estimates from your recent ' + benchDistance +
+        'K result. Slow down for heat, hills, fatigue or difficult terrain; effort takes priority.</p></div>';
+    } else {
+      html += '<div class="pace-guide"><b>TRAIN BY EFFORT</b><p>Easy and long runs: full-sentence conversation (RPE 3–4/10). Tempo: comfortably hard (6–7/10). Intervals: strong but controlled (7–8/10). No reliable min/km range is possible without a benchmark.</p></div>';
+    }
+    if (warnings.length) html += '<div class="note">' + warnings.join('<br><br>') + '</div>';
+    for (let w=1; w<=weeks; w++) {
+      const race = w === weeks, remaining = weeks-w;
+      const taper = !race && remaining <= 2, recovery = !race && !taper && w % 4 === 0;
+      let actual = 0, content = '';
+      if (lowBase) {
+        for (let i=0; i<D; i++) {
+          content += beginnerSession(w,i===D-1,!(!race || i!==D-1),T);
+        }
+      } else if (race) {
+        const preRuns = D-1;
+        const preDistance = Math.max(1.5,Math.min(5,K / Math.max(D,2) * 0.65));
+        for (let i=0;i<preRuns;i++) {
+          const d = round(i === preRuns-1 ? Math.min(3,preDistance) : preDistance);
+          actual += d;
+          content += i === preRuns-1 ? strideRun(d,basePace,true) : easyRun(d,basePace,'easy');
+        }
+        actual += T;
+        content += raceRun(T,basePace,benchDistance,benchmarkSeconds);
+      } else {
+        let total = K * Math.min(1.8,Math.pow(1.045,w-1));
+        if (recovery) total *= 0.82;
+        if (taper) total *= remaining===2 ? 0.82 : 0.67;
+        total = round(Math.max(1,total));
+        const longCap = D===1?1:D===2?.63:D===3?.52:D===4?.43:.38;
+        const longBase = L > 0 ? L : total * longCap * .85;
+        const desired = Math.min(maxLong,longBase + (w-1)*(T>=42?0.8:T>=21?0.6:T===10?0.45:0.3));
+        const longest = D===1 ? total : Math.min(total-(D-1)*0.6,
+          Math.max(total*longCap*.73,Math.min(desired,total*longCap)));
+        const longKm = round(Math.max(0.6,longest));
+        const extra = round(total-longKm);
+        const weights = Array.from({length:D-1},(_,i)=>
+          D>=3 && i===0 ? 1.15 : D>=5 && i===D-2 ? 0.75 : 1);
+        const sumWeights = weights.reduce((a,b)=>a+b,0);
+        const dists = weights.map((weight,i)=>i===weights.length-1 ? 0 :
+          round(extra*weight/sumWeights));
+        if (dists.length) dists[dists.length-1] = round(extra-dists.reduce((a,b)=>a+b,0));
+        dists.forEach((d,i)=>{
+          actual += d;
+          if (D >= 3 && i===0) {
+            const workout = w<=2 || K<12 || taper ? 'strides' : w%2===0 && d>=5.5 ? 'intervals' : 'tempo';
+            content += workout==='intervals' ? intervalRun(d,basePace,T)
+              : workout==='tempo' && d>=4 ? tempoRun(d,basePace) : strideRun(d,basePace,taper);
+          } else {
+            content += easyRun(d,basePace, D>=5 && i===D-2 ? 'recovery':'easy');
+          }
+        });
+        actual += longKm;
+        content += easyRun(longKm,basePace,'long');
+      }
+      html += '<div class="week"><h3>WEEK ' + w + ' · ' +
+        (race?'RACE WEEK':taper?'TAPER':recovery?'RECOVERY':'BUILD') +
+        '</h3><p class="week-volume">' + (lowBase?'Run/walk time-based sessions':'Scheduled volume: '+km(actual)) +
+        ' · Run 1 through ' + D + ' in order; separate harder and long days where possible.</p>' +
+        content + '</div>';
+    }
+    $('res').innerHTML = html;
+    $('res').classList.add('on');
+    $('res').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  $('buildPlanBtn').addEventListener('click',generate);
 })();
 </script>
 <!-- Invisible LibreCounter page-view analytics -->
