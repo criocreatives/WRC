@@ -174,6 +174,10 @@ function build() {
   if(hasBenchmark&&seconds<=0){alert('Enter your actual recent finishing time, or select NONE.');return;}
   const goalSeconds=fieldValue('thh','tmm','tss');
   const daysAsked=Number($('days').value);
+  const picked=Array.from(document.querySelectorAll('input[name="runDay"]:checked')).map(el=>el.value);
+  if(picked.length && picked.length!==daysAsked){
+    alert('Choose exactly '+daysAsked+' preferred running days, or uncheck them all for automatic spacing.');return;
+  }
   const weekly=Number($('km').value);
   const longest=Number($('long').value);
   if(weekly>0&&longest===0){
@@ -193,6 +197,8 @@ function build() {
   const required=readiness(target,weekly,longest,days);
   const shortWindow=weeks<required;
   const plans=[];
+  if(picked.length && days!==daysAsked)plans.push(notice('info','RUN DAYS SUGGESTED INSTEAD',
+    'Your preferred days were replaced by recovery-aware suggestions because RunLab reduced your weekly run count.'));
   if(days!==daysAsked)plans.push(notice('warning','RUN DAYS ADJUSTED',
     'You selected '+daysAsked+' runs per week. RunLab scheduled '+days+
     ' based on your reported mileage and longest run, leaving time for recovery. Build consistency before increasing frequency.'));
@@ -208,6 +214,8 @@ function build() {
     (days===1?'':'s')+', allow approximately '+required+'+ weeks as a conservative planning estimate ('+
     (required-weeks)+' more than you have). RunLab will not prescribe a full '+km(target)+
     ' race attempt on this date. Consider a shorter distance or later race and reassess with a coach if unsure.'));
+  else if(newRunner)plans.push(notice('warning','TIME TO BUILD A BEGINNER BASE',
+    'You have approximately '+weeks+' weeks until the event, but current running volume is near zero. Start with the run/walk schedule, build gradually, and reassess your race goal after a few weeks. RunLab will not automatically prescribe a full-distance race.'));
   else plans.push(notice('ok','TRAINING WINDOW LOOKS PLAUSIBLE',
     'Approximately '+weeks+' weeks remain; your inputs suggest at least '+required+
     ' weeks for a gradual buildup. This is a planning estimate, not a guarantee of race readiness. Reassess if training is interrupted or your body is not adapting.'));
@@ -236,7 +244,17 @@ function build() {
   }else{
     html+='<div class="pace-guide"><b>USE THE TALK TEST</b><p>Easy and long: full sentences (RPE 3–4/10). Run/walk: gentle jogging with recovery walks. If you supply a benchmark, use it later when a continuous-running base is established.</p></div>';
   }
-  const weekdays=scheduleDays(days);
+  const normalDays=scheduleDays(days);
+  const weekdayOrder=['MON','TUE','WED','THU','FRI','SAT','SUN'];
+  const weekdays=picked.length===days && days===daysAsked ? picked.slice().sort((a,b)=>weekdayOrder.indexOf(a)-weekdayOrder.indexOf(b)) : normalDays;
+  if(picked.length===days && days===daysAsked && days<=3){
+    const indices=weekdays.map(d=>weekdayOrder.indexOf(d));
+    let backToBack=false;
+    for(let i=1;i<indices.length;i++)if(indices[i]-indices[i-1]===1)backToBack=true;
+    if(indices.length>1 && indices[0]===0 && indices[indices.length-1]===6)backToBack=true;
+    if(backToBack)html+=notice('warning','RECOVERY-DAY REMINDER',
+      'You selected consecutive run days. Try to separate sessions by an easy/rest day, especially if you are new to running.');
+  }
   const cappedStart=weekly>0&&longest>0?Math.min(weekly,longest*days):weekly;
   for(let w=1;w<=weeks;w++){
     const last=w===weeks, left=weeks-w;
@@ -309,7 +327,8 @@ function build() {
         runs+=runSlot(++runNo,weekdays[days-1],novice?walkRun(longD,w,true):easyRun(longD,paceBase,'long'));
       }
     }
-    const volume=newRunner?'Run/walk time-based sessions':km(distance)+' total this week';
+    const volume=newRunner?'Run/walk time-based sessions':last&&shortWindow&&distance===0?
+      'No training run before race-date reassessment':km(distance)+' total this week';
     const heading=last?'RACE WEEK':taper?'TAPER':cutback?'RECOVERY WEEK':'BUILD';
     html+='<section class="week"><h3>WEEK '+w+' · '+heading+'</h3><p class="week-volume">'+volume+
       (last?' · Keep the days before the event easy.':
