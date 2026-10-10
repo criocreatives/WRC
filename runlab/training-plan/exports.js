@@ -28,16 +28,30 @@
     notify(weeks.length ? weeks.length + ' weeks ready to export.' : '');
   }
   document.addEventListener('runlab:planready',updateWeeks);
+  function globalWarnings() {
+    return Array.from(document.querySelectorAll('#res .plan-notice.danger, #res .plan-notice.warning'))
+      .map(node => (node.textContent || '').replace(/\s+/g,' ').trim()).filter(Boolean);
+  }
   function extractWeek(el) {
+    const runs = Array.from(el.querySelectorAll('.run-slot')).map(slot => {
+      const run=slot.querySelector('.run');
+      return {
+        title: ((slot.querySelector('.slot-label')?.textContent||'').trim()+' · '+
+          (run?.querySelector('.session-top strong')?.textContent||'').trim()).replace(/\s+/g,' '),
+        amount: (run?.querySelector('.session-top span:last-child')?.textContent||'').trim(),
+        effort: (run?.querySelector('.session-pace')?.textContent||'').replace(/\s+/g,' ').trim(),
+        details: (run?.querySelector('.session-detail')?.textContent||'').replace(/\s+/g,' ').trim()
+      };
+    });
+    Array.from(el.querySelectorAll('.race-advisory')).forEach(node => runs.push({
+      title:'RACE DATE · SAFETY ADVISORY',amount:'',
+      effort:'Race readiness warning · not a workout',
+      details:(node.textContent||'').replace(/\s+/g,' ').trim()
+    }));
     return {
-      title: (el.querySelector('h3')?.textContent || '').trim(),
-      volume: (el.querySelector('.week-volume')?.textContent || '').trim(),
-      runs: Array.from(el.querySelectorAll('.run')).map(node => ({
-        title:(node.querySelector('.session-top strong')?.textContent || '').trim(),
-        amount:(node.querySelector('.session-top span:last-child')?.textContent || '').trim(),
-        effort:(node.querySelector('.session-pace')?.textContent || '').replace(/\s+/g,' ').trim(),
-        details:(node.querySelector('.session-detail')?.textContent || '').replace(/\s+/g,' ').trim()
-      }))
+      title:(el.querySelector('h3')?.textContent||'').trim(),
+      volume:(el.querySelector('.week-volume')?.textContent||'').replace(/\s+/g,' ').trim(),
+      runs
     };
   }
   const getWeeks = () => weekNodes().map(extractWeek);
@@ -72,7 +86,9 @@
     if(!ctx)throw Error('This browser cannot create JPEG images.');
     ctx.font='24px Helvetica,Arial,sans-serif';
     const volumeLines=wrapCanvas(ctx,week.volume,inner-40);
-    const rendered=week.runs.map(run=>{
+    const alertText=globalWarnings().find(text=>/TRAINING WINDOW|RACE DAY|TIME TO BUILD/.test(text));
+    const allRuns=alertText?[{title:'IMPORTANT TRAINING NOTICE',amount:'',effort:'PLEASE READ BEFORE TRAINING',details:alertText},...week.runs]:week.runs;
+    const rendered=allRuns.map(run=>{
       ctx.font='24px Helvetica,Arial,sans-serif';
       const effortLines=wrapCanvas(ctx,run.effort,inner-48);
       const detailLines=wrapCanvas(ctx,run.details,inner-48);
@@ -151,6 +167,11 @@
     wrapped('PERSONALIZED TRAINING PLAN',23,[24,26,28],'bold',10);
     wrapped('Complete running schedule · Generated '+new Date().toLocaleDateString('en-GB'),11,[90,95,99],'normal',5);
     wrapped('Run the sessions in order, allowing recovery between hard and long runs. Training paces are estimates; slow down when needed.',10,[50,55,58],'normal',5);
+    const warnings=globalWarnings();
+    if(warnings.length) {
+      wrapped('IMPORTANT TRAINING NOTICES',11,[180,64,32],'bold',5.4);
+      warnings.forEach(note=>wrapped(note,9,[100,55,40],'normal',4.7));
+    }
     weeks.forEach((week,index)=>{
       enough(45);
       y+=5;
