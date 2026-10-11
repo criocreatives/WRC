@@ -129,25 +129,27 @@ function notice(type,title,text) {
     '"><strong>'+title+'</strong><p>'+text+'</p></div>';
 }
 function readiness(target,k,longest,days) {
-  // Conservative planning estimates, not a validated individual fitness prediction.
-  const strong=target<=5?k>=15&&longest>=5&&days>=3:
-    target<=10?k>=25&&longest>=8&&days>=3:
-    target<30?k>=35&&longest>=12&&days>=3:
-    k>=50&&longest>=20&&days>=4;
-  const moderate=target<=5?k>=8&&longest>=3&&days>=3:
-    target<=10?k>=12&&longest>=5&&days>=3:
-    target<30?k>=20&&longest>=8&&days>=3:
-    k>=30&&longest>=12&&days>=4;
-  const minimum=target<=5?(strong?6:moderate?9:12):
-    target<=10?(strong?8:moderate?12:16):
-    target<30?(strong?12:moderate?16:22):
-    strong?18:moderate?22:30;
-  const targetLong=target<=5?4:target<=10?8:target<30?16:26;
-  const startingLong=Math.max(.6,longest);
-  const growthWeeks=startingLong>=targetLong?0:
-    Math.ceil(Math.log(targetLong/startingLong)/Math.log(1.08));
-  const extra=days<3?4:0;
-  return Math.max(minimum+extra,growthWeeks+2+extra);
+  // Heuristic preparation ranges, not a diagnosis or guarantee. Established
+  // runners may need sharpening and taper, not an entirely new training base.
+  let minimum;
+  if (target<=5) {
+    minimum=k>=20&&longest>=7&&days>=3?3:
+      k>=15&&longest>=5&&days>=3?5:
+      k>=8&&longest>=3&&days>=2?8:12;
+  } else if (target<=10) {
+    minimum=k>=35&&longest>=12&&days>=3?5:
+      k>=25&&longest>=8&&days>=3?8:
+      k>=12&&longest>=5&&days>=2?12:16;
+  } else if (target<30) {
+    minimum=k>=45&&longest>=16&&days>=4?8:
+      k>=35&&longest>=12&&days>=3?12:
+      k>=20&&longest>=8&&days>=3?16:22;
+  } else {
+    minimum=k>=55&&longest>=24&&days>=4?8:
+      k>=45&&longest>=20&&days>=4?12:
+      k>=30&&longest>=12&&days>=3?20:30;
+  }
+  return minimum+(days===1?6:days===2?3:0);
 }
 function scheduleDays(days) {
   const layouts={
@@ -159,11 +161,12 @@ function scheduleDays(days) {
 }
 function build() {
   const raceDate=new Date(dateEl.value+'T12:00:00');
-  const today=new Date();today.setHours(0,0,0,0);
+  const today=new Date();today.setHours(12,0,0,0);
   if (!dateEl.value||Number.isNaN(raceDate.getTime())||raceDate<=today) {
     alert('Choose a future race date.');return;
   }
-  const daysRemaining=Math.ceil((raceDate-today)/86400000);
+  // Compare local calendar dates at noon to avoid an extra phantom week.
+  const daysRemaining=Math.round((raceDate-today)/86400000);
   const weeks=Math.ceil(daysRemaining/7);
   if(weeks>52){alert('This builder covers up to 52 weeks. Return closer to race day to build your plan.');return;}
   const target=Number(document.querySelector('input[name="target"]:checked').value);
@@ -172,6 +175,10 @@ function build() {
   const hasBenchmark=b&&b.value!=='none';
   const seconds=hasBenchmark?fieldValue('bh','bm','bs'):0;
   if(hasBenchmark&&seconds<=0){alert('Enter your actual recent finishing time, or select NONE.');return;}
+  if(hasBenchmark&&(!Number.isFinite(seconds)||seconds/benchmark<140||seconds/benchmark>1800)){
+    alert('Check your benchmark time: it appears unusually fast or slow for the distance. Use your actual recent result, or select NONE for effort-based training.');
+    return;
+  }
   const goalSeconds=fieldValue('thh','tmm','tss');
   const daysAsked=Number($('days').value);
   const picked=Array.from(document.querySelectorAll('input[name="runDay"]:checked')).map(el=>el.value);
@@ -223,6 +230,8 @@ function build() {
     'Start with easy run/walk sessions and rest days. No speed sessions or fixed race pace are prescribed at your current training volume.'));
   else if(novice)plans.push(notice('info','BUILDING AN AEROBIC BASE',
     'Your current longest run or weekly distance suggests easy run/walk training first. Faster tempo and interval workouts are intentionally withheld until a steadier running base is established.'));
+  if(hasBenchmark&&(weekly<8||longest<3))plans.push(notice('info','BENCHMARK PACE IS NOT ENDURANCE READINESS',
+    'A timed result estimates pace, but weekly running distance and your longest recent session matter more for safely increasing endurance. RunLab will prioritize comfortable, consistent running.'));
   if(!hasBenchmark)plans.push(notice('info','NO BENCHMARK PROVIDED',
     'Workout intensity will use the talk test and perceived effort. For pace ranges in min/km, enter a recent timed 3K, 5K or 10K.'));
   if(goalSeconds&&hasBenchmark){
