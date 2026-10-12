@@ -28,14 +28,13 @@ h1 em{font-style:normal;color:var(--lime)}
 .lead{font-size:clamp(15px,2.4vw,18px);max-width:500px;line-height:1.5;margin:0;color:#e0ece9}
 .hero-date{display:inline-flex;align-items:center;gap:12px;background:rgba(4,16,22,.7);border:1px solid #39705f;border-radius:12px;margin-top:30px;padding:13px 16px;font-size:13px;font-weight:800;letter-spacing:.025em}
 .hero-date strong{color:var(--lime)}
-.date-notice{margin-top:17px;border:1px solid #3b7167;border-left:4px solid var(--teal);background:#0b292d;padding:14px 16px;border-radius:11px;line-height:1.55;color:#e0efec;font-size:13px}.date-notice strong{color:var(--lime)}
-.test-flag b{color:#fff}
 .details-area{margin:20px 0 15px}
 .details-head{padding:2px 2px 17px}
 .details-head h2{margin:0}
 .bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px}
 .detail-card{grid-column:span 4;min-width:0;background:linear-gradient(150deg,#0b2730,#06151b);border:1px solid #274851;border-radius:19px;padding:clamp(17px,3vw,23px);display:flex;flex-direction:column;gap:12px;overflow:hidden}
 .detail-card.span8{grid-column:span 8}
+.detail-card.span6{grid-column:span 6}
 .detail-card.span12{grid-column:span 12}
 .detail-card .mini{font-size:10px;color:var(--teal);letter-spacing:.12em;font-weight:900;line-height:1.5;text-transform:uppercase}
 .detail-card .big{font-size:clamp(26px,4.5vw,44px);line-height:1.04;letter-spacing:-.055em;font-weight:800;color:#fff;font-variant-numeric:tabular-nums;overflow-wrap:break-word}
@@ -52,10 +51,15 @@ h1 em{font-style:normal;color:var(--lime)}
 .detail-card.price .included{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
 .detail-card.price .included span{border:1px solid rgba(0,48,31,.2);background:rgba(255,255,255,.26);border-radius:7px;color:#153e22;font-size:10px;font-weight:800;padding:7px 9px}
 .detail-card.logistics{background:linear-gradient(150deg,#0d3335,#081b24);border-color:#33665d}.detail-card.logistics .big{font-size:clamp(22px,3vw,30px);line-height:1.12}
-.detail-card.leg .big{color:var(--lime)}
-.detail-card.total{background:linear-gradient(140deg,#0c433c,#0b242b);border-color:#398071}
-.detail-card.total .big{color:var(--teal)}
-.detail-card.water{background:linear-gradient(140deg,#0b3539,#081c27);border-color:#34766f}.detail-card.water .big{color:var(--teal)}
+.detail-card.journey{background:linear-gradient(145deg,#0a3035,#071b27);border-color:#367067}
+.detail-card.overview{background:linear-gradient(145deg,#0b3936,#0a222a);border-color:#398071}
+.detail-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:4px 0}
+.detail-half{display:flex;flex-direction:column;gap:8px;min-width:0;border:1px solid #345653;background:rgba(2,17,24,.34);padding:13px 12px;border-radius:12px}
+.detail-half strong{font-size:clamp(24px,3.4vw,33px);font-weight:800;color:var(--lime);letter-spacing:-.05em;line-height:1.08;font-variant-numeric:tabular-nums}
+.overview .detail-half strong{color:var(--teal)}
+.detail-half span{font-size:10px;line-height:1.5;font-weight:800;color:#c8e0db;letter-spacing:.045em}
+.detail-half small{font-size:12px;color:#e9f5ef;line-height:1.5}
+
 .detail-card.note-card{flex-direction:row;align-items:flex-start;gap:13px;background:#11272a;padding:15px 18px}
 .detail-card.note-card .mini{color:var(--lime);flex:none}
 .detail-card.note-card .caption{margin:0}
@@ -64,13 +68,11 @@ h1 em{font-style:normal;color:var(--lime)}
 .pack-panel p,.pack-panel li{font-size:13px;line-height:1.65;color:#d0dddc}
 .pack-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 21px;margin:0;padding-left:22px}
 .pack-list li{padding-right:8px}
-@media(max-width:720px){.detail-card{grid-column:span 6}.detail-card.span8{grid-column:span 12}.detail-card.span12{grid-column:span 12}.detail-card.price{min-height:unset}.detail-card.route{min-height:210px}.detail-card .big{font-size:clamp(25px,5vw,38px)}.detail-card .route-words{font-size:clamp(30px,7vw,46px)}}
-@media(max-width:460px){.bento{gap:10px}.detail-card{grid-column:span 6;padding:16px}.detail-card.price{grid-column:span 12}.detail-card.route{min-height:185px}.detail-card .big{font-size:clamp(23px,7vw,32px)}.detail-card.note-card{flex-direction:column;gap:6px}.pack-list{grid-template-columns:1fr}.pack-panel{padding:19px}}
+@media(max-width:720px){.detail-card{grid-column:span 6}.detail-card.span8,.detail-card.span6,.detail-card.span12{grid-column:span 12}.detail-card.price{min-height:unset}.detail-card.route{min-height:210px}.detail-card .big{font-size:clamp(25px,5vw,38px)}.detail-card .route-words{font-size:clamp(30px,7vw,46px)}}
+@media(max-width:460px){.bento{gap:10px}.detail-card{grid-column:span 12;padding:16px}.detail-card.price{grid-column:span 12}.detail-card.route{min-height:185px}.detail-card .big{font-size:clamp(23px,7vw,32px)}.detail-card.note-card{flex-direction:column;gap:6px}.pack-list{grid-template-columns:1fr}.pack-panel{padding:19px}}
 
 .eyebrow{color:var(--teal);font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
 h2{font-size:clamp(23px,4vw,34px);letter-spacing:-.045em;line-height:1;margin:0 0 15px}
-.panel p,.panel li{font-size:13px;line-height:1.65;color:#d0dddc}
-.facts{display:grid;gap:11px}.fact{border-bottom:1px solid #213b42;padding-bottom:10px}.fact:last-child{border:0;padding-bottom:0}.fact b{display:block;font-size:10px;letter-spacing:.11em;color:var(--teal);margin-bottom:4px}.fact span{font-size:15px;font-weight:700}
 .signup{background:linear-gradient(135deg,#0d272b,#071b20);border:1px solid #2c5152;border-radius:20px;padding:clamp(18px,4vw,30px);margin-top:15px}
 .signup-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;margin-bottom:17px}
 .registration-card{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;gap:18px;padding:clamp(23px,5vw,36px);border:1px solid #458674;border-radius:18px;background:radial-gradient(ellipse at 100% 0%,rgba(21,230,193,.16),transparent 55%),linear-gradient(142deg,#103a38,#09242c 73%,#071a23)}
@@ -80,9 +82,6 @@ h2{font-size:clamp(23px,4vw,34px);letter-spacing:-.045em;line-height:1;margin:0 
 .registration-card h3{font-size:clamp(34px,7vw,58px);line-height:.92;letter-spacing:-.055em;margin:0;color:#fff}
 .registration-card h3 em{font-style:normal;color:var(--lime)}
 .registration-card p{font-size:14px;line-height:1.65;color:#d2e5df;margin:0;max-width:610px}
-.registration-facts{display:flex;flex-wrap:wrap;gap:9px}
-.registration-facts span{display:inline-flex;align-items:center;min-height:39px;border:1px solid #3a6964;border-radius:9px;padding:8px 12px;background:#0a3033;font-size:12px;line-height:1.4;color:#d9ebe5;font-weight:700}
-.registration-facts strong{color:var(--lime)}
 .registration-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:18px;align-self:flex-start;width:min(100%,420px);min-height:60px;padding:16px 19px;border-radius:11px;background:linear-gradient(100deg,var(--lime),var(--teal));color:#082a20;text-decoration:none;font-size:13px;font-weight:900;letter-spacing:.06em;box-shadow:0 8px 25px rgba(0,0,0,.18);transition:transform .18s ease,filter .18s ease}
 .registration-cta:hover{transform:translateY(-2px);filter:brightness(1.05)}
 .registration-cta:focus-visible{outline:3px solid #fff;outline-offset:4px}
@@ -94,7 +93,7 @@ h2{font-size:clamp(23px,4vw,34px);letter-spacing:-.045em;line-height:1;margin:0 
 .site-footer{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;padding:37px 10px 0}
 .site-footer img{display:block;width:min(260px,55vw)}.site-footer a{font-size:11px;color:var(--teal);font-weight:800;text-decoration:none}
 
-@media(max-width:690px){.hero{min-height:360px;padding:27px 22px}.hero-date{font-size:12px}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.confirm dl{grid-template-columns:1fr}.confirm dt{margin-top:6px}.wrap{padding:14px 13px 50px}.topbar{margin-bottom:16px}}
+@media(max-width:690px){.hero{min-height:360px;padding:27px 22px}.hero-date{font-size:12px}.wrap{padding:14px 13px 50px}.topbar{margin-bottom:16px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -108,45 +107,50 @@ h2{font-size:clamp(23px,4vw,34px);letter-spacing:-.045em;line-height:1;margin:0 
 <p class="lead">From Gordon Town to RafJam. Take the scenic route together.</p>
 <div class="hero-date"><strong>SUNDAY · DATE TBC</strong><span>OCT 25 OR NOV 1</span></div>
 </section>
-<div class="date-notice" role="note"><strong>DATE BEING FINALIZED.</strong> The hike is planned for either Sunday, October 25 or Sunday, November 1, 2026. Registration is open now; WRC will communicate the confirmed date and meeting details.</div>
 <section class="details-area" aria-labelledby="details-title">
 <div class="details-head"><div class="eyebrow">01 · THE PLAN</div><h2 id="details-title">EVENT DETAILS.</h2></div>
 <div class="bento">
 <article class="detail-card route span8">
 <div class="mini">THE ROUTE · OUT &amp; BACK</div>
 <div class="route-words">Gordon Town <span class="route-arrow" aria-hidden="true">↔</span> <span>RafJam</span></div>
-<p class="caption card-bottom">A scenic mountain hike from Gordon Town to RafJam and back, with climbing and downhill sections along the way.</p>
+<p class="caption card-bottom">A scenic mountain hike with a return along the same route.</p>
 </article>
 <article class="detail-card price">
 <div class="mini">HIKE COST · JMD</div>
 <div class="big">$5,000</div>
-<p class="caption">Includes access to RafJam and a light refreshment kit.</p>
+<p class="caption">Per person · Includes:</p>
 <div class="included"><span>RAFJAM ACCESS</span><span>LIGHT REFRESHMENT KIT</span></div>
 </article>
-<article class="detail-card leg"><div class="mini">01 · HIKE THERE</div><div class="big">~5 km</div><p class="caption card-bottom">Gordon Town → RafJam<br>Approximately 2 hours</p></article>
-<article class="detail-card leg"><div class="mini">02 · HIKE BACK</div><div class="big">~5 km</div><p class="caption card-bottom">RafJam → Gordon Town<br>Approximately 2 hours</p></article>
-<article class="detail-card total"><div class="mini">TOTAL ROUND TRIP</div><div class="big">~10 km</div><p class="caption card-bottom">Approximately 4 hours of hiking, excluding rest stops and activities at RafJam.</p></article>
-<article class="detail-card"><div class="mini">EVENT DATE</div><div class="big medium">OCT 25 / NOV 1</div><p class="caption card-bottom">Sundays · 2026 · Final date TBC</p></article>
-<article class="detail-card"><div class="mini">ELEVATION &amp; TERRAIN</div><div class="big">~440 m</div><p class="caption card-bottom">Indicative elevation gain from a previous outing. Expect steep, uneven terrain, climbs and descents.</p></article>
-<article class="detail-card"><div class="mini">MEET-UP TIME</div><div class="big medium">TBC</div><p class="caption card-bottom">Start time will be shared once finalized.</p></article>
-<article class="detail-card logistics"><div class="mini">MEETING POINT</div><div class="big medium">Gordon Town Square</div><p class="caption card-bottom">Meet the WRC group at Gordon Town Square before setting off.</p></article>
-<article class="detail-card logistics"><div class="mini">PARKING</div><div class="big medium">Community Centre</div><p class="caption card-bottom">Parking by the Gordon Town Community Centre.</p></article>
-<article class="detail-card logistics"><div class="mini">GETTING THERE</div><div class="big medium">CARPOOL</div><p class="caption card-bottom">No event bus will be provided. Please arrange your own transport; carpooling is strongly encouraged.</p></article>
-<article class="detail-card water span12"><div class="mini">OPTIONAL AT RAFJAM</div><div class="big medium">SWIMMING &amp; WADING</div><p class="caption card-bottom">Swimming and wading are voluntary and subject to venue permission and safety arrangements. You may remain out of the water without penalty.</p></article>
-<div class="detail-card note-card span12"><div class="mini">PLEASE NOTE</div><p class="caption">Distances and hiking times are estimates; duration may vary with group pace, rest stops, trail conditions and weather. No bus transport is included in the JMD $5,000 participation fee.</p></div>
+<article class="detail-card journey span6">
+<div class="mini">HIKE THERE &amp; BACK</div>
+<div class="detail-pair">
+<div class="detail-half"><strong>~5 km</strong><span>GORDON TOWN → RAFJAM</span><small>About 2 hours</small></div>
+<div class="detail-half"><strong>~5 km</strong><span>RAFJAM → GORDON TOWN</span><small>About 2 hours</small></div>
+</div>
+</article>
+<article class="detail-card overview span6">
+<div class="mini">ROUND TRIP &amp; TERRAIN</div>
+<div class="detail-pair">
+<div class="detail-half"><strong>~10 km</strong><span>TOTAL DISTANCE</span></div>
+<div class="detail-half"><strong>~440 m</strong><span>ELEVATION GAIN</span></div>
+</div>
+<p class="caption card-bottom">About 4 hours of hiking, excluding rest stops and activities at RafJam. Expect steep, uneven terrain, climbs and descents. Estimates vary with route, pace, weather and trail conditions.</p>
+</article>
+<article class="detail-card"><div class="mini">EVENT DATE</div><div class="big medium">OCT 25 / NOV 1</div><p class="caption card-bottom">Sunday · 2026 · Final date TBC</p></article>
+<article class="detail-card logistics"><div class="mini">MEETING &amp; PARKING</div><div class="big medium">Gordon Town Square</div><p class="caption card-bottom">Park by Gordon Town Community Centre. Meet-up time TBC.</p></article>
+<article class="detail-card logistics"><div class="mini">TRANSPORT</div><div class="big medium">CARPOOL</div><p class="caption card-bottom">No event bus is provided. Arrange your own transport; carpooling is encouraged.</p></article>
+<div class="detail-card note-card span12"><div class="mini">PLEASE NOTE</div><p class="caption"><strong>Swimming and wading at RafJam are optional,</strong> subject to venue permission and safety arrangements. You may stay out of the water without penalty.</p></div>
 </div>
 </section>
 <aside class="pack-panel" aria-labelledby="pack-title"><div class="eyebrow">02 · GET READY</div><h2 id="pack-title">WHAT TO BRING.</h2>
 <ul class="pack-list"><li>Comfortable shoes with good grip</li><li>Drinking water and a light snack</li><li>Light rain protection</li><li>Sun protection</li><li>A charged phone</li></ul>
-<p>Meet at Gordon Town Square and park by the Gordon Town Community Centre. Please carpool where possible, as no event bus is provided. The exact meet-up time and any additional route instructions will be shared once confirmed.</p>
 </aside>
 <section class="signup" id="signup" aria-labelledby="signup-title">
 <div class="signup-head"><div><div class="eyebrow">03 · JOIN THE HIKE</div><h2 id="signup-title">REGISTER FOR THE HIKE.</h2></div></div>
 <div class="registration-card">
 <div class="registration-state">REGISTRATION OPEN</div>
 <h3>READY TO<br><em>HIKE?</em></h3>
-<p>Complete the official WRC registration form, including participant details, hiking readiness questions and the safety waiver. The form opens directly in Google Forms for a smoother experience on mobile.</p>
-<div class="registration-facts"><span><strong>JMD $5,000</strong>&nbsp; per person</span><span>RAFJAM ACCESS + LIGHT REFRESHMENT KIT</span><span>DATE TO BE CONFIRMED</span></div>
+<p>Complete the official WRC registration form, including hiking readiness questions and the safety waiver.</p>
 <a class="registration-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSeWSsclAos6W29TbB8HXmElo8EJ89okMMvpmLT6dpCn8p4IZw/viewform" target="_blank" rel="noopener noreferrer" aria-label="Complete RafJam Hike registration in Google Forms (opens in a new tab)"><span>COMPLETE REGISTRATION</span><span aria-hidden="true">↗</span></a>
 <p class="registration-help">Opens in a new tab · Google Forms · Participants must be 18 or older</p>
 </div>
