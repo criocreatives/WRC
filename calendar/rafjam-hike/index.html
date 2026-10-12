@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1c23">
+<meta name="description" content="WADADA Run Club Sunday hike from Gordon Town to RafJam on October 25, 2026. Event details and registration preview.">
+<title>RafJam Hike · WADADA Run Club</title>
+<link rel="icon" type="image/png" href="../../assets/icons/wrc favicon.png">
+<style>
+:root{--bg:#0b1c23;--panel:#06151b;--panel2:#081a21;--line:#24434b;--lime:#c9ff3d;--teal:#15e6c1;--white:#f6faf9;--muted:#a8bdbe}
+*{box-sizing:border-box}
+html{background:#07171c;scroll-behavior:smooth}
+body{margin:0;font-family:Helvetica,Arial,sans-serif;color:var(--white);background:radial-gradient(ellipse at 92% 2%,rgba(21,230,193,.14),transparent 42%),linear-gradient(180deg,#0b1c23,#06151b 75%);min-height:100vh}
+a{color:inherit}
+button,input,select{font:inherit}
+.wrap{max-width:850px;margin:auto;padding:18px 18px 70px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 24px}
+.back{border:1px solid var(--line);border-radius:12px;background:#092129;padding:12px 14px;text-decoration:none;font-weight:700;font-size:11px;letter-spacing:.075em}
+.back:focus-visible,.back:hover{border-color:var(--lime)}
+.club-logo{display:block;width:min(185px,40vw);height:auto}
+.hero{position:relative;overflow:hidden;border-radius:23px;padding:clamp(26px,5vw,48px);min-height:410px;background:linear-gradient(140deg,#10342d,#08252a 56%,#06151b);border:1px solid #28604e;isolation:isolate}
+.hero:before{content:"";position:absolute;z-index:-1;inset:0;background:repeating-radial-gradient(ellipse at 95% 10%,transparent 0 23px,rgba(184,245,196,.07) 24px 25px,transparent 27px 45px);opacity:.75}
+.mountains{position:absolute;right:-2%;bottom:0;width:95%;max-width:800px;opacity:.42;z-index:-1}
+.kicker{font-size:11px;font-weight:800;letter-spacing:.18em;color:var(--teal);text-transform:uppercase}
+h1{font-size:clamp(54px,11vw,100px);line-height:.86;letter-spacing:-.07em;text-transform:uppercase;margin:18px 0 20px;max-width:700px}
+h1 em{font-style:normal;color:var(--lime)}
+.lead{font-size:clamp(15px,2.4vw,18px);max-width:500px;line-height:1.5;margin:0;color:#e0ece9}
+.hero-date{display:inline-flex;align-items:center;gap:12px;background:rgba(4,16,22,.7);border:1px solid #39705f;border-radius:12px;margin-top:30px;padding:13px 16px;font-size:13px;font-weight:800;letter-spacing:.025em}
+.hero-date strong{color:var(--lime)}
+.test-flag{margin-top:20px;border:1px solid #74684a;border-left:4px solid #e5d18a;background:#292b25;padding:14px 16px;border-radius:11px;line-height:1.55;color:#f1e7c4;font-size:13px}
+.test-flag b{color:#fff}
+.sections{display:grid;grid-template-columns:1.18fr .82fr;gap:14px;margin:15px 0}
+.panel{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:22px}
+.eyebrow{color:var(--teal);font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+h2{font-size:clamp(23px,4vw,34px);letter-spacing:-.045em;line-height:1;margin:0 0 15px}
+.panel p,.panel li{font-size:13px;line-height:1.65;color:#d0dddc}
+.facts{display:grid;gap:11px}.fact{border-bottom:1px solid #213b42;padding-bottom:10px}.fact:last-child{border:0;padding-bottom:0}.fact b{display:block;font-size:10px;letter-spacing:.11em;color:var(--teal);margin-bottom:4px}.fact span{font-size:15px;font-weight:700}
+.pack-list{margin:0;padding-left:20px}.pack-list li{margin:6px 0}
+.signup{background:linear-gradient(135deg,#0d272b,#071b20);border:1px solid #2c5152;border-radius:20px;padding:clamp(18px,4vw,30px);margin-top:15px}
+.signup-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;margin-bottom:13px}
+.status{border:1px solid #837547;color:#f7e2a1;background:#3c3624;border-radius:999px;padding:7px 10px;font-size:10px;font-weight:800;letter-spacing:.08em}
+.signup p{font-size:13px;line-height:1.65;color:#bfcece}
+.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;margin-top:23px}
+.field{display:flex;flex-direction:column;min-width:0}
+.field.full{grid-column:1/-1}
+label{display:block;font-weight:800;font-size:11px;letter-spacing:.055em;color:#e6efee;margin-bottom:8px}
+.field input,.field select{width:100%;min-height:50px;color:#fff;background:#061519;border:1px solid #426068;border-radius:11px;padding:12px 13px;font-size:16px}
+.field input::placeholder{color:#7c9499}
+.field input:focus,.field select:focus{outline:2px solid var(--teal);outline-offset:1px}
+small.helper{font-size:11px;line-height:1.5;color:#a9c0c0;margin:7px 0 0}
+.checkbox{display:flex;gap:13px;align-items:flex-start;margin-top:24px;font-size:12px;font-weight:400;color:#d2dfdc;line-height:1.65;letter-spacing:0}
+.checkbox input{width:22px;height:22px;flex:none;accent-color:var(--lime);margin:0}
+.actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:23px 0 0}
+.primary{border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;min-height:50px;border-radius:11px;padding:13px 19px;background:linear-gradient(90deg,var(--lime),var(--teal));color:#071e1a;font-size:13px;font-weight:900;letter-spacing:.035em}
+.secondary{cursor:pointer;display:inline-flex;align-items:center;justify-content:center;min-height:45px;border:1px solid #4c7478;border-radius:10px;padding:12px 16px;background:transparent;color:#fff;font-size:12px;font-weight:700}
+.primary:focus-visible,.secondary:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.confirm{margin-top:19px;border:1px solid #467c67;background:#112f2c;border-radius:14px;padding:20px}
+.confirm[hidden],#formWrap[hidden]{display:none!important}
+.confirm h3{font-size:25px;margin:5px 0 10px;letter-spacing:-.04em}
+.confirm dl{display:grid;grid-template-columns:150px minmax(0,1fr);gap:8px 12px;font-size:13px;line-height:1.5;border-top:1px solid #315e57;padding-top:14px}
+.confirm dt{color:#98bfb7}.confirm dd{margin:0;color:white;font-weight:700;overflow-wrap:anywhere}
+.caution{font-size:12px;color:#ead7a3!important}
+.privacy{border-top:1px solid #1f4646;padding-top:16px;margin-top:20px;font-size:11px!important}
+.site-footer{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;padding:37px 10px 0}
+.site-footer img{display:block;width:min(260px,55vw)}.site-footer a{font-size:11px;color:var(--teal);font-weight:800;text-decoration:none}
+@media(max-width:690px){.sections{grid-template-columns:1fr}.hero{min-height:360px;padding:27px 22px}.hero-date{font-size:12px}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.confirm dl{grid-template-columns:1fr}.confirm dt{margin-top:6px}.wrap{padding:14px 13px 50px}.topbar{margin-bottom:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<div class="topbar"><a class="back" href="../">← WRC CALENDAR</a><a href="/" aria-label="WADADA Run Club homepage"><img class="club-logo" src="../../assets/logos/WRC Logo Stack.png" alt="Wadada Run Club"></a></div>
+<section class="hero">
+<svg class="mountains" viewBox="0 0 800 285" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path fill="#116354" d="M0 218 85 151 150 180 288 60 425 175 504 113 600 170 716 36 800 130V285H0Z"/><path fill="#0f514e" d="m0 262 126-120 103 73L340 126l132 108 112-105 117 89 99-76v143H0Z"/><path fill="#081e28" d="m0 285 143-96 113 61 116-95 141 110 123-74 164 75v19H0Z"/></svg>
+<div class="kicker">WADADA RUN CLUB · SPECIAL EVENT</div>
+<h1>THE<br><em>RAFJAM</em><br>HIKE.</h1>
+<p class="lead">From Gordon Town to RafJam. Take the scenic route together.</p>
+<div class="hero-date"><strong>SUN · 25 OCT 2026</strong><span>JAMAICA</span></div>
+</section>
+<div class="test-flag" role="note"><b>REGISTRATION PREVIEW — TEST MODE.</b> This form is for testing the signup experience. No registration is created, and the information you enter is not sent to WRC or saved to a database.</div>
+<div class="sections">
+<section class="panel" aria-labelledby="details-title">
+<div class="eyebrow">01 · THE PLAN</div><h2 id="details-title">EVENT DETAILS.</h2>
+<div class="facts">
+<div class="fact"><b>DATE</b><span>Sunday, October 25, 2026</span></div>
+<div class="fact"><b>ROUTE</b><span>Gordon Town → RafJam</span></div>
+<div class="fact"><b>MEET-UP TIME</b><span>To be confirmed</span></div>
+<div class="fact"><b>MEETING POINT / TRANSPORT</b><span>To be confirmed</span></div>
+<div class="fact"><b>DISTANCE / DIFFICULTY</b><span>To be confirmed</span></div>
+<div class="fact"><b>PARTICIPATION COST</b><span>To be confirmed</span></div>
+</div>
+</section>
+<aside class="panel" aria-labelledby="pack-title"><div class="eyebrow">02 · GET READY</div><h2 id="pack-title">WHAT TO BRING.</h2>
+<ul class="pack-list"><li>Comfortable shoes with good grip</li><li>Drinking water and a light snack</li><li>Light rain protection</li><li>Sun protection</li><li>A charged phone</li></ul>
+<p>Final meeting instructions and any route-specific requirements will be shared once confirmed. Plan for uneven terrain and changing weather.</p>
+</aside>
+</div>
+<section class="signup" id="signup" aria-labelledby="signup-title">
+<div class="signup-head"><div><div class="eyebrow">03 · JOIN THE HIKE</div><h2 id="signup-title">SIGN-UP PREVIEW.</h2></div><div class="status">TEST MODE</div></div>
+<p>Try out the form below and review how your details would appear. <strong>This is not a real registration.</strong> Your test entry is not transmitted, stored or counted as a place.</p>
+<div id="formWrap">
+<form id="signupForm">
+<div class="formgrid">
+<div class="field full"><label for="name">FULL NAME *</label><input id="name" name="name" type="text" autocomplete="name" minlength="2" maxlength="90" required placeholder="Your first and last name"></div>
+<div class="field"><label for="phone">WHATSAPP / CONTACT NUMBER *</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="25" required placeholder="e.g. +1 876 555 0000"><small class="helper">For future event updates when registration goes live.</small></div>
+<div class="field"><label for="experience">HIKING EXPERIENCE *</label><select id="experience" name="experience" required><option value="">Select an option</option><option value="First-time hiker">First-time hiker</option><option value="Occasional hiker">Occasional hiker</option><option value="Regular hiker">Regular hiker</option></select></div>
+<div class="field"><label for="transport">TRANSPORT PLAN *</label><select id="transport" name="transport" required><option value="">Select an option</option><option value="Making my own way">Making my own way</option><option value="Would like transport information">Would like transport information</option><option value="Not sure yet">Not sure yet</option></select></div>
+<div class="field"><label for="group">HOW MANY PEOPLE? *</label><select id="group" name="group" required><option value="1">Just me (1)</option><option value="2">2 people</option><option value="3">3 people</option><option value="4">4 people</option><option value="5">5 people</option></select><small class="helper">For planning only. Each participant may need to register separately when signups open.</small></div>
+<div class="field full"><label for="emergency">EMERGENCY CONTACT (OPTIONAL FOR TESTING)</label><input id="emergency" name="emergency" type="text" maxlength="120" placeholder="Contact name and number"><small class="helper">In the live version, only share emergency-contact details with that person's permission.</small></div>
+</div>
+<label class="checkbox"><input id="ack" name="ack" type="checkbox" required><span>I understand this is an outdoor hike with potentially uneven terrain and changing weather. I also understand this form is a preview and does not reserve a place. *</span></label>
+<div class="actions"><button class="primary" type="submit">PREVIEW MY SIGN-UP →</button><button class="secondary" type="reset">CLEAR FORM</button></div>
+</form>
+</div>
+<div id="confirmation" class="confirm" hidden role="status" aria-live="polite" tabindex="-1">
+<div class="eyebrow">PREVIEW COMPLETE</div><h3>HERE'S YOUR ENTRY.</h3>
+<p>Review the details below as a test of the signup flow.</p>
+<dl id="entryDetails"></dl>
+<p class="caution"><strong>NOT REGISTERED.</strong> Nothing was submitted or saved. Closing or refreshing this page clears this preview.</p>
+<div class="actions"><button type="button" class="secondary" id="editBtn">← EDIT DETAILS</button><button type="button" class="secondary" id="restartBtn">START NEW TEST</button></div>
+</div>
+<p class="privacy">Privacy during testing: form entries stay in this browser's current page memory only. No analytics events contain the form values. When real signups open, the form will require a configured, verified registration destination.</p>
+</section>
+<footer class="site-footer"><a href="/" aria-label="WRC homepage"><img src="../../assets/logos/WRC Logo Text Gradient - Copy.png" alt="Wadada Run Club"></a><a href="../">BACK TO CALENDAR ↗</a></footer>
+</main>
+<script>
+(function(){
+'use strict';
+var form=document.getElementById('signupForm');
+var wrap=document.getElementById('formWrap');
+var panel=document.getElementById('confirmation');
+var details=document.getElementById('entryDetails');
+function text(id){return document.getElementById(id).value.trim();}
+function addItem(label,value){
+ var dt=document.createElement('dt');dt.textContent=label;
+ var dd=document.createElement('dd');dd.textContent=value;
+ details.appendChild(dt);details.appendChild(dd);
+}
+form.addEventListener('submit',function(event){
+ event.preventDefault();
+ if(!form.reportValidity())return;
+ var phoneDigits=text('phone').replace(/\D/g,'');
+ if(phoneDigits.length<7||phoneDigits.length>15){document.getElementById('phone').setCustomValidity('Enter a valid contact number with 7–15 digits.');document.getElementById('phone').reportValidity();return;}
+ var name=text('name');if(name.length<2)return;
+ details.textContent='';
+ addItem('Full name',name);
+ addItem('Contact number',text('phone'));
+ addItem('Hiking experience',text('experience'));
+ addItem('Transport plan',text('transport'));
+ addItem('Number of people',text('group'));
+ if(text('emergency'))addItem('Emergency contact',text('emergency'));
+ wrap.hidden=true;panel.hidden=false;panel.focus();
+});
+document.getElementById('phone').addEventListener('input',function(){this.setCustomValidity('');});
+document.getElementById('editBtn').addEventListener('click',function(){panel.hidden=true;wrap.hidden=false;document.getElementById('name').focus();});
+document.getElementById('restartBtn').addEventListener('click',function(){form.reset();details.textContent='';panel.hidden=true;wrap.hidden=false;document.getElementById('name').focus();});
+form.addEventListener('reset',function(){document.getElementById('phone').setCustomValidity('');});
+})();
+</script>
+<!-- Invisible LibreCounter page-view analytics -->
+<img src="https://librecounter.org/hidden.svg" referrerpolicy="unsafe-url" alt="" aria-hidden="true" width="1" height="1" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;">
+</body></html>
