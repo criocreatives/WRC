@@ -64,6 +64,19 @@ small.helper{font-size:11px;line-height:1.5;color:#a9c0c0;margin:7px 0 0}
 .privacy{border-top:1px solid #1f4646;padding-top:16px;margin-top:20px;font-size:11px!important}
 .site-footer{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;padding:37px 10px 0}
 .site-footer img{display:block;width:min(260px,55vw)}.site-footer a{font-size:11px;color:var(--teal);font-weight:800;text-decoration:none}
+
+.trial{border:1px solid #286252;background:linear-gradient(145deg,#0e2829,#06191e);border-radius:20px;padding:clamp(20px,4vw,28px);margin:15px 0}
+.trial-head{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+.trial-date{font-size:10px;font-weight:800;letter-spacing:.09em;color:#b7d0cc;border:1px solid #365b58;border-radius:99px;padding:7px 10px;white-space:nowrap}
+.trial h2{margin-bottom:12px}
+.trial-intro{font-size:13px;line-height:1.65;color:#d4e2de;margin:2px 0 18px;max-width:660px}
+.trial-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.trial-metric{border:1px solid #345550;background:#07191e;padding:14px 12px;border-radius:13px;min-width:0}
+.trial-metric b{display:block;color:var(--lime);font-size:clamp(20px,3.3vw,29px);line-height:1.2;font-variant-numeric:tabular-nums;letter-spacing:-.04em}
+.trial-metric span{display:block;font-size:10px;font-weight:800;letter-spacing:.07em;line-height:1.45;text-transform:uppercase;color:#b2c6c5;margin-top:8px}
+.trial-foot{border-top:1px solid #244e4b;margin-top:18px;padding-top:15px;color:#c5d7d2;font-size:12px;line-height:1.65}
+.trial-foot strong{color:#fff}
+@media(max-width:690px){.trial-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.trial-head{display:block}.trial-date{display:inline-block;margin-bottom:13px}.trial-metric b{font-size:clamp(21px,6vw,28px)}}
 @media(max-width:690px){.sections{grid-template-columns:1fr}.hero{min-height:360px;padding:27px 22px}.hero-date{font-size:12px}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.confirm dl{grid-template-columns:1fr}.confirm dt{margin-top:6px}.wrap{padding:14px 13px 50px}.topbar{margin-bottom:16px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -87,7 +100,7 @@ small.helper{font-size:11px;line-height:1.5;color:#a9c0c0;margin:7px 0 0}
 <div class="fact"><b>ROUTE</b><span>Gordon Town → RafJam</span></div>
 <div class="fact"><b>MEET-UP TIME</b><span>To be confirmed</span></div>
 <div class="fact"><b>MEETING POINT / TRANSPORT</b><span>To be confirmed</span></div>
-<div class="fact"><b>DISTANCE / DIFFICULTY</b><span>To be confirmed</span></div>
+<div class="fact"><b>DISTANCE / DIFFICULTY</b><span>Final event details to be confirmed. See September 6 test-hike data below.</span></div>
 <div class="fact"><b>PARTICIPATION COST</b><span>To be confirmed</span></div>
 </div>
 </section>
@@ -96,8 +109,19 @@ small.helper{font-size:11px;line-height:1.5;color:#a9c0c0;margin:7px 0 0}
 <p>Final meeting instructions and any route-specific requirements will be shared once confirmed. Plan for uneven terrain and changing weather.</p>
 </aside>
 </div>
+<section class="trial" aria-labelledby="trial-title">
+<div class="trial-head"><div><div class="eyebrow">03 · ROUTE REFERENCE</div><h2 id="trial-title">THE TEST HIKE.</h2></div><div class="trial-date">RECORDED · SEPT 6, 2026</div></div>
+<p class="trial-intro">A previous hike recorded in Saint Andrew provides a practical reference for the distance, climbing and time involved. This was a <strong>test outing</strong>, not a confirmed itinerary or promised completion time for October 25.</p>
+<div class="trial-metrics">
+<div class="trial-metric"><b>9.98 km</b><span>Distance covered</span></div>
+<div class="trial-metric"><b>437 m</b><span>Elevation gained</span></div>
+<div class="trial-metric"><b>3h 47m</b><span>Total elapsed time</span></div>
+<div class="trial-metric"><b>342–740 m</b><span>Recorded elevation range</span></div>
+</div>
+<div class="trial-foot"><strong>What to expect:</strong> The test outing involved sustained climbing and descending, which may feel demanding even at a relaxed pace. Its moving/workout time was 3h 33m, with a longer 3h 47m elapsed time including pauses. Actual event distance, route conditions, group pace and stops may differ. Final arrangements will be confirmed before the hike.</div>
+</section>
 <section class="signup" id="signup" aria-labelledby="signup-title">
-<div class="signup-head"><div><div class="eyebrow">03 · JOIN THE HIKE</div><h2 id="signup-title">SIGN-UP PREVIEW.</h2></div><div class="status">TEST MODE</div></div>
+<div class="signup-head"><div><div class="eyebrow">04 · JOIN THE HIKE</div><h2 id="signup-title">SIGN-UP PREVIEW.</h2></div><div class="status">TEST MODE</div></div>
 <p>Try out the form below and review how your details would appear. <strong>This is not a real registration.</strong> Your test entry is not transmitted, stored or counted as a place.</p>
 <div id="formWrap">
 <form id="signupForm">
