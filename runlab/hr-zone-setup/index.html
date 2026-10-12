@@ -1,4 +1,199 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HR Zone Setup · RUNLAB</title><link rel="icon" type="image/png" href="../../assets/runlab/WRC Runlabfavicon.png"><link rel="stylesheet" href="../style.css"></head><body><div class="wrap"><header><a href="../"><img class="logo-sub" src="../../assets/runlab/WRC Runlab TXT orng.svg"></a></header><main><a class="backbtn" href="../">← RUNLAB</a><div class="eyebrow">RUNLAB · 02</div><h1>HR ZONE<br>SETUP.</h1><p>Calculate five heart-rate zones and copy the BPM boundaries into your running watch.</p><section class="tool"><div class="formgrid"><div><label>RESTING HEART RATE</label><select id="rest"></select></div><div><label>MAX HEART RATE</label><select id="max"></select></div><div><label>METHOD</label><select id="method"><option value="hrr">Heart Rate Reserve · Karvonen</option><option value="max">% of Max HR</option></select></div></div><p><button onclick="zones()">CALCULATE WATCH ZONES</button></p><div id="res" class="result"></div><div id="exports" class="exportbar"></div></section></main><footer><div class="footlinks"><a href="../"><img class="runlab-pill" src="../../assets/runlab/WRC Runlab TXT orng.svg" alt="RUNLAB"></a><a href="/"><img class="wrc-home" src="../../assets/logos/WRC Logo Stack.png"></a></div></footer></div><script src="../tools.js"></script><script>addExports('res','exports','RUNLAB-HR-Zones');fill('rest',30,120,55);fill('max',100,230,195);function zones(){let R=+rest.value,M=+max.value,md=method.value,B=[[.5,.6],[.6,.7],[.7,.8],[.8,.9],[.9,1]],N=['Recovery','Easy / aerobic','Steady','Threshold','High intensity'],U=['Warm-ups, cool-downs and active recovery.','Build aerobic endurance; the main zone for easy runs and comfortable mileage.','Moderate sustained running for aerobic strength without full threshold intensity.','Hard, controlled tempo and threshold work to improve sustained speed.','Very hard short intervals and VO₂-focused work; normally used in limited doses.'];res.innerHTML='<div class=eyebrow>RUNLAB · WATCH SETTINGS</div><h2>YOUR HEART RATE ZONES</h2>'+B.map((b,i)=>{let lo=md==='hrr'?R+(M-R)*b[0]:M*b[0],hi=md==='hrr'?R+(M-R)*b[1]:M*b[1];return '<div class=zone><b>ZONE '+(i+1)+'</b><span><strong>'+N[i]+'</strong><small>'+U[i]+'</small></span><strong>'+Math.round(lo)+'–'+Math.round(hi)+' bpm</strong></div>'}).join('');res.classList.add('on')}</script>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HR Zone Setup · RUNLAB</title><meta name="description" content="Estimate five heart rate zones and configure your running watch."><link rel="icon" type="image/png" href="../../assets/runlab/WRC Runlabfavicon.png"><link rel="stylesheet" href="../style.css"><style>
+.hrz-guide{background:#1e2123;border:1px solid #474a4c;border-radius:13px;padding:16px;margin-bottom:18px}
+.hrz-guide summary{font-size:12px;font-weight:700;color:#fff;letter-spacing:.06em;cursor:pointer;min-height:24px}
+.hrz-guide summary::marker{color:#ee4823}
+.hrz-guide p,.hrz-guide li{font-size:12px;line-height:1.65;color:#d0d2d4}
+.hrz-guide li{margin:8px 0}.hrz-guide ul{padding-left:21px}
+.hrz-guide a{color:#ff9d80}
+.hrz-form label{font-size:11px;letter-spacing:.065em;color:#e4e6e8}
+.hrz-form input,.hrz-form select{min-height:50px}
+.hrz-form>div{min-width:0}
+.hrz-help{display:block;color:#afb5b9;font-size:12px;line-height:1.5;margin-top:7px}
+.hrz-wide{grid-column:1/-1}
+.hrz-method{background:#101214;border-left:3px solid #ee4823;border-radius:7px;padding:12px 14px;color:#d4d6d8;font-size:12px;line-height:1.55;margin-top:10px}
+.hrz-button{margin:18px 0}.hrz-button button{min-height:48px;min-width:220px;letter-spacing:.05em}
+.hrz-error{padding:14px;border-radius:10px;background:#35221f;border:1px solid #e28b6e;font-size:13px;color:#fff;line-height:1.55}
+.hrz-error[hidden]{display:none!important}
+.hrz-summary{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}.hrz-summary span{padding:9px 11px;background:#101214;border:1px solid #45484a;border-radius:8px;font-size:11px}.hrz-summary strong{color:#fff}
+.hrz-zone{display:grid;grid-template-columns:75px minmax(0,1fr) 145px;gap:12px;border-top:1px solid #353a3c;padding:16px 0;align-items:center}
+.hrz-zone-number{color:#ee4823;font-size:12px;letter-spacing:.05em;font-weight:700}.hrz-name{font-size:15px;font-weight:700;color:#fff}.hrz-scale{font-size:11px;color:#aeb3b6;margin:4px 0}
+.hrz-desc{font-size:12px;color:#c8cacc;line-height:1.55}.hrz-value{font-size:18px;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.hrz-note{font-size:12px;line-height:1.65;background:#222426;border:1px solid #47494a;border-radius:11px;padding:13px;margin:13px 0;color:#d4d5d6}
+.hrz-note strong{color:#fff}.hrz-alert{border-left:3px solid #ee4823}
+.hrz-actions{gap:9px!important}.hrz-actions button{min-height:44px;font-size:11px;letter-spacing:.03em}
+.hrz-status{font-size:12px;line-height:1.5;flex-basis:100%;margin:0;color:#c1c4c5}
+.hrz-button button:focus-visible,.hrz-actions button:focus-visible,.hrz-guide summary:focus-visible{outline:2px solid white;outline-offset:3px}
+@media(max-width:720px){.hrz-zone{grid-template-columns:68px minmax(0,1fr);gap:8px}.hrz-value{grid-column:2;text-align:left;font-size:20px}.hrz-actions button{flex:1 1 130px}}
+@media(max-width:400px){.tool{padding:16px}.hrz-button button{width:100%}}
+@media print{
+@page{size:A4;margin:18mm}
+html,body{background:#fff!important;color:#111!important}body:before,header,footer,main>.backbtn,main>.eyebrow,main>h1,main>.hrz-intro,.hrz-guide,.hrz-form,.hrz-button,.hrz-error,.hrz-actions{display:none!important}
+.wrap{width:100%!important}.tool{padding:0!important;border:0!important;background:#fff!important;margin:0!important}
+.result.on{display:block!important}.result h2,.hrz-name,.hrz-value,.hrz-summary strong,.hrz-note strong{color:#111!important}
+.hrz-zone{border-color:#ddd!important;break-inside:avoid}.hrz-zone-number{color:#b73519!important}
+.hrz-desc,.hrz-scale{color:#444!important}.hrz-summary span,.hrz-note{background:#fff!important;color:#222!important;border-color:#ccc!important}
+}
+</style></head>
+<body><div class="wrap"><header><a href="../" aria-label="RUNLAB home"><img class="logo-sub" src="../../assets/runlab/WRC Runlab TXT orng.svg" alt="RUNLAB"></a></header>
+<main><a class="backbtn" href="../">← RUNLAB</a><div class="eyebrow">RUNLAB · 02</div><h1>HR ZONE<br>SETUP.</h1>
+<p class="hrz-intro">Calculate five heart-rate ranges for your running watch. Use your actual measurements and choose the same method used by your watch.</p>
+<section class="tool"><details class="hrz-guide"><summary>HOW TO FIND YOUR NUMBERS &amp; SET YOUR WATCH</summary>
+<p><strong>Resting HR:</strong> Use a reliable reading while genuinely rested or your watch's recent resting-heart-rate trend. <strong>Max HR:</strong> Use a credible maximum from activity data or supervised testing. An age formula is only a rough estimate; do not attempt a maximal test just to fill in this form.</p>
+<p><strong>Choose the matching method:</strong> Heart Rate Reserve (HRR / Karvonen) uses both values; % Max HR uses your maximum alone. The same percentage produces different BPM figures. These are general estimates, not individually measured lactate or ventilatory thresholds.</p>
+<ul><li><strong>Apple Watch:</strong> Watch Settings → Workout → Heart Rate Zones → Manual. Apple generally lets you edit Zone 2–4 boundaries, with Zones 1 and 5 determined around them. You can also use the Watch app on iPhone. Apple's automatic zones may differ.</li>
+<li><strong>Garmin:</strong> Garmin Connect → Garmin Devices → your device → Heart Rate Zones. Choose the matching %HRR or %Max HR calculation basis if offered, then adjust BPM settings. Some devices support sport-specific zones; sync afterward. Do not confuse this with %LTHR.</li>
+<li><strong>Other devices:</strong> Check whether manual zones are supported and whether their basis is max HR, HRR or threshold HR.</li></ul>
+<p><a href="https://support.apple.com/en-mide/guide/watch/apd897dccddf/watchos" target="_blank" rel="noopener noreferrer">Apple Watch instructions</a> · <a href="https://support.garmin.com/en-IE/?faq=w8qlOr7BQ16Z82HVrevpw9" target="_blank" rel="noopener noreferrer">Garmin instructions</a>.</p>
+</details>
+<div class="formgrid hrz-form"><div><label for="rest">RESTING HEART RATE</label>
+<input type="number" id="rest" min="30" max="120" step="1" inputmode="numeric" placeholder="e.g. 55" autocomplete="off">
+<small class="hrz-help">Your measured resting BPM. Only used in HRR calculations.</small></div>
+<div><label for="max">MAXIMUM HEART RATE</label>
+<input type="number" id="max" min="100" max="230" step="1" inputmode="numeric" placeholder="e.g. 195" autocomplete="off">
+<small class="hrz-help">Your credible observed maximum BPM, not a goal.</small></div>
+<div class="hrz-wide"><label for="method">CALCULATION METHOD</label>
+<select id="method"><option value="hrr">Heart Rate Reserve · Karvonen</option><option value="max">% of Maximum Heart Rate</option></select>
+<small class="hrz-help">Choose the calculation system used by your watch or training plan.</small>
+<div class="hrz-method" id="methodHelp" aria-live="polite"></div></div></div>
+<p class="hrz-button"><button type="button" id="calcZones">CALCULATE WATCH ZONES</button></p>
+<div class="hrz-error" role="alert" tabindex="-1" id="error" hidden></div>
+<div id="res" class="result" aria-live="polite" aria-atomic="true"></div>
+<div class="exportbar hrz-actions" id="exports"><button type="button" id="copyZones">COPY ZONES</button>
+<button type="button" id="savePng">SAVE PNG IMAGE</button>
+<button type="button" id="printZones">PRINT / SAVE AS PDF</button>
+<p id="exportStatus" class="hrz-status" role="status" aria-live="polite"></p></div>
+</section></main>
+<footer><div class="footlinks"><a href="../" aria-label="RUNLAB home"><img class="runlab-pill" src="../../assets/runlab/WRC Runlab TXT orng.svg" alt="RUNLAB"></a><a href="/" aria-label="WRC home"><img class="wrc-home" src="../../assets/logos/WRC Logo Stack.png" alt="WRC"></a></div></footer></div>
+<script>
+(function(){
+'use strict';
+var $=function(id){return document.getElementById(id);};
+var rEl=$('rest'),mEl=$('max'),methodEl=$('method'),res=$('res'),error=$('error'),status=$('exportStatus');
+var latest=null;
+function bands(r,m,method){
+ var pct=[50,60,70,80,90,100];
+ var at=function(p){return method==='hrr'?r+(m-r)*p/100:m*p/100;};
+ return pct.slice(0,5).map(function(p,i){
+  return {n:i+1,lo:Math.ceil(at(p)),hi:i===4?m:Math.ceil(at(pct[i+1]))-1,p:p,until:pct[i+1]};
+ });
+}
+function validation(r,m,method){
+ if(!Number.isInteger(r)||!Number.isInteger(m))return 'Enter resting and maximum heart rates as whole-number BPM values.';
+ if(r<30||r>120||m<100||m>230)return 'Check your inputs: resting HR must be 30–120 BPM and maximum HR 100–230 BPM.';
+ if(m<=r)return 'Maximum heart rate must be greater than resting heart rate.';
+ if(m-r<30)return 'These values are too close for meaningful five-zone boundaries. Check both measurements (at least 30 BPM apart).';
+ if(method!=='hrr'&&method!=='max')return 'Select a valid method.';
+ return '';
+}
+function heading(method,n){
+ var hrr=['Light movement','Moderate aerobic','Steady / vigorous','Hard aerobic','Very high intensity'];
+ var max=['Very light','Light to moderate','Moderate to vigorous','Vigorous','Very high intensity'];
+ return (method==='hrr'?hrr:max)[n-1];
+}
+function detail(method,n){
+ var hrr=[
+ 'Warm-ups or relaxed activity. Some recovery effort may fall below Zone 1.',
+ 'This may be moderate, not truly easy. Confirm with comfortable breathing and the talk test.',
+ 'Steady work, often too demanding for conversational easy runs.',
+ 'Hard running; not automatically your lactate threshold.',
+ 'Near-maximal effort. Use only when appropriate, with recovery.'
+ ];
+ var max=[
+ 'Relaxed movement; gentle warm-ups may also fall below Zone 1.',
+ 'Often easier aerobic running; cross-check with the talk test.',
+ 'Steady effort which may be too hard for recovery days.',
+ 'Demanding work; not a personalized threshold measurement.',
+ 'Hard effort near maximum heart rate; not for everyday mileage.'
+ ];
+ return (method==='hrr'?hrr:max)[n-1];
+}
+function updateInfo(){
+ $('methodHelp').textContent=methodEl.value==='hrr'?
+  'Heart Rate Reserve (Karvonen): resting HR + percentage × (maximum HR − resting HR). These ranges are usually higher than the same % of maximum HR.':
+  '% of Maximum HR: percentage × maximum HR. Resting HR is not used. These zones differ from heart-rate reserve or lactate-threshold zones.';
+}
+function reset(){
+ latest=null;res.innerHTML='';res.classList.remove('on');error.hidden=true;status.textContent='';updateInfo();
+}
+function calculate(){
+ var r=rEl.value.trim()===''?NaN:Number(rEl.value),m=mEl.value.trim()===''?NaN:Number(mEl.value),method=methodEl.value;
+ var issue=validation(r,m,method);
+ if(issue){reset();error.textContent=issue;error.hidden=false;error.focus();return;}
+ var rows=bands(r,m,method);
+ if(rows.some(function(z){return z.hi<z.lo;})){reset();error.textContent='These values cannot produce five separate zones. Verify the measurements.';error.hidden=false;error.focus();return;}
+ latest={r:r,m:m,method:method,rows:rows};
+ var methodName=method==='hrr'?'HEART RATE RESERVE · KARVONEN':'PERCENTAGE OF MAXIMUM HR';
+ var html='<div class="eyebrow">RUNLAB · WATCH SETTINGS</div><h2>YOUR HEART RATE ZONES</h2>'+
+  '<div class="hrz-summary"><span>METHOD <strong>'+methodName+'</strong></span><span>MAXIMUM <strong>'+m+' BPM</strong></span>'+
+  (method==='hrr'?'<span>RESTING <strong>'+r+' BPM</strong></span>':'')+'</div>';
+ rows.forEach(function(z){
+  html+='<div class="hrz-zone"><b class="hrz-zone-number">ZONE '+z.n+'</b><div><div class="hrz-name">'+heading(method,z.n)+'</div>'+
+   '<div class="hrz-scale">'+z.p+'–'+z.until+'% '+(method==='hrr'?'HRR':'MAX HR')+'</div>'+
+   '<div class="hrz-desc">'+detail(method,z.n)+'</div></div><strong class="hrz-value">'+z.lo+'–'+z.hi+' BPM</strong></div>';
+ });
+ html+='<div class="hrz-note"><strong>READ THIS BEFORE TRAINING.</strong> These are generic percentage-based heart-rate ranges, not measured aerobic or lactate thresholds. Below Zone 1 is also possible. Easy running should still feel conversational. Heat, hills, fatigue, medication and wrist-sensor errors can affect readings.</div>';
+ if(r>=100)html+='<div class="hrz-note hrz-alert"><strong>VERIFY RESTING HR.</strong> A resting reading of '+r+' BPM deserves a recheck when fully rested. If persistently elevated or accompanied by symptoms, seek medical advice.</div>';
+ res.innerHTML=html;res.classList.add('on');error.hidden=true;status.textContent='Zones ready to copy or save.';
+ res.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function plain(){
+ if(!latest)return '';
+ var s=['RUNLAB · WADADA RUN CLUB','Method: '+(latest.method==='hrr'?'Heart Rate Reserve (Karvonen)':'Percentage of Maximum HR'),'Maximum: '+latest.m+' BPM'];
+ if(latest.method==='hrr')s.push('Resting: '+latest.r+' BPM');
+ latest.rows.forEach(function(z){s.push('ZONE '+z.n+': '+z.lo+'–'+z.hi+' BPM ('+z.p+'–'+z.until+'%)');});
+ s.push('Generic estimates, not measured physiological thresholds. Use the talk test.');
+ return s.join('\n');
+}
+async function copy(){
+ if(!latest)return;
+ try{
+  if(navigator.clipboard&&navigator.clipboard.writeText)await navigator.clipboard.writeText(plain());
+  else{
+   var t=document.createElement('textarea');t.value=plain();t.style.position='fixed';t.style.left='-9999px';document.body.appendChild(t);t.select();
+   var ok=document.execCommand('copy');t.remove();if(!ok)throw new Error('Copy unsupported');
+  }
+  status.textContent='Zones copied.';
+ }catch(e){status.textContent='Copy unavailable. Try Save PNG or Print / PDF.';}
+}
+function png(){
+ if(!latest)return;
+ try{
+  var c=document.createElement('canvas');c.width=1080;c.height=1210;var g=c.getContext('2d');
+  if(!g)throw new Error('Canvas unavailable');
+  function text(t,x,y,size,color,bold,align){g.fillStyle=color;g.font=(bold?'bold ':'')+size+'px Helvetica,Arial,sans-serif';g.textAlign=align||'left';g.fillText(t,x,y);}
+  g.fillStyle='#17191b';g.fillRect(0,0,1080,1210);g.fillStyle='#ee4823';g.fillRect(0,0,1080,12);
+  text('RUNLAB / WADADA RUN CLUB',65,100,26,'#ee4823',true);
+  text('HEART RATE ZONES',65,181,55,'#ffffff',true);
+  text(latest.method==='hrr'?'HEART RATE RESERVE · KARVONEN':'PERCENTAGE OF MAXIMUM HR',65,230,24,'#d2d5d6');
+  text('MAX '+latest.m+' BPM'+(latest.method==='hrr'?'    REST '+latest.r+' BPM':''),65,275,24,'#b9bcbe');
+  latest.rows.forEach(function(z,i){
+   var y=310+i*154;g.fillStyle='#242628';g.fillRect(55,y,970,135);g.fillStyle='#ee4823';g.fillRect(55,y,6,135);
+   text('ZONE '+z.n,80,y+52,25,'#ee4823',true);
+   text(heading(latest.method,z.n).toUpperCase(),247,y+52,23,'#ffffff',true);
+   text(z.p+'–'+z.until+'% '+(latest.method==='hrr'?'HRR':'MAX HR'),247,y+98,21,'#a8abae');
+   text(z.lo+'–'+z.hi+' BPM',992,y+99,33,'#ffffff',true,'right');
+  });
+  text('GENERIC ESTIMATES — NOT YOUR MEASURED THRESHOLDS',65,1145,21,'#ededed',true);
+  text('For easy runs, use comfortable effort and the talk test.',65,1183,20,'#c4c7c8');
+  var save=function(blob){
+   if(!blob){status.textContent='Unable to create PNG.';return;}
+   var url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='RUNLAB-HR-Zones.png';
+   document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},30000);
+   status.textContent='PNG prepared. Check your downloads or share menu.';
+  };
+  if(c.toBlob)c.toBlob(save,'image/png');
+  else{
+   var a=document.createElement('a');a.href=c.toDataURL('image/png');a.download='RUNLAB-HR-Zones.png';document.body.appendChild(a);a.click();a.remove();
+   status.textContent='PNG prepared.';
+  }
+ }catch(e){status.textContent='Image export failed. Use Copy or Print / PDF instead.';}
+}
+rEl.addEventListener('input',reset);mEl.addEventListener('input',reset);methodEl.addEventListener('change',reset);
+$('calcZones').addEventListener('click',calculate);$('copyZones').addEventListener('click',copy);
+$('savePng').addEventListener('click',png);$('printZones').addEventListener('click',function(){if(latest)window.print();});
+updateInfo();
+})();
+</script>
 <!-- Invisible LibreCounter page-view analytics -->
 <img src="https://librecounter.org/hidden.svg" referrerpolicy="unsafe-url" alt="" aria-hidden="true" width="1" height="1" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;">
 </body></html>
