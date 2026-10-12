@@ -72,20 +72,25 @@ h2{font-size:clamp(23px,4vw,34px);letter-spacing:-.045em;line-height:1;margin:0 
 .panel p,.panel li{font-size:13px;line-height:1.65;color:#d0dddc}
 .facts{display:grid;gap:11px}.fact{border-bottom:1px solid #213b42;padding-bottom:10px}.fact:last-child{border:0;padding-bottom:0}.fact b{display:block;font-size:10px;letter-spacing:.11em;color:var(--teal);margin-bottom:4px}.fact span{font-size:15px;font-weight:700}
 .signup{background:linear-gradient(135deg,#0d272b,#071b20);border:1px solid #2c5152;border-radius:20px;padding:clamp(18px,4vw,30px);margin-top:15px}
-.signup-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;margin-bottom:13px}
-
-.signup-copy{font-size:13px;line-height:1.65;color:#c6d8d5;margin:0 0 12px}
-.signup-copy strong{color:#fff}
-.form-hint{background:#103334;border:1px solid #295d58;border-radius:11px;padding:13px 15px;margin:13px 0;font-size:12px;line-height:1.6;color:#d9efea}
-.embed-shell{background:#f4f0fa;border-radius:15px;overflow:hidden;min-height:2370px;isolation:isolate}
-.embed-shell iframe{display:block;width:100%;height:2380px;border:0;background:#f4f0fa;color-scheme:light}
-.form-direct{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:14px 0 0}
-.form-direct a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border:1px solid #3e6c65;border-radius:10px;padding:10px 14px;color:var(--lime);font-size:12px;font-weight:800;text-decoration:none}
-.form-direct a:hover,.form-direct a:focus-visible{border-color:var(--lime);outline:0}
-.form-direct small{color:#adc6c1;font-size:11px;line-height:1.5}
+.signup-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;margin-bottom:17px}
+.registration-card{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;gap:18px;padding:clamp(23px,5vw,36px);border:1px solid #458674;border-radius:18px;background:radial-gradient(ellipse at 100% 0%,rgba(21,230,193,.16),transparent 55%),linear-gradient(142deg,#103a38,#09242c 73%,#071a23)}
+.registration-card:before{content:"";pointer-events:none;position:absolute;z-index:-1;inset:0;opacity:.32;background:repeating-radial-gradient(ellipse at 105% -15%,transparent 0 26px,rgba(134,222,203,.18) 27px 28px,transparent 29px 50px)}
+.registration-state{display:inline-flex;align-self:flex-start;gap:8px;align-items:center;padding:8px 11px;border:1px solid #5b9e79;background:#0f403a;border-radius:999px;color:var(--lime);font-size:10px;font-weight:900;letter-spacing:.12em}
+.registration-state:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime)}
+.registration-card h3{font-size:clamp(34px,7vw,58px);line-height:.92;letter-spacing:-.055em;margin:0;color:#fff}
+.registration-card h3 em{font-style:normal;color:var(--lime)}
+.registration-card p{font-size:14px;line-height:1.65;color:#d2e5df;margin:0;max-width:610px}
+.registration-facts{display:flex;flex-wrap:wrap;gap:9px}
+.registration-facts span{display:inline-flex;align-items:center;min-height:39px;border:1px solid #3a6964;border-radius:9px;padding:8px 12px;background:#0a3033;font-size:12px;line-height:1.4;color:#d9ebe5;font-weight:700}
+.registration-facts strong{color:var(--lime)}
+.registration-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:18px;align-self:flex-start;width:min(100%,420px);min-height:60px;padding:16px 19px;border-radius:11px;background:linear-gradient(100deg,var(--lime),var(--teal));color:#082a20;text-decoration:none;font-size:13px;font-weight:900;letter-spacing:.06em;box-shadow:0 8px 25px rgba(0,0,0,.18);transition:transform .18s ease,filter .18s ease}
+.registration-cta:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.registration-cta:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.registration-cta span:last-child{font-size:20px;line-height:1}
+.registration-card .registration-help{font-size:12px;color:#b3d6ca}
 .registration-note{border-top:1px solid #285149;margin:20px 0 0;padding-top:17px;font-size:11px;line-height:1.6;color:#b4c8c3}
-@media(max-width:690px){.signup{padding:18px 12px}.embed-shell{min-height:3000px}.embed-shell iframe{height:3020px}.form-direct{padding:0 5px}.form-direct a{width:100%}}
-@media(max-width:400px){.embed-shell{min-height:3240px}.embed-shell iframe{height:3260px}}
+@media(max-width:690px){.signup{padding:18px 12px}.registration-card{padding:23px 19px;gap:17px}.registration-cta{width:100%;min-height:58px}.registration-card h3{font-size:clamp(34px,10vw,50px)}}
+@media(prefers-reduced-motion:reduce){.registration-cta{transition:none}.registration-cta:hover{transform:none}}
 .site-footer{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;padding:37px 10px 0}
 .site-footer img{display:block;width:min(260px,55vw)}.site-footer a{font-size:11px;color:var(--teal);font-weight:800;text-decoration:none}
 
@@ -137,11 +142,15 @@ h2{font-size:clamp(23px,4vw,34px);letter-spacing:-.045em;line-height:1;margin:0 
 </aside>
 <section class="signup" id="signup" aria-labelledby="signup-title">
 <div class="signup-head"><div><div class="eyebrow">03 · JOIN THE HIKE</div><h2 id="signup-title">REGISTER FOR THE HIKE.</h2></div></div>
-<p class="signup-copy">Fill out the official WRC form below to register your interest. <strong>Participation costs JMD $5,000</strong> and includes RafJam access and a light refreshment kit. WRC will share payment instructions, final date and meet-up details separately.</p>
-<div class="form-hint">Registration details go directly to the Google Form managed by the organizers. Submitting the form is not proof of payment or confirmation of a paid place.</div>
-<div class="embed-shell"><iframe title="WRC RafJam Hike Registration Form" src="https://docs.google.com/forms/d/e/1FAIpQLSeWSsclAos6W29TbB8HXmElo8EJ89okMMvpmLT6dpCn8p4IZw/viewform?embedded=true" width="640" height="2345" loading="eager" referrerpolicy="strict-origin-when-cross-origin">Loading registration form…</iframe></div>
-<div class="form-direct"><a href="https://docs.google.com/forms/d/e/1FAIpQLSeWSsclAos6W29TbB8HXmElo8EJ89okMMvpmLT6dpCn8p4IZw/viewform" target="_blank" rel="noopener noreferrer">OPEN FORM DIRECTLY ↗</a><small>If the embedded form does not load or is difficult to scroll on your phone, use this link instead.</small></div>
-<p class="registration-note">WRC uses Google Forms to collect registrations. Information you submit is processed by Google and made available to authorized WRC organizers. Please only provide emergency-contact details with that person's knowledge. Payment status and event attendance will be confirmed separately.</p>
+<div class="registration-card">
+<div class="registration-state">REGISTRATION OPEN</div>
+<h3>READY TO<br><em>HIKE?</em></h3>
+<p>Complete the official WRC registration form, including participant details, hiking readiness questions and the safety waiver. The form opens directly in Google Forms for a smoother experience on mobile.</p>
+<div class="registration-facts"><span><strong>JMD $5,000</strong>&nbsp; per person</span><span>RAFJAM ACCESS + LIGHT REFRESHMENT KIT</span><span>DATE TO BE CONFIRMED</span></div>
+<a class="registration-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSeWSsclAos6W29TbB8HXmElo8EJ89okMMvpmLT6dpCn8p4IZw/viewform" target="_blank" rel="noopener noreferrer" aria-label="Complete RafJam Hike registration in Google Forms (opens in a new tab)"><span>COMPLETE REGISTRATION</span><span aria-hidden="true">↗</span></a>
+<p class="registration-help">Opens in a new tab · Google Forms · Participants must be 18 or older</p>
+</div>
+<p class="registration-note">Your answers are submitted directly through Google Forms to WRC organizers, not through this website. Registration does not confirm payment or guarantee a paid place. WRC will communicate payment instructions, the final event date and meeting time separately. Please provide emergency-contact information only with that person's knowledge.</p>
 </section>
 <footer class="site-footer"><a href="/" aria-label="WRC homepage"><img src="../../assets/logos/WRC Logo Text Gradient - Copy.png" alt="Wadada Run Club"></a><a href="../">BACK TO CALENDAR ↗</a></footer>
 </main>
