@@ -27,7 +27,7 @@
 @media(max-width:400px){.tool{padding:16px}.hrz-button button{width:100%}}
 @media print{
 @page{size:A4;margin:18mm}
-html,body{background:#fff!important;color:#111!important}body:before,header,footer,main>.backbtn,main>.eyebrow,main>h1,main>.hrz-intro,.hrz-guide,.hrz-form,.hrz-button,.hrz-error,.hrz-actions{display:none!important}
+html,body{background:#fff!important;color:#111!important}body:before,header,footer,main>.backbtn,main>.eyebrow,main>h1,main>.hrz-intro,.hrz-guide,.hrz-form,.hrz-button,.hrz-error,#exports{display:none!important}
 .wrap{width:100%!important}.tool{padding:0!important;border:0!important;background:#fff!important;margin:0!important}
 .result.on{display:block!important}.result h2,.hrz-name,.hrz-value,.hrz-summary strong,.hrz-note strong{color:#111!important}
 .hrz-zone{border-color:#ddd!important;break-inside:avoid}.hrz-zone-number{color:#b73519!important}
@@ -47,7 +47,7 @@ html,body{background:#fff!important;color:#111!important}body:before,header,foot
 </details>
 <div class="formgrid hrz-form"><div><label for="rest">RESTING HEART RATE</label>
 <input type="number" id="rest" min="30" max="120" step="1" inputmode="numeric" placeholder="e.g. 55" autocomplete="off">
-<small class="hrz-help">Your measured resting BPM. Only used in HRR calculations.</small></div>
+<small class="hrz-help" id="restHint">Your measured resting BPM. Only used in HRR calculations.</small></div>
 <div><label for="max">MAXIMUM HEART RATE</label>
 <input type="number" id="max" min="100" max="230" step="1" inputmode="numeric" placeholder="e.g. 195" autocomplete="off">
 <small class="hrz-help">Your credible observed maximum BPM, not a goal.</small></div>
@@ -78,11 +78,13 @@ function bands(r,m,method){
  });
 }
 function validation(r,m,method){
- if(!Number.isInteger(r)||!Number.isInteger(m))return 'Enter resting and maximum heart rates as whole-number BPM values.';
- if(r<30||r>120||m<100||m>230)return 'Check your inputs: resting HR must be 30–120 BPM and maximum HR 100–230 BPM.';
- if(m<=r)return 'Maximum heart rate must be greater than resting heart rate.';
- if(m-r<30)return 'These values are too close for meaningful five-zone boundaries. Check both measurements (at least 30 BPM apart).';
  if(method!=='hrr'&&method!=='max')return 'Select a valid method.';
+ if(!Number.isInteger(m)||m<100||m>230)return 'Enter a whole-number maximum HR between 100 and 230 BPM.';
+ if(method==='hrr'){
+  if(!Number.isInteger(r)||r<30||r>120)return 'Enter a whole-number resting HR between 30 and 120 BPM.';
+  if(m<=r)return 'Maximum heart rate must be greater than resting heart rate.';
+  if(m-r<30)return 'These values are too close for meaningful five-zone boundaries. Check both measurements (at least 30 BPM apart).';
+ }
  return '';
 }
 function heading(method,n){
@@ -108,6 +110,8 @@ function detail(method,n){
  return (method==='hrr'?hrr:max)[n-1];
 }
 function updateInfo(){
+ rEl.disabled=methodEl.value==='max';
+ $('restHint').textContent=methodEl.value==='max'?'Not needed for % Maximum HR. This field is disabled until you select HRR.':'Your measured resting BPM. Only used in HRR calculations.';
  $('methodHelp').textContent=methodEl.value==='hrr'?
   'Heart Rate Reserve (Karvonen): resting HR + percentage × (maximum HR − resting HR). These ranges are usually higher than the same % of maximum HR.':
   '% of Maximum HR: percentage × maximum HR. Resting HR is not used. These zones differ from heart-rate reserve or lactate-threshold zones.';
