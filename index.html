@@ -11,7 +11,71 @@ h1,h2,h3,h4,h5,h6,.title,.headline,.card-title,.date strong,.overall strong,.ran
 p,li,a,button,input,select,textarea{font-family:Helvetica,Arial,sans-serif}
 p,li{font-weight:400}
 .eyebrow,.kicker,.subtext,.subtitle,.meta,.note,.caption,.small,.label,.tag,.details,.footer-copy,small{font-family:Helvetica,Arial,sans-serif;font-weight:300}
-.card.runlab{background:#17191b!important;background-image:none!important;border-color:#34383b!important}.card.runlab:hover{border-color:#ee4823!important}.card.runlab .pill{background:#ee4823!important;color:#fff!important}.card.runlab .arrow{color:#ee4823!important}.card.runlab p{color:#aeb2b4!important}.card.runlab .num{color:#ee4823!important;opacity:.08}</style></head><body><main class="wrap"><a class="home-logo" href="https://updates.wadadarunclub.com/"><img class="logo" src="assets/logos/WRC Logo Stack.png" alt="Wadada Run Club"></a><div class="tag">RUN SMART • RUN TOGETHER</div><div class="eyebrow">WRC Updates</div><h1>RUN CLUB<br>HQ.</h1><p class="intro">Your quick link to WRC events, run schedules and runner resources. Pick a section and get moving.</p><section class="grid"><a class="card" href="/calendar/"><span class="num">01</span><span class="pill">RUN SCHEDULE</span><h2>Calendar</h2><p>Club runs and race dates in one clean schedule.</p><span class="arrow">VIEW CALENDAR →</span></a><a class="card" href="/race-day/"><span class="num">02</span><span class="pill">RESULTS + RECAPS</span><h2>Race Day</h2><p>Race-day updates, WRC performances, results, photos and post-race recaps.</p><span class="arrow">VIEW RACE DAY →</span></a><a class="card" href="/gear/"><span class="num">03</span><span class="pill">GEAR GUIDES</span><h2>Gear</h2><p>WRC running shoe and watch rankings, comparisons and value guides.</p><span class="arrow">VIEW GEAR →</span></a><a class="card runlab" href="/runlab/"><span class="num">04</span><span class="pill">TRAIN SMARTER</span><h2>RUNLAB</h2><p>Training plans, heart-rate zone setup and fueling tools for runners.</p><span class="arrow">OPEN RUNLAB →</span></a></section><footer class="footer"><img class="footer-logo" src="assets/logos/WRC Logo Text Gradient - Copy.png" alt="Wadada Run Club"><p>SHOW UP • PUT IN THE WORK • RUN TOGETHER</p></footer></main>
+.card.runlab{background:#17191b!important;background-image:none!important;border-color:#34383b!important}.card.runlab:hover{border-color:#ee4823!important}.card.runlab .pill{background:#ee4823!important;color:#fff!important}.card.runlab .arrow{color:#ee4823!important}.card.runlab p{color:#aeb2b4!important}.card.runlab .num{color:#ee4823!important;opacity:.08}
+
+/* WRC seasonal featured event: RafJam Hike */
+.hike-feature{
+  position:relative;isolation:isolate;overflow:hidden;
+  display:grid;grid-template-columns:minmax(0,1.3fr) minmax(225px,.7fr);
+  gap:22px;align-items:stretch;margin:0 0 23px;
+  border:1px solid #346b62;border-radius:23px;
+  background:radial-gradient(ellipse at 90% 0,rgba(21,230,193,.17),transparent 54%),linear-gradient(135deg,#0f3839,#071d28 77%);
+  box-shadow:0 15px 38px rgba(0,0,0,.19);
+}
+.hike-feature:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.4;
+ background-image:repeating-radial-gradient(ellipse at 100% 4%,transparent 0 21px,rgba(177,235,206,.10) 22px 23px,transparent 24px 43px)}
+.hike-feature-copy{padding:27px 0 27px 29px;min-width:0;position:relative;z-index:1}
+.hike-feature-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.hike-feature-label{display:inline-block;font-size:10px;font-weight:900;letter-spacing:.14em;color:var(--lime)}
+.hike-feature-status{font-size:9px;line-height:1.35;font-weight:800;color:#d3efdf;border:1px solid #397d70;background:#0d383a;border-radius:999px;padding:6px 9px}
+.hike-feature h2{font-size:clamp(40px,6.2vw,60px);font-weight:800;letter-spacing:-.07em;line-height:.91;margin:0 0 15px;color:#fff}
+.hike-feature h2 span{color:var(--lime)}
+.hike-feature-desc{font-size:13px;line-height:1.6;color:#d7e8e3;max-width:520px;margin:0 0 17px}
+.hike-feature-stats{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 19px}
+.hike-feature-stats span{display:inline-flex;align-items:center;gap:6px;border:1px solid #39665f;background:#0a2b30;border-radius:9px;padding:8px 10px;font-size:11px;color:#dbefea}
+.hike-feature-stats strong{font-size:12px;color:#fff}
+.hike-feature-cta{display:inline-flex;min-height:45px;align-items:center;justify-content:center;gap:12px;padding:12px 16px;border-radius:11px;background:linear-gradient(90deg,var(--lime),var(--teal));color:#06251f;text-decoration:none;font-size:12px;font-weight:900;letter-spacing:.045em;transition:transform .18s ease,filter .18s ease}
+.hike-feature-cta:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.hike-feature-cta:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.hike-feature-aside{display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding:22px 24px 26px 8px;min-width:0}
+.hike-feature-mountain{position:absolute;right:0;bottom:0;width:100%;height:94%;object-fit:cover;pointer-events:none;z-index:-1;opacity:.92}
+.hike-feature-date{position:relative;align-self:flex-end;background:rgba(3,22,27,.86);border:1px solid #387365;border-radius:12px;padding:12px 13px;max-width:235px;backdrop-filter:blur(6px)}
+.hike-feature-date b{display:block;color:var(--lime);font-size:10px;letter-spacing:.1em;margin-bottom:5px}
+.hike-feature-date span{display:block;font-size:12px;line-height:1.55;color:#e9f7f2;font-weight:700}
+@media(max-width:760px){
+ .hike-feature{grid-template-columns:1fr;gap:0}
+ .hike-feature-copy{padding:23px 21px 0}
+ .hike-feature-aside{min-height:122px;padding:17px 21px 20px;align-items:flex-end}
+ .hike-feature-mountain{height:170px;width:75%;opacity:.83}
+ .hike-feature-date{max-width:100%}
+}
+@media(max-width:400px){
+ .hike-feature h2{font-size:43px}
+ .hike-feature-copy{padding:20px 17px 0}
+ .hike-feature-aside{padding:15px 17px 18px}
+ .hike-feature-cta{width:100%}
+ .hike-feature-stats span{font-size:10px;padding:7px 9px}
+}
+@media(prefers-reduced-motion:reduce){.hike-feature-cta{transition:none}.hike-feature-cta:hover{transform:none}}
+</style></head><body><main class="wrap"><a class="home-logo" href="https://updates.wadadarunclub.com/"><img class="logo" src="assets/logos/WRC Logo Stack.png" alt="Wadada Run Club"></a><div class="tag">RUN SMART • RUN TOGETHER</div><div class="eyebrow">WRC Updates</div><h1>RUN CLUB<br>HQ.</h1><p class="intro">Your quick link to WRC events, run schedules and runner resources. Pick a section and get moving.</p><aside class="hike-feature" aria-labelledby="rafjam-title">
+ <div class="hike-feature-copy">
+  <div class="hike-feature-top"><span class="hike-feature-label">WRC · FEATURED EVENT</span><span class="hike-feature-status">REGISTRATION OPEN</span></div>
+  <h2 id="rafjam-title">THE <span>RAFJAM</span><br>HIKE.</h2>
+  <p class="hike-feature-desc">Gordon Town to RafJam and back. Mountain trails, a scenic route and a light refreshment kit included with your RafJam access.</p>
+  <div class="hike-feature-stats"><span><strong>~10 KM</strong> round trip</span><span><strong>~4 HRS</strong> estimated</span><span><strong>JMD $5,000</strong> per person</span></div>
+  <a class="hike-feature-cta" href="/calendar/rafjam-hike/" aria-label="Register for the WRC RafJam hike">REGISTER FOR THE HIKE <span aria-hidden="true">↗</span></a>
+ </div>
+ <div class="hike-feature-aside">
+  <svg class="hike-feature-mountain" viewBox="0 0 350 320" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+   <path d="M0 230 85 139l46 36 78-127 64 104 39-37 65 95v110H0Z" fill="#1e6660"/>
+   <path d="M-10 282 66 177l49 52 88-117 69 102 45-37 66 62v100H-10Z" fill="#114d53"/>
+   <path d="m-10 321 92-94 79 45 71-99 71 88 72-37v99H-10Z" fill="#0a303e"/>
+   <path d="M10 274q90-90 172-44t157-33" fill="none" stroke="#c9ff3d" stroke-width="2.5" stroke-dasharray="4 11" stroke-linecap="round" opacity=".8"/>
+   <circle cx="10" cy="274" r="6" fill="#c9ff3d"/><circle cx="339" cy="197" r="6" fill="#c9ff3d"/>
+  </svg>
+  <div class="hike-feature-date"><b>DATE TO BE CONFIRMED</b><span>Sunday, Oct 25 or Nov 1, 2026</span></div>
+ </div>
+</aside><section class="grid"><a class="card" href="/calendar/"><span class="num">01</span><span class="pill">RUN SCHEDULE</span><h2>Calendar</h2><p>Club runs and race dates in one clean schedule.</p><span class="arrow">VIEW CALENDAR →</span></a><a class="card" href="/race-day/"><span class="num">02</span><span class="pill">RESULTS + RECAPS</span><h2>Race Day</h2><p>Race-day updates, WRC performances, results, photos and post-race recaps.</p><span class="arrow">VIEW RACE DAY →</span></a><a class="card" href="/gear/"><span class="num">03</span><span class="pill">GEAR GUIDES</span><h2>Gear</h2><p>WRC running shoe and watch rankings, comparisons and value guides.</p><span class="arrow">VIEW GEAR →</span></a><a class="card runlab" href="/runlab/"><span class="num">04</span><span class="pill">TRAIN SMARTER</span><h2>RUNLAB</h2><p>Training plans, heart-rate zone setup and fueling tools for runners.</p><span class="arrow">OPEN RUNLAB →</span></a></section><footer class="footer"><img class="footer-logo" src="assets/logos/WRC Logo Text Gradient - Copy.png" alt="Wadada Run Club"><p>SHOW UP • PUT IN THE WORK • RUN TOGETHER</p></footer></main>
 <!-- Invisible LibreCounter page-view analytics -->
 <img src="https://librecounter.org/hidden.svg" referrerpolicy="unsafe-url" alt="" aria-hidden="true" width="1" height="1" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;">
 </body></html>
