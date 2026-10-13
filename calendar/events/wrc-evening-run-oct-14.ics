@@ -8,9 +8,9 @@ UID:20261014T181500-wrc-evening-run-oct-14.ics@wadadarunclub.com
 DTSTAMP:20261002T160000Z
 DTSTART;TZID=America/Jamaica:20261014T181500
 DTEND;TZID=America/Jamaica:20261014T194500
-SUMMARY:WRC — Evening Run
-LOCATION:Palisadoes\, Kingston\, Jamaica
-DESCRIPTION:Wadada Run Club — Evening Run.\n\nMeet up: 6:15 PM\n\nBefore the run:\n• Arrive 10–15 minutes early\n• Bring water / hydration\n• Wear appropriate running shoes\n\nBeginner friendly. Focus on time spent in activity\, not pace.\n\nWRC — Show Up • Put In The Work • Run Together
+SUMMARY:WRC — Let's Run — Palisadoes Strip
+LOCATION:Palisadoes Strip\, Kingston\, Jamaica
+DESCRIPTION:Wadada Run Club — Let's Run!\nBeginners welcome.\n\nBeginner friendly — all paces welcome.\nMeeting point: Palisadoes Strip\, 6:15 PM.\nParking: First lay-by on the right at the start of the paved sidewalk.\nPlan:\n1. Warm-up dynamic drills — 10 minutes.\n2. Run block — 45–60 minutes.\n3. Cool-down stretches — 10 minutes.\n4. Group photo and taillights.\nArrive on time\, bring a friend or two\, and bring drinking water.
 BEGIN:VALARM
 TRIGGER:-PT16H
 ACTION:DISPLAY
