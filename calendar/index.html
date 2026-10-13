@@ -64,15 +64,28 @@ p,li{font-weight:400}
 .site-home-btn{position:relative;z-index:1;display:inline-flex;margin:14px 0 8px 14px;align-items:center;gap:7px;padding:9px 12px;border:1px solid #29464d;border-radius:999px;background:rgba(4,17,22,.88);backdrop-filter:blur(10px);color:#dce9e5;text-decoration:none;font:700 9px/1 Helvetica,Arial,sans-serif;letter-spacing:.12em;transition:.18s ease}.site-home-btn:hover{border-color:#c9ff3d;color:#c9ff3d;transform:translateY(-1px)}.site-home-btn svg{width:13px;height:13px;fill:currentColor}@media(max-width:600px){.site-home-btn{padding:8px 10px}}.site-home-wrap{display:flex;justify-content:center;padding:26px 0 8px}.site-home-btn{position:static!important;margin:0!important;display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:9px 12px!important;border:1px solid #17343c!important;border-radius:12px!important;background-color:#06151b!important;background-image:linear-gradient(145deg,#081a21,#041116)!important;box-shadow:0 10px 24px rgba(0,0,0,.18);color:#dce9e5!important;text-decoration:none;font:700 9px/1 Helvetica,Arial,sans-serif;letter-spacing:.12em;transition:.18s ease}.site-home-btn:hover{border-color:#c9ff3d!important;color:#c9ff3d!important;transform:translateY(-1px)}.site-home-btn svg{width:13px;height:13px;fill:currentColor}
 .cal-btn{display:inline-flex;text-decoration:none;align-items:center;gap:7px;margin-top:12px;padding:9px 11px;border:1px solid #2c5550;border-radius:10px;background:#071b1b;color:var(--lime);font:700 10px/1 Helvetica,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;-webkit-appearance:none;appearance:none}.cal-btn:hover{border-color:var(--lime);background:#0b2926}.cal-btn svg{width:13px;height:13px;fill:currentColor}
 .cal-actions{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin-top:12px}.cal-label{font:700 10px/1 Helvetica,Arial,sans-serif;letter-spacing:.08em;color:#dce9e5;margin-right:2px}.cal-os{display:inline-flex;align-items:center;justify-content:center;padding:8px 10px;border:1px solid #2c5550;border-radius:9px;background:#071b1b;color:var(--lime);text-decoration:none;font:700 10px/1 Helvetica,Arial,sans-serif;letter-spacing:.06em}.cal-os:hover{border-color:var(--lime);background:#0b2926}
-/* Automatically de-emphasize calendar events after their date/time has passed. */
-.card.past-event{
-  opacity:.34;
-  filter:saturate(.35);
-  transition:opacity .2s ease,filter .2s ease;
-}
-.card.past-event:hover{opacity:.52}
-.card.past-event .cal-actions{opacity:.32;pointer-events:none;user-select:none}
-.card.past-event .cal-os{cursor:not-allowed;border-color:#29413f;color:#789a93;background:#071515}
+/* Automatically archive completed events so upcoming runs stay in view. */
+.past-events{margin:10px 0 18px;border:1px solid #345157;border-radius:15px;background:linear-gradient(145deg,#10252b,#071a20);overflow:hidden}
+.past-events>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:13px 16px;list-style:none;cursor:pointer;font-size:12px;font-weight:800;color:#d3e1e0;letter-spacing:.015em}
+.past-events>summary::-webkit-details-marker{display:none}
+.past-events>summary::after{content:"";flex:none;width:9px;height:9px;border-right:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(45deg);transition:transform .16s ease;margin:0 3px 4px}
+.past-events[open]>summary::after{transform:rotate(225deg);margin:5px 3px 0}
+.past-events>summary:hover{background:rgba(21,230,193,.055)}
+.past-events>summary:focus-visible{outline:2px solid var(--lime);outline-offset:-3px}
+.past-events-label{display:flex;align-items:center;gap:9px;flex-wrap:wrap;min-width:0}
+.past-events-label strong{font-size:12px}
+.past-events-count{font-size:10px;color:#bed1ce;border:1px solid #365b5e;background:#132e34;border-radius:99px;padding:5px 8px;white-space:nowrap}
+.past-events-list{padding:0 11px 3px;border-top:1px solid #29434a}
+.past-events-list .card{padding:11px 12px;margin:10px 0;border-radius:12px;box-shadow:none;opacity:.82;filter:saturate(.58)}
+.past-events-list .card:hover{opacity:1;filter:saturate(.8)}
+.past-events-list .date{margin-bottom:5px}
+.past-events-list .date strong{font-size:12px}
+.past-events-list .day{font-size:9px;padding:4px 6px}
+.past-events-list .title,.past-events-list .race .title{font-size:16px;margin-bottom:5px}
+.past-events-list .place{font-size:12px}
+.past-events-list .cal-actions,.past-events-list .btn[aria-disabled="true"]{display:none}
+.past-events-list .note{font-size:11px}
+@media(prefers-reduced-motion:reduce){.past-events>summary::after{transition:none}}
 </style>
 </head>
 <body>
@@ -155,10 +168,59 @@ p,li{font-weight:400}
 </div>
 <script>
 (function(){
-  const now = new Date();
-  document.querySelectorAll('.card[data-event-end]').forEach(function(card){
-    const end = new Date(card.dataset.eventEnd);
-    if (!Number.isNaN(end.getTime()) && now > end) card.classList.add('past-event');
+  'use strict';
+  const now = Date.now();
+
+  // Each section retains its existing upcoming-event cards. Past cards move
+  // to a compact, keyboard-accessible disclosure immediately after them.
+  document.querySelectorAll('.section-head').forEach(function(heading){
+    const past = [];
+    let item = heading.nextElementSibling;
+    while (item && item.matches('.card[data-event-end]')) {
+      const next = item.nextElementSibling;
+      const end = Date.parse(item.dataset.eventEnd);
+      if (Number.isFinite(end) && now > end) past.push(item);
+      item = next;
+    }
+    if (!past.length) return;
+
+    const disclosure = document.createElement('details');
+    disclosure.className = 'past-events';
+    const summary = document.createElement('summary');
+    const label = document.createElement('span');
+    label.className = 'past-events-label';
+    const title = document.createElement('strong');
+    title.textContent = heading.querySelector('h2')?.textContent.includes('Race') ? 'Past races' : 'Past club runs';
+    const count = document.createElement('span');
+    count.className = 'past-events-count';
+    count.textContent = past.length + (past.length === 1 ? ' event' : ' events');
+    label.append(title, count);
+    summary.append(label);
+    const list = document.createElement('div');
+    list.className = 'past-events-list';
+    disclosure.append(summary, list);
+    heading.parentNode.insertBefore(disclosure, item);
+
+    past.forEach(function(card){
+      card.classList.add('past-event');
+      // Expired registration links are no longer actionable; event-info
+      // links remain accessible if the archive is expanded.
+      card.querySelectorAll('a.btn').forEach(function(link){
+        if (/register/i.test(link.textContent)) {
+          link.removeAttribute('href');
+          link.removeAttribute('target');
+          link.setAttribute('aria-disabled', 'true');
+          link.tabIndex = -1;
+        }
+      });
+      card.querySelectorAll('.cal-actions a').forEach(function(link){
+        link.removeAttribute('href');
+        link.removeAttribute('target');
+        link.setAttribute('aria-disabled', 'true');
+        link.tabIndex = -1;
+      });
+      list.appendChild(card);
+    });
   });
 })();
 </script>
