@@ -12,12 +12,12 @@ SUMMARY:WRC — Let's Run — Palisadoes Strip
 LOCATION:Palisadoes Strip\, Kingston\, Jamaica
 DESCRIPTION:Wadada Run Club — Let's Run!\nBeginners welcome.\n\nBeginner friendly — all paces welcome.\nMeeting point: Palisadoes Strip\, 6:15 PM.\nParking: First lay-by on the right at the start of the paved sidewalk.\nPlan:\n1. Warm-up dynamic drills — 10 minutes.\n2. Run block — 45–60 minutes.\n3. Cool-down stretches — 10 minutes.\n4. Group photo and taillights.\nArrive on time\, bring a friend or two\, and bring drinking water.
 BEGIN:VALARM
-TRIGGER:-PT16H
+TRIGGER:-PT12H
 ACTION:DISPLAY
 DESCRIPTION:WRC event reminder
 END:VALARM
 BEGIN:VALARM
-TRIGGER:-PT9H
+TRIGGER:-PT2H
 ACTION:DISPLAY
 DESCRIPTION:WRC event reminder
 END:VALARM
