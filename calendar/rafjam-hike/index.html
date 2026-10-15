@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b1c23">
-<meta name="description" content="WADADA Run Club RafJam Hike — Sunday, November 1, 2026. Meet at Gordon Town Square by 4:45 AM; hike starts 5:00 AM. Registration details coming soon.">
+<meta name="description" content="WADADA Run Club RafJam Hike — Sunday, November 1, 2026. Meet at Gordon Town Square by 4:45 AM; hike starts 5:00 AM. Registration is now open.">
 <title>RafJam Hike · WADADA Run Club</title>
 <link rel="icon" type="image/png" href="../../assets/icons/wrc favicon.png">
 <style>
@@ -78,8 +78,8 @@ h2{font-size:clamp(23px,4vw,34px);letter-spacing:-.045em;line-height:1;margin:0 
 .signup-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;margin-bottom:17px}
 .registration-card{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;gap:18px;padding:clamp(23px,5vw,36px);border:1px solid #458674;border-radius:18px;background:radial-gradient(ellipse at 100% 0%,rgba(21,230,193,.16),transparent 55%),linear-gradient(142deg,#103a38,#09242c 73%,#071a23)}
 .registration-card:before{content:"";pointer-events:none;position:absolute;z-index:-1;inset:0;opacity:.32;background:repeating-radial-gradient(ellipse at 105% -15%,transparent 0 26px,rgba(134,222,203,.18) 27px 28px,transparent 29px 50px)}
-.registration-state{display:inline-flex;align-self:flex-start;gap:8px;align-items:center;max-width:100%;padding:9px 12px;border:1px solid #64767c;background:#233136;border-radius:12px;color:#d2dadd;font-size:10px;font-weight:900;letter-spacing:.075em;line-height:1.45}
-.registration-state:before{content:"";width:7px;height:7px;flex:none;border-radius:50%;background:#97a6ae}
+.registration-state{display:inline-flex;align-self:flex-start;gap:8px;align-items:center;max-width:100%;padding:9px 12px;border:1px solid #3d9279;background:rgba(21,230,193,.12);border-radius:12px;color:var(--lime);font-size:10px;font-weight:900;letter-spacing:.075em;line-height:1.45}
+.registration-state:before{content:"";width:7px;height:7px;flex:none;border-radius:50%;background:var(--lime)}
 .registration-card h3{font-size:clamp(34px,7vw,58px);line-height:.92;letter-spacing:-.055em;margin:0;color:#fff}
 .registration-card h3 em{font-style:normal;color:var(--lime)}
 .registration-card p{font-size:14px;line-height:1.65;color:#d2e5df;margin:0;max-width:610px}
@@ -87,7 +87,7 @@ h2{font-size:clamp(23px,4vw,34px);letter-spacing:-.045em;line-height:1;margin:0 
 .registration-cta:not(:disabled):hover{transform:translateY(-2px);filter:brightness(1.05)}
 .registration-cta:disabled{background:#344247;color:#aab6bb;box-shadow:none;cursor:not-allowed;opacity:.8;transform:none;filter:none;justify-content:center}
 .registration-cta:focus-visible{outline:3px solid #fff;outline-offset:4px}
-.registration-cta span:last-child{font-size:20px;line-height:1}
+.registration-cta svg{display:block;flex:none;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .registration-card .registration-help{font-size:12px;color:#b3d6ca}
 .registration-note{border-top:1px solid #285149;margin:20px 0 0;padding-top:17px;font-size:11px;line-height:1.6;color:#b4c8c3}
 @media(max-width:690px){.signup{padding:18px 12px}.registration-card{padding:23px 19px;gap:17px}.registration-cta{width:100%;min-height:58px}.registration-card h3{font-size:clamp(34px,10vw,50px)}}
@@ -150,13 +150,13 @@ h2{font-size:clamp(23px,4vw,34px);letter-spacing:-.045em;line-height:1;margin:0 
 <section class="signup" id="signup" aria-labelledby="signup-title">
 <div class="signup-head"><div><div class="eyebrow">03 · JOIN THE HIKE</div><h2 id="signup-title">REGISTRATION.</h2></div></div>
 <div class="registration-card">
-<div class="registration-state">REGISTRATION DETAILS COMING SOON</div>
+<div class="registration-state">REGISTRATION IS OPEN</div>
 <h3>READY TO<br><em>HIKE?</em></h3>
-<p>The date is confirmed for November 1. Online registration will be available here once final form and safety-waiver checks are complete.</p>
-<button class="registration-cta" type="button" disabled aria-label="Registration not yet open; form checks are being finalised"><span>REGISTRATION NOT YET OPEN</span><span aria-hidden="true">⏳</span></button>
-<p class="registration-help">Registration is not yet open. Participants must be 18 or older.</p>
+<p>Join us on Sunday, November 1. Complete the official registration form, including the hiking readiness questions and safety waiver. One form is required for each hiker.</p>
+<a class="registration-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSeWSsclAos6W29TbB8HXmElo8EJ89okMMvpmLT6dpCn8p4IZw/viewform" target="_blank" rel="noopener noreferrer" aria-label="Open the official RafJam hike registration form in a new tab"><span>REGISTER FOR THE HIKE</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+<p class="registration-help">Open to hikers aged 18 or older. Registration does not confirm payment or guarantee a place.</p>
 </div>
-<p class="registration-note">Once registration opens, submissions will be handled through Google Forms. Registering will not confirm payment or guarantee a paid place. WRC will share payment instructions and any further event updates. Please only provide emergency-contact details with that person's knowledge.</p>
+<p class="registration-note">Registration is handled through Google Forms. Submitting the form does not confirm payment or guarantee a paid place. WRC will share payment instructions and any further event updates. Please only provide emergency-contact details with that person's knowledge.</p>
 </section>
 <footer class="site-footer"><a href="/" aria-label="WRC homepage"><img src="../../assets/logos/WRC Logo Text Gradient - Copy.png" alt="Wadada Run Club"></a><a href="../">BACK TO CALENDAR ↗</a></footer>
 </main>
