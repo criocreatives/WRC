@@ -1,12 +1,27 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Wadada Run Club//Calendar//EN
+PRODID:-//Wadada Run Club//WRC Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
 BEGIN:VEVENT
 UID:20261017-social@wadadarunclub.com
-DTSTART;VALUE=DATE:20261017
-DTEND;VALUE=DATE:20261018
+DTSTART;TZID=America/Jamaica:20261017T050000
+DTEND;TZID=America/Jamaica:20261017T063000
 SUMMARY:WRC — Saturday Social Run
-LOCATION:5 Holborn Road
-DESCRIPTION:Location: 5 Holborn Road. Start time TBC. Check the WRC calendar for updated details.
+LOCATION:5 Holborn Road\, Kingston\, Jamaica
+DESCRIPTION:Wadada Run Club — Saturday Social Run.\nLocation: 5 Holbor
+ n Road.\nStart: 5:00 AM.\nEnd time not confirmed. 6:30 AM is a provisio
+ nal calendar placeholder.\nMorning run alerts: 16 hours and 9 hours bef
+ ore the run.
+BEGIN:VALARM
+TRIGGER:-PT16H
+ACTION:DISPLAY
+DESCRIPTION:WRC Saturday Social Run reminder
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT9H
+ACTION:DISPLAY
+DESCRIPTION:WRC Saturday Social Run reminder
+END:VALARM
 END:VEVENT
 END:VCALENDAR
