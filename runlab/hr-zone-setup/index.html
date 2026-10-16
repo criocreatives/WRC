@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HR Zone Setup · RUNLAB</title><meta name="description" content="Estimate five heart rate zones and configure your running watch."><link rel="icon" type="image/png" href="../../assets/runlab/WRC Runlabfavicon.png"><link rel="stylesheet" href="../style.css"><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Heart Rate Zone Calculator | RUNLAB by WRC</title><link rel="icon" type="image/png" href="../../assets/runlab/WRC Runlabfavicon.png"><link rel="stylesheet" href="../style.css"><style>
 .hrz-guide{background:#1e2123;border:1px solid #474a4c;border-radius:13px;padding:16px;margin-bottom:18px}
 .hrz-guide summary{font-size:12px;font-weight:700;color:#fff;letter-spacing:.06em;cursor:pointer;min-height:24px}
 .hrz-guide summary::marker{color:#ee4823}
@@ -33,9 +33,27 @@ html,body{background:#fff!important;color:#111!important}body:before,header,foot
 .hrz-zone{border-color:#ddd!important;break-inside:avoid}.hrz-zone-number{color:#b73519!important}
 .hrz-desc,.hrz-scale{color:#444!important}.hrz-summary span,.hrz-note{background:#fff!important;color:#222!important;border-color:#ccc!important}
 }
-</style><link rel="stylesheet" href="/assets/wrc-policy-notices.css"></head>
-<body><div class="wrap"><header><a href="../" aria-label="RUNLAB home"><img class="logo-sub" src="../../assets/runlab/WRC Runlab TXT orng.svg" alt="RUNLAB"></a></header>
-<main><a class="backbtn" href="../">← RUNLAB</a><div class="eyebrow">RUNLAB · 02</div><h1>HR ZONE<br>SETUP.</h1>
+</style><link rel="stylesheet" href="/assets/wrc-policy-notices.css">
+<!-- WRC search, social and sharing metadata -->
+<meta name="description" content="Estimate five heart-rate zones using heart rate reserve or percent of maximum heart rate, with watch setup guidance and printable results.">
+<link rel="canonical" href="https://updates.wadadarunclub.com/runlab/hr-zone-setup/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wadada Run Club">
+<meta property="og:locale" content="en_JM">
+<meta property="og:title" content="Heart Rate Zone Calculator | RUNLAB by WRC">
+<meta property="og:description" content="Estimate five heart-rate zones using heart rate reserve or percent of maximum heart rate, with watch setup guidance and printable results.">
+<meta property="og:url" content="https://updates.wadadarunclub.com/runlab/hr-zone-setup/">
+<meta property="og:image" content="https://updates.wadadarunclub.com/assets/logos/WRC%20Logo%20Stack.png">
+<meta property="og:image:alt" content="Wadada Run Club logo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Heart Rate Zone Calculator | RUNLAB by WRC">
+<meta name="twitter:description" content="Estimate five heart-rate zones using heart rate reserve or percent of maximum heart rate, with watch setup guidance and printable results.">
+<meta name="twitter:image" content="https://updates.wadadarunclub.com/assets/logos/WRC%20Logo%20Stack.png">
+<link rel="stylesheet" href="/assets/wrc-shared.css">
+</head>
+<body><a class="wrc-skip-link" href="#wrc-main">Skip to content</a><nav class="wrc-global-nav wrc-is-runlab" aria-label="WRC primary navigation"><div class="wrc-nav-inner"><a class="wrc-nav-brand" href="/" aria-label="Wadada Run Club homepage"><span class="wrc-nav-mark" aria-hidden="true">WRC</span><span>WADADA RUN CLUB</span></a><div class="wrc-nav-links wrc-nav-links--desktop"><a href="/">Home</a><a href="/calendar/">Calendar</a><a href="/race-day/">Race Day</a><a href="/gear/">Gear</a><a href="/runlab/" aria-current="location">RUNLAB</a><a href="/policies/">Policies</a></div><details class="wrc-nav-menu"><summary>MENU</summary><div class="wrc-nav-links wrc-nav-links--mobile"><a href="/">Home</a><a href="/calendar/">Calendar</a><a href="/race-day/">Race Day</a><a href="/gear/">Gear</a><a href="/runlab/" aria-current="location">RUNLAB</a><a href="/policies/">Policies</a></div></details></div></nav><div class="wrap"><header><a href="../" aria-label="RUNLAB home"><img class="logo-sub" src="../../assets/runlab/WRC Runlab TXT orng.svg" alt="RUNLAB" decoding="async"></a></header>
+<main id="wrc-main"><a class="backbtn" href="../">← RUNLAB</a><div class="eyebrow">RUNLAB · 02</div><h1>HR ZONE<br>SETUP.</h1>
 <p class="hrz-intro">Calculate five heart-rate ranges for your running watch. Use your actual measurements and choose the same method used by your watch.</p>
 <section class="tool"><details class="hrz-guide"><summary>HOW TO FIND YOUR NUMBERS &amp; SET YOUR WATCH</summary>
 <p><strong>Resting HR:</strong> Use a reliable reading while genuinely rested or your watch's recent resting-heart-rate trend. <strong>Max HR:</strong> Use a credible maximum from activity data or supervised testing. An age formula is only a rough estimate; do not attempt a maximal test just to fill in this form.</p>
@@ -63,7 +81,7 @@ html,body{background:#fff!important;color:#111!important}body:before,header,foot
 <button type="button" id="printZones">PRINT / SAVE AS PDF</button>
 <p id="exportStatus" class="hrz-status" role="status" aria-live="polite"></p></div>
 </section><aside class="wrc-policy-notice wrc-policy-notice--health" aria-label="Health and RUNLAB disclaimer"><strong>RUNLAB safety:</strong> These calculations are general estimates—not a diagnosis, medical advice or individual coaching. Seek qualified advice when needed, and stop activity if you experience concerning symptoms. <a href="/policies/health/">Read full health and training guidance</a>.</aside></main>
-<footer><div class="footlinks"><a href="../" aria-label="RUNLAB home"><img class="runlab-pill" src="../../assets/runlab/WRC Runlab TXT orng.svg" alt="RUNLAB"></a><a href="/" aria-label="WRC home"><img class="wrc-home" src="../../assets/logos/WRC Logo Stack.png" alt="WRC"></a></div></footer></div>
+<footer><div class="footlinks"><a href="../" aria-label="RUNLAB home"><img class="runlab-pill" src="../../assets/runlab/WRC Runlab TXT orng.svg" alt="RUNLAB" decoding="async" loading="lazy"></a><a href="/" aria-label="WRC home"><img class="wrc-home" src="../../assets/logos/WRC Logo Stack.png" alt="WRC" decoding="async" loading="lazy"></a></div></footer></div>
 <script>
 (function(){
 'use strict';
