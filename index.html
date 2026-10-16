@@ -16,48 +16,37 @@ p,li{font-weight:400}
 /* WRC seasonal featured event: RafJam Hike */
 .hike-feature{
   position:relative;isolation:isolate;overflow:hidden;
-  display:grid;grid-template-columns:minmax(0,1.3fr) minmax(225px,.7fr);
-  gap:22px;align-items:stretch;margin:0 0 23px;
-  border:1px solid #346b62;border-radius:23px;
-  background:radial-gradient(ellipse at 90% 0,rgba(21,230,193,.17),transparent 54%),linear-gradient(135deg,#0f3839,#071d28 77%);
-  box-shadow:0 15px 38px rgba(0,0,0,.19);
+  display:block;margin:0 0 18px;
+  border:1px solid #346b62;border-radius:19px;
+  background:radial-gradient(ellipse at 90% 0,rgba(21,230,193,.15),transparent 54%),linear-gradient(135deg,#0f3839,#071d28 77%);
+  box-shadow:0 12px 30px rgba(0,0,0,.16);
 }
-.hike-feature:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.4;
- background-image:repeating-radial-gradient(ellipse at 100% 4%,transparent 0 21px,rgba(177,235,206,.10) 22px 23px,transparent 24px 43px)}
-.hike-feature-copy{padding:27px 0 27px 29px;min-width:0;position:relative;z-index:1}
-.hike-feature-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
-.hike-feature-label{display:inline-block;font-size:10px;font-weight:900;letter-spacing:.14em;color:var(--lime)}
-.hike-feature-status{font-size:9px;line-height:1.4;font-weight:800;color:var(--lime);border:1px solid #3d9279;background:rgba(21,230,193,.12);border-radius:10px;padding:7px 10px;max-width:100%}
-.hike-feature h2{font-size:clamp(40px,6.2vw,60px);font-weight:800;letter-spacing:-.07em;line-height:.91;margin:0 0 15px;color:#fff}
+.hike-feature:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.28;
+  background-image:repeating-radial-gradient(ellipse at 100% 4%,transparent 0 21px,rgba(177,235,206,.10) 22px 23px,transparent 24px 43px)}
+.hike-feature-copy{position:relative;z-index:1;padding:19px 24px 21px;min-width:0}
+.hike-feature-top{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:8px}
+.hike-feature-label{font-size:9px;font-weight:900;letter-spacing:.14em;color:var(--lime)}
+.hike-feature-status{font-size:9px;line-height:1.3;font-weight:800;color:var(--lime);border:1px solid #3d9279;background:rgba(21,230,193,.12);border-radius:9px;padding:5px 8px}
+.hike-feature h2{font-size:clamp(30px,4vw,39px);font-weight:800;letter-spacing:-.055em;line-height:1;margin:0 0 9px;color:#fff}
 .hike-feature h2 span{color:var(--lime)}
-.hike-feature-desc{font-size:13px;line-height:1.6;color:#d7e8e3;max-width:520px;margin:0 0 17px}
-.hike-feature-stats{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 19px}
-.hike-feature-stats span{display:inline-flex;align-items:center;gap:6px;border:1px solid #39665f;background:#0a2b30;border-radius:9px;padding:8px 10px;font-size:11px;color:#dbefea}
-.hike-feature-stats strong{font-size:12px;color:#fff}
-.hike-feature-cta{display:inline-flex;min-height:45px;align-items:center;justify-content:center;gap:12px;padding:12px 16px;border-radius:11px;background:linear-gradient(90deg,var(--lime),var(--teal));color:#06251f;text-decoration:none;font-size:12px;font-weight:900;letter-spacing:.045em;transition:transform .18s ease,filter .18s ease}
+.hike-feature-desc{font-size:12px;line-height:1.5;color:#d7e8e3;max-width:650px;margin:0 0 13px}
+.hike-feature-desc strong{color:#fff}
+.hike-feature-extra{display:block;margin-top:3px;color:#aee3d4}
+.hike-feature-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.hike-feature-cta{display:inline-flex;min-height:38px;align-items:center;justify-content:center;gap:10px;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--lime),var(--teal));color:#06251f;text-decoration:none;font-size:11px;font-weight:900;letter-spacing:.035em;transition:transform .18s ease,filter .18s ease}
 .hike-feature-cta:hover{transform:translateY(-2px);filter:brightness(1.06)}
 .hike-feature-cta:focus-visible{outline:3px solid #fff;outline-offset:4px}
-.hike-feature-details{display:inline-flex;margin-left:13px;color:#d7eee5;font-size:11px;font-weight:800;text-underline-offset:3px;text-decoration-thickness:1px}
+.hike-feature-details{color:#d7eee5;font-size:11px;font-weight:800;text-underline-offset:3px;text-decoration-thickness:1px}
 .hike-feature-details:hover,.hike-feature-details:focus-visible{color:var(--lime)}
-@media(max-width:400px){.hike-feature-details{margin:12px 0 0;width:100%;justify-content:center}}
-.hike-feature-aside{display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding:22px 24px 26px 8px;min-width:0}
-.hike-feature-mountain{position:absolute;right:0;bottom:0;width:100%;height:94%;object-fit:cover;pointer-events:none;z-index:-1;opacity:.92}
-.hike-feature-date{position:relative;align-self:flex-end;background:rgba(3,22,27,.86);border:1px solid #387365;border-radius:12px;padding:12px 13px;max-width:235px;backdrop-filter:blur(6px)}
-.hike-feature-date b{display:block;color:var(--lime);font-size:10px;letter-spacing:.1em;margin-bottom:5px}
-.hike-feature-date span{display:block;font-size:12px;line-height:1.55;color:#e9f7f2;font-weight:700}
-@media(max-width:760px){
- .hike-feature{grid-template-columns:1fr;gap:0}
- .hike-feature-copy{padding:23px 21px 0}
- .hike-feature-aside{min-height:122px;padding:17px 21px 20px;align-items:flex-end}
- .hike-feature-mountain{height:170px;width:75%;opacity:.83}
- .hike-feature-date{max-width:100%}
-}
-@media(max-width:400px){
- .hike-feature h2{font-size:43px}
- .hike-feature-copy{padding:20px 17px 0}
- .hike-feature-aside{padding:15px 17px 18px}
- .hike-feature-cta{width:100%}
- .hike-feature-stats span{font-size:10px;padding:7px 9px}
+.hike-feature-mountain{position:absolute;right:-18px;bottom:0;width:265px;height:100%;pointer-events:none;z-index:0;opacity:.17}
+@media(max-width:600px){
+ .hike-feature-copy{padding:17px 18px 18px}
+ .hike-feature h2{font-size:clamp(29px,8vw,37px)}
+ .hike-feature-desc{font-size:11.5px;margin-bottom:12px}
+ .hike-feature-mountain{width:175px;opacity:.10}
+ .hike-feature-actions{gap:10px}
+ .hike-feature-cta{min-height:40px}
+ .hike-feature-details{font-size:10px}
 }
 @media(prefers-reduced-motion:reduce){.hike-feature-cta{transition:none}.hike-feature-cta:hover{transform:none}}
 </style><link rel="stylesheet" href="/assets/wrc-policy-notices.css">
@@ -80,22 +69,16 @@ p,li{font-weight:400}
 <link rel="stylesheet" href="/assets/wrc-shared.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Wadada Run Club","url":"https://updates.wadadarunclub.com/","logo":"https://updates.wadadarunclub.com/assets/logos/WRC%20Logo%20Stack.png","email":"wadadarunclub@gmail.com","description":"Jamaica-based running club sharing group runs, training tools, races and community events."}</script>
 </head><body><a class="wrc-skip-link" href="#wrc-main">Skip to content</a><nav class="wrc-global-nav" aria-label="WRC primary navigation"><div class="wrc-nav-inner"><a class="wrc-nav-brand" href="/" aria-label="Wadada Run Club homepage"><span>WADADA RUN CLUB</span></a><div class="wrc-nav-links wrc-nav-links--desktop"><a href="/" aria-current="page">Home</a><a href="/calendar/">Calendar</a><a href="/race-day/">Race Day</a><a href="/gear/">Gear</a><a href="/runlab/">RUNLAB</a><a href="/policies/">Policies</a></div><details class="wrc-nav-menu"><summary>MENU</summary><div class="wrc-nav-links wrc-nav-links--mobile"><a href="/" aria-current="page">Home</a><a href="/calendar/">Calendar</a><a href="/race-day/">Race Day</a><a href="/gear/">Gear</a><a href="/runlab/">RUNLAB</a><a href="/policies/">Policies</a></div></details></div></nav><main id="wrc-main" class="wrap"><a class="home-logo" href="https://updates.wadadarunclub.com/"><img class="logo" src="assets/logos/WRC Logo Stack.png" alt="Wadada Run Club" decoding="async"></a><div class="tag">RUN SMART • RUN TOGETHER</div><div class="eyebrow">Wadada Run Club</div><h1>RUN CLUB<br>HQ.</h1><p class="intro">Your home for club runs, upcoming events, race-day stories and tools to train smarter. Explore what WRC has to offer.</p><aside class="hike-feature" aria-labelledby="rafjam-title">
- <div class="hike-feature-copy">
-  <div class="hike-feature-top"><span class="hike-feature-label">WRC · FEATURED EVENT</span><span class="hike-feature-status">NOVEMBER 1 · REGISTRATION OPEN</span></div>
-  <h2 id="rafjam-title">THE <span>RAFJAM</span><br>HIKE.</h2>
-  <p class="hike-feature-desc">Gordon Town to RafJam and back on Sunday, November 1. Meet at Gordon Town Square by 4:45 AM for a 5:00 AM start. Park by the Community Centre; no event bus is provided, so carpooling is encouraged.</p>
-  <div class="hike-feature-stats"><span><strong>~10 KM</strong> round trip</span><span><strong>~4 HRS</strong> estimated</span><span><strong>5:00 AM</strong> hike start</span><span><strong>JMD $5,000</strong> per person</span></div>
-  <a class="hike-feature-cta" href="/calendar/rafjam-hike/#signup" aria-label="Go to registration for the WRC RafJam hike">REGISTER FOR HIKE <span aria-hidden="true">↗</span></a><a class="hike-feature-details" href="/calendar/rafjam-hike/" aria-label="View full WRC RafJam hike details">VIEW HIKE DETAILS</a>
- </div>
- <div class="hike-feature-aside">
-  <svg class="hike-feature-mountain" viewBox="0 0 350 320" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+ <svg class="hike-feature-mountain" viewBox="0 0 350 320" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
    <path d="M0 230 85 139l46 36 78-127 64 104 39-37 65 95v110H0Z" fill="#1e6660"/>
    <path d="M-10 282 66 177l49 52 88-117 69 102 45-37 66 62v100H-10Z" fill="#114d53"/>
    <path d="m-10 321 92-94 79 45 71-99 71 88 72-37v99H-10Z" fill="#0a303e"/>
-   <path d="M10 274q90-90 172-44t157-33" fill="none" stroke="#c9ff3d" stroke-width="2.5" stroke-dasharray="4 11" stroke-linecap="round" opacity=".8"/>
-   <circle cx="10" cy="274" r="6" fill="#c9ff3d"/><circle cx="339" cy="197" r="6" fill="#c9ff3d"/>
-  </svg>
-  <div class="hike-feature-date"><b>DATE CONFIRMED</b><span>Sunday, November 1, 2026</span></div>
+ </svg>
+ <div class="hike-feature-copy">
+   <div class="hike-feature-top"><span class="hike-feature-label">WRC · FEATURED EVENT</span><span class="hike-feature-status">REGISTRATION OPEN</span></div>
+   <h2 id="rafjam-title"><span>RAFJAM</span> HIKE.</h2>
+   <p class="hike-feature-desc"><strong>Sunday, November 1</strong> · Meet 4:45 AM · Start 5:00 AM · Gordon Town Square<span class="hike-feature-extra">~10 km round trip · JMD $5,000 per person</span></p>
+   <div class="hike-feature-actions"><a class="hike-feature-cta" href="/calendar/rafjam-hike/#signup" aria-label="Go to registration for the WRC RafJam hike">REGISTER FOR HIKE <span aria-hidden="true">↗</span></a><a class="hike-feature-details" href="/calendar/rafjam-hike/" aria-label="View full WRC RafJam hike details">VIEW HIKE DETAILS</a></div>
  </div>
 </aside><section class="grid"><a class="card" href="/calendar/"><span class="num">01</span><span class="pill">RUN SCHEDULE</span><h2>Calendar</h2><p>Club runs and race dates in one clean schedule.</p><span class="arrow">VIEW CALENDAR →</span></a><a class="card" href="/race-day/"><span class="num">02</span><span class="pill">RESULTS + RECAPS</span><h2>Race Day</h2><p>Race-day updates, WRC performances, results, photos and post-race recaps.</p><span class="arrow">VIEW RACE DAY →</span></a><a class="card" href="/gear/"><span class="num">03</span><span class="pill">GEAR GUIDES</span><h2>Gear</h2><p>WRC running shoe and watch rankings, comparisons and value guides.</p><span class="arrow">VIEW GEAR →</span></a><a class="card runlab" href="/runlab/"><span class="num">04</span><span class="pill">TRAIN SMARTER</span><h2>RUNLAB</h2><p>Training plans, heart-rate zone setup and fueling tools for runners.</p><span class="arrow">OPEN RUNLAB →</span></a></section><footer class="footer"><img class="footer-logo" src="assets/logos/WRC Logo Text Gradient - Copy.png" alt="Wadada Run Club" decoding="async" loading="lazy"><p>SHOW UP • PUT IN THE WORK • RUN TOGETHER</p></footer></main>
 <!-- Invisible LibreCounter page-view analytics -->
