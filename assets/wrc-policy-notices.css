@@ -1,1 +1,11 @@
 .wrc-site-legal{position:relative;z-index:2;box-sizing:border-box;margin:42px auto 0;padding:26px 15px;width:100%;background:#06181c;border-top:1px solid #285158;color:#c5dad4;font:12px/1.7 Helvetica,Arial,sans-serif;text-align:center}.wrc-site-legal .wrc-legal-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 17px;max-width:1050px;margin:0 auto 13px}.wrc-site-legal a{color:#d8eee8;font-size:12px;text-decoration:underline;text-underline-offset:3px}.wrc-site-legal a:focus-visible,.wrc-site-legal a:hover{color:#c9ff3d}.wrc-site-legal p{margin:0 auto;max-width:900px;color:#b5c8c5;font-size:11px}.wrc-policy-notice{box-sizing:border-box;max-width:960px;margin:16px auto 22px;padding:13px 15px;border:1px solid #406c63;border-left:3px solid #c9ff3d;border-radius:11px;background:#0a292b;color:#e1f0ed;text-align:left;font:12px/1.65 Helvetica,Arial,sans-serif}.wrc-policy-notice strong{font-weight:700;color:#fff}.wrc-policy-notice a{color:#c9ff3d;text-decoration:underline;text-underline-offset:3px}.wrc-policy-notice--health{background:#251d1d;border-color:#72463b;border-left:3px solid #ee4823}.wrc-policy-notice--health a{color:#ffb49e}.wrc-policy-notice--gear{border-left-color:#15e6c1}@media(max-width:600px){.wrc-site-legal{padding:25px 12px}.wrc-policy-notice{margin:14px 0 18px}}@media print{.wrc-site-legal{display:none}}
+@media print {
+  .wrc-policy-notice--health{
+    display:block!important;background:#fff!important;color:#202020!important;
+    border:1px solid #777!important;border-left:3px solid #c74c32!important;
+    margin:18px 0 8px!important;padding:12px 14px!important;break-inside:avoid;
+    font:11px/1.45 Helvetica,Arial,sans-serif!important
+  }
+  .wrc-policy-notice--health strong,.wrc-policy-notice--health a{color:#111!important}
+  .wrc-policy-notice--health a{text-decoration:underline!important}
+}

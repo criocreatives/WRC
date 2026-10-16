@@ -11,6 +11,8 @@
     '<button id="downloadPlanJpeg" type="button">DOWNLOAD JPEG · SELECTED WEEK</button>' +
     '<button id="printPlan" type="button" class="export-print">PRINT / SAVE AS PDF</button></div>' +
     '<p id="exportStatus" class="export-status" role="status" aria-live="polite"></p>';
+  const safetyText = "RUNLAB safety: These calculations are general estimates - not a diagnosis, medical advice or individual coaching. Seek qualified advice when needed, and stop activity if you experience concerning symptoms.";
+  const safetyPolicy = "https://updates.wadadarunclub.com/policies/health/";
   const select = document.getElementById('exportWeek');
   const status = document.getElementById('exportStatus');
   const weekNodes = () => Array.from(document.querySelectorAll('#res .week'));
@@ -96,7 +98,9 @@
       return {run,effortLines,detailLines,titleLines,
         height:38+titleLines.length*34+22+effortLines.length*33+14+detailLines.length*35+38};
     });
-    const height=Math.ceil(260+volumeLines.length*34+rendered.reduce((sum,run)=>sum+run.height+20,0)+100);
+    ctx.font='20px Helvetica,Arial,sans-serif';
+    const safetyLines=wrapCanvas(ctx,safetyText+'  '+safetyPolicy,inner);
+    const height=Math.ceil(260+volumeLines.length*34+rendered.reduce((sum,run)=>sum+run.height+20,0)+100+safetyLines.length*27);
     if(height>15000)throw Error('That image exceeds the mobile browser limit.');
     canvas.width=width;canvas.height=height;
     ctx.fillStyle='#17191b';ctx.fillRect(0,0,width,height);
@@ -123,8 +127,8 @@
       ctx.textAlign='right';ctx.fillText(entry.run.amount,margin+inner-15,cardY+45);ctx.textAlign='left';
       y=cardY+cardH+20;
     }
-    ctx.fillStyle='#777e81';ctx.font='18px Helvetica,Arial,sans-serif';
-    ctx.fillText('Training guidance, not a medical clearance. Adjust to effort, conditions and recovery.',margin,height-40);
+    ctx.fillStyle='#d9dbdc';ctx.font='20px Helvetica,Arial,sans-serif';
+    drawText(ctx,safetyLines,margin,height-40-(safetyLines.length-1)*27,27);
     const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/jpeg',0.92));
     if(!blob)throw Error('Unable to create JPEG.');
     downloadBlob(blob,filename('_Week_'+String(index+1).padStart(2,'0')+'.jpg'));
@@ -151,7 +155,7 @@
     function nextPage() {
       pdf.addPage();page++;y=20;
     }
-    function enough(n) {if(y+n>H-22)nextPage()}
+    function enough(n) {if(y+n>H-43)nextPage()}
     function wrapped(text,size,color,weight,lineheight) {
       pdf.setFont('helvetica',weight||'normal');
       pdf.setFontSize(size);
@@ -185,11 +189,18 @@
         wrapped(run.details,9,[60,63,67],'normal',4.7);
       });
     });
+    wrapped('HEALTH & TRAINING DISCLAIMER',10,[180,64,32],'bold',5);
+    wrapped(safetyText+' '+safetyPolicy,9,[70,72,75],'normal',4.7);
     const pageCount=pdf.internal.getNumberOfPages();
     for(let p=1;p<=pageCount;p++){
       pdf.setPage(p);pdf.setDrawColor(220,222,225);
-      pdf.line(edge,H-15,W-edge,H-15);
-      pdf.setFontSize(8);pdf.setFont('helvetica','normal');pdf.setTextColor(125,125,125);
+      pdf.line(edge,H-39,W-edge,H-39);
+      pdf.setFont('helvetica','normal');pdf.setTextColor(95,95,95);
+      pdf.setFontSize(8);
+      pdf.text('RUNLAB safety: Estimates only, not medical advice. Stop activity if concerning symptoms arise.',edge,H-33);
+      pdf.setFontSize(7.5);
+      pdf.text(safetyPolicy,edge,H-28);
+      pdf.setFontSize(8);
       pdf.text('RUNLAB · Run smart. Run together.',edge,H-10);
       pdf.text(p+' / '+pageCount,W-edge,H-10,{align:'right'});
     }

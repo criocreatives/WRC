@@ -35,7 +35,7 @@ html,body{background:#fff!important;color:#111!important}body:before,header,foot
 }
 </style><link rel="stylesheet" href="/assets/wrc-policy-notices.css"></head>
 <body><div class="wrap"><header><a href="../" aria-label="RUNLAB home"><img class="logo-sub" src="../../assets/runlab/WRC Runlab TXT orng.svg" alt="RUNLAB"></a></header>
-<main><a class="backbtn" href="../">← RUNLAB</a><div class="eyebrow">RUNLAB · 02</div><h1>HR ZONE<br>SETUP.</h1><aside class="wrc-policy-notice wrc-policy-notice--health" aria-label="Health and RUNLAB disclaimer"><strong>RUNLAB safety:</strong> These calculations are general estimates—not a diagnosis, medical advice or individual coaching. Seek qualified advice when needed, and stop activity if you experience concerning symptoms. <a href="/policies/health/">Read full health and training guidance</a>.</aside>
+<main><a class="backbtn" href="../">← RUNLAB</a><div class="eyebrow">RUNLAB · 02</div><h1>HR ZONE<br>SETUP.</h1>
 <p class="hrz-intro">Calculate five heart-rate ranges for your running watch. Use your actual measurements and choose the same method used by your watch.</p>
 <section class="tool"><details class="hrz-guide"><summary>HOW TO FIND YOUR NUMBERS &amp; SET YOUR WATCH</summary>
 <p><strong>Resting HR:</strong> Use a reliable reading while genuinely rested or your watch's recent resting-heart-rate trend. <strong>Max HR:</strong> Use a credible maximum from activity data or supervised testing. An age formula is only a rough estimate; do not attempt a maximal test just to fill in this form.</p>
@@ -62,7 +62,7 @@ html,body{background:#fff!important;color:#111!important}body:before,header,foot
 <button type="button" id="savePng">SAVE PNG IMAGE</button>
 <button type="button" id="printZones">PRINT / SAVE AS PDF</button>
 <p id="exportStatus" class="hrz-status" role="status" aria-live="polite"></p></div>
-</section></main>
+</section><aside class="wrc-policy-notice wrc-policy-notice--health" aria-label="Health and RUNLAB disclaimer"><strong>RUNLAB safety:</strong> These calculations are general estimates—not a diagnosis, medical advice or individual coaching. Seek qualified advice when needed, and stop activity if you experience concerning symptoms. <a href="/policies/health/">Read full health and training guidance</a>.</aside></main>
 <footer><div class="footlinks"><a href="../" aria-label="RUNLAB home"><img class="runlab-pill" src="../../assets/runlab/WRC Runlab TXT orng.svg" alt="RUNLAB"></a><a href="/" aria-label="WRC home"><img class="wrc-home" src="../../assets/logos/WRC Logo Stack.png" alt="WRC"></a></div></footer></div>
 <script>
 (function(){
@@ -162,10 +162,10 @@ async function copy(){
 function png(){
  if(!latest)return;
  try{
-  var c=document.createElement('canvas');c.width=1080;c.height=1210;var g=c.getContext('2d');
+  var c=document.createElement('canvas');c.width=1080;c.height=1340;var g=c.getContext('2d');
   if(!g)throw new Error('Canvas unavailable');
   function text(t,x,y,size,color,bold,align){g.fillStyle=color;g.font=(bold?'bold ':'')+size+'px Helvetica,Arial,sans-serif';g.textAlign=align||'left';g.fillText(t,x,y);}
-  g.fillStyle='#17191b';g.fillRect(0,0,1080,1210);g.fillStyle='#ee4823';g.fillRect(0,0,1080,12);
+  g.fillStyle='#17191b';g.fillRect(0,0,1080,1340);g.fillStyle='#ee4823';g.fillRect(0,0,1080,12);
   text('RUNLAB / WADADA RUN CLUB',65,100,26,'#ee4823',true);
   text('HEART RATE ZONES',65,181,55,'#ffffff',true);
   text(latest.method==='hrr'?'HEART RATE RESERVE · KARVONEN':'PERCENTAGE OF MAXIMUM HR',65,230,24,'#d2d5d6');
@@ -177,8 +177,11 @@ function png(){
    text(z.p+'–'+z.until+'% '+(latest.method==='hrr'?'HRR':'MAX HR'),247,y+98,21,'#a8abae');
    text(z.lo+'–'+z.hi+' BPM',992,y+99,33,'#ffffff',true,'right');
   });
-  text('GENERIC ESTIMATES — NOT YOUR MEASURED THRESHOLDS',65,1145,21,'#ededed',true);
-  text('For easy runs, use comfortable effort and the talk test.',65,1183,20,'#c4c7c8');
+  text('GENERIC ESTIMATES — NOT YOUR MEASURED THRESHOLDS',65,1129,21,'#ededed',true);
+  text('For easy runs, use comfortable effort and the talk test.',65,1162,20,'#c4c7c8');
+  text('RUNLAB safety: Estimates only, not medical advice or individual coaching.',65,1215,19,'#e7e7e7');
+  text('Seek qualified advice as needed; stop activity for concerning symptoms.',65,1245,19,'#e7e7e7');
+  text('https://updates.wadadarunclub.com/policies/health/',65,1284,18,'#ffb49e');
   var save=function(blob){
    if(!blob){status.textContent='Unable to create PNG.';return;}
    var url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='RUNLAB-HR-Zones.png';
