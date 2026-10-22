@@ -27,3 +27,8 @@
 @media(min-width:801px) and (max-width:1010px){.wrc-global-nav .wrc-nav-links{gap:1px}.wrc-global-nav .wrc-nav-links a{padding:7px 8px}}
 @media(prefers-reduced-motion:reduce){.wrc-global-nav a{transition:none}}
 @media print{.wrc-global-nav,.wrc-skip-link{display:none!important}}
+
+/* WhatsApp community link in desktop and mobile navigation. */
+.wrc-global-nav .wrc-nav-whatsapp{display:inline-flex;align-items:center;gap:7px}
+.wrc-global-nav .wrc-nav-whatsapp img{display:block;width:17px;height:17px;flex:none}
+@media(max-width:800px){.wrc-global-nav .wrc-nav-links--mobile .wrc-nav-whatsapp{display:flex}}
