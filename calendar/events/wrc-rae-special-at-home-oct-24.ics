@@ -1,0 +1,33 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//WRC Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:20261024-rae-special-home@wadadarunclub.com
+DTSTAMP:20261024T210000Z
+DTSTART;TZID=America/Jamaica:20261024T173000
+DTEND;TZID=America/Jamaica:20261024T180000
+SUMMARY:WRC — RAE SPECIAL (At-Home Pink Run)
+LOCATION:At home — indoors (no in-person meetup)
+DESCRIPTION:WADADA RUN CLUB — RAE SPECIAL\nAt-home pink awareness run\,
+  named after WRC's Lyrae.\nSaturday\, October 24\, 2026. Start at 5:30 P
+ M.\n1. Run at least 1 km inside your house and track it.\n2. Wear pink\,
+  take a photo or video\, post to your socials and tag @wadadarunclub and
+  @jamaicacancersociety with #raisingawareness.\n3. Send your photo or vi
+ deo in HD to the WRC social group.\n4. Have fun!\nThe in-person Pink Run
+  at Emancipation Park is CANCELLED due to rain. There is no in-person me
+ etup.\nCalendar end time 6:00 PM is only a placeholder\; no finish time 
+ was announced.\niOS reminders: 12 hours and 2 hours ahead.
+BEGIN:VALARM
+TRIGGER:-PT12H
+ACTION:DISPLAY
+DESCRIPTION:WRC RAE SPECIAL reminder
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:WRC RAE SPECIAL reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR
