@@ -5,27 +5,13 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:20261024-evening-pink-run@wadadarunclub.com
-DTSTAMP:20261022T234200Z
+DTSTAMP:20261024T203300Z
+SEQUENCE:1
+STATUS:CANCELLED
 DTSTART;TZID=America/Jamaica:20261024T173000
 DTEND;TZID=America/Jamaica:20261024T190000
-SUMMARY:WRC — Saturday Evening Pink Run
+SUMMARY:CANCELLED — WRC Saturday Evening Pink Run
 LOCATION:Emancipation Park\, Kingston\, Jamaica
-DESCRIPTION:Wadada Run Club — Saturday Evening Pink Run\nSaturday\, Oct
- ober 24\, 2026 at 5:30 PM\nEmancipation Park\, Kingston\, Jamaica\nWear 
- pink\, bring a pink item and pink snacks to share.\nJoin WRC to raise aw
- areness for breast cancer and share the message on your socials.\nBring 
- friends and help spread awareness.\nFinish time has not been announced\;
-  7:00 PM is a provisional calendar end time.\nEvening-run reminders: 12 
- hours and 2 hours before.
-BEGIN:VALARM
-TRIGGER:-PT12H
-ACTION:DISPLAY
-DESCRIPTION:WRC Saturday Evening Pink Run reminder
-END:VALARM
-BEGIN:VALARM
-TRIGGER:-PT2H
-ACTION:DISPLAY
-DESCRIPTION:WRC Saturday Evening Pink Run reminder
-END:VALARM
+DESCRIPTION:Cancelled due to rain. WRC's Saturday Evening Pink Run on October 24 at 5:30 PM at Emancipation Park will not take place. Do not travel to the meeting point.
 END:VEVENT
 END:VCALENDAR
