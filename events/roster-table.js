@@ -8,7 +8,7 @@
   if (!people.length) return;
 
   const paths = {
-    payment: '<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/>',
+    payment: '<path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',
     registration: '<rect x="5" y="4" width="14" height="18" rx="2"/><path d="M9 4.5V3h6v1.5M9 11h6M9 15h6"/>',
     car: '<path d="m5 17-1 2v2h2v-2h12v2h2v-2l-1-2M5 17H3v-6l2-6h14l2 6v6h-2M5 17h14M3 11h18"/><path d="M7 14h1m8 0h1"/>',
     group: '<path d="M16 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M16 4.5a4 4 0 0 1 0 7.7M22 20v-2a4 4 0 0 0-3-3.9"/><circle cx="9" cy="7" r="4"/>',
