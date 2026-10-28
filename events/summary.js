@@ -32,3 +32,14 @@
  const reminder=logistics.querySelector('.info-grid .info:last-child p');
  if(reminder)reminder.textContent='Payment deadline for non-core participants. J$5,000 per paying hiker; core members exempt. No payment receipts are tracked here.';
 })();
+/* Match expanded text colors to the status controls without exposing extra data. */
+document.addEventListener("click",function(event){
+ const trigger=event.target.closest?.(".roster-table .roster-state");
+ if(!trigger)return;
+ const row=trigger.closest("tr"),next=row?.nextElementSibling;
+ if(!next?.classList.contains("roster-detail-row"))return;
+ const values=next.querySelectorAll("td > div");
+ const icons=row.querySelectorAll(".roster-state");
+ icons.forEach((status,i)=>{if(values[i])values[i].style.color=getComputedStyle(status).color});
+ if(values[3]&&icons[1])values[3].style.color=getComputedStyle(icons[1]).color;
+});
