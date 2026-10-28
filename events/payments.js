@@ -1,1 +1,42 @@
-(function(){"use strict";const area=document.getElementById("current-events");if(!area)return;const reg=area.querySelector("#snapshot-title")?.closest(".section");if(!reg)return;const exempt=new Set(["Lyrae M.","Romario L.","Joel N.","Shane G.","Bree B."]);const paid=new Set([]);let num=0;area.querySelectorAll(".person").forEach(row=>{const n=row.querySelector(".person-top strong")?.textContent?.trim(),label=exempt.has(n)?"EXEMPT":paid.has(n)?"PAID":"PENDING",t=row.querySelector(".transport");if(!t)return;row.querySelectorAll("span").forEach(s=>{if(s.textContent.trim()==="CORE MEMBER · FEE EXEMPT")s.remove()});const s=document.createElement("span");s.style.cssText="display:inline-block;margin-top:6px;padding:4px 8px;border-radius:7px;font-size:10px;font-weight:800;background:"+(label==="EXEMPT"?"#154c4a":label==="PAID"?"#255b38":"#35434a")+";color:#e8f7ec";s.textContent=label;t.insertAdjacentElement("afterend",s);num++});const section=document.createElement("section");section.className="section";section.innerHTML='<h3>PAYMENT STATUS.</h3><div class="metrics"><div class="metric"><strong>'+paid.size+'</strong><span>PAID</span></div><div class="metric"><strong>'+(num-paid.size-exempt.size)+'</strong><span>PENDING</span></div><div class="metric"><strong>'+exempt.size+'</strong><span>CORE EXEMPT</span></div></div><p class="muted">Payment updates are confirmed by organisers. Form submission alone does not confirm payment.</p>';reg.insertAdjacentElement("afterend",section);})();
+/* WRC RafJam payment snapshot — verified against private Payments tab, 27 October 2026.
+   Display abbreviated names only; no contacts, receipts, or private notes. */
+(function(){
+ "use strict";
+ const root=document.getElementById("current-events");
+ if(!root)return;
+ const registration=root.querySelector("#snapshot-title")?.closest(".section");
+ if(!registration)return;
+ const statuses=new Map([["Lyrae M.","Exempt"],["Nathanael J.","Pending"],["Christina D.","Pending"],["Romario L.","Exempt"],["Janielle S.","Pending"],["Charlette R.","Pending"],["Heba E.","Pending"],["Venessa C.","Pending"],["Tenelle C.","Pending"],["Shantae L.","Pending"],["Andre F.","Pending"],["Roberto E.","Pending"],["Joel N.","Exempt"],["Shane G.","Exempt"],["Bree B.","Exempt"],["Karen O.","Pending"],["Anna-Marie O.","Pending"]]);
+ const totals={Paid:0,Pending:0,Exempt:0,Unrecorded:0};
+ root.querySelectorAll(".person").forEach(person=>{
+   const name=person.querySelector(".person-top strong")?.textContent?.trim();
+   const transport=person.querySelector(".transport");
+   if(!name||!transport)return;
+   const status=statuses.get(name)||"Not recorded";
+   if(status==="Not recorded")totals.Unrecorded++;
+   else if(Object.prototype.hasOwnProperty.call(totals,status))totals[status]++;
+   person.querySelectorAll("span").forEach(el=>{
+     if(el.textContent.trim()==="CORE MEMBER · FEE EXEMPT")el.remove();
+   });
+   const indicator=document.createElement("span");
+   indicator.style.cssText="display:inline-block;margin-top:6px;padding:4px 8px;border-radius:7px;font-size:10px;font-weight:800;background:"+
+     (status==="Exempt"?"#154c4a":status==="Paid"?"#255b38":status==="Pending"?"#35434a":"#55442d")+";color:#e8f7ec";
+   indicator.textContent=status.toUpperCase();
+   transport.insertAdjacentElement("afterend",indicator);
+ });
+ const section=document.createElement("section");
+ section.className="section";
+ const title=document.createElement("h3");title.textContent="PAYMENT STATUS.";
+ const metrics=document.createElement("div");metrics.className="metrics";
+ for(const [key,label] of [["Paid","PAID"],["Pending","PENDING"],["Exempt","CORE EXEMPT"]]){
+   const tile=document.createElement("div");tile.className="metric";
+   const num=document.createElement("strong");num.textContent=String(totals[key]);
+   const desc=document.createElement("span");desc.textContent=label;
+   tile.append(num,desc);metrics.appendChild(tile);
+ }
+ const note=document.createElement("p");note.className="muted";
+ note.textContent="Checked against the organiser's payment tracker on October 27, 2026. Only recorded payments count as Paid; registration alone is not payment confirmation."+
+   (totals.Unrecorded?" "+totals.Unrecorded+" registration(s) have no payment record.":"");
+ section.append(title,metrics,note);
+ registration.insertAdjacentElement("afterend",section);
+})();
