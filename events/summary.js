@@ -18,10 +18,10 @@
  '</div><p style="font-size:12px;color:var(--mute);line-height:1.6">Potential revenue is not confirmed collections. The form does not record payments. Eleven hikers making their own way does not imply eleven cars; confirm drivers and parking capacity.</p></section>';
  add(logistics,money);
  const reviews='<section class="section"><h3>ITEMS REQUIRING ATTENTION.</h3><div class="info-grid">'+
- [['Joel N.','Correct emergency-contact fields'],['Charlette R.','Verify emergency-contact number'],['Roberto E.','Independent emergency contact recommended'],['Bree B.','Confirm registration name']].map(([n,msg])=>'<div class="info" style="border-color:#695337"><b style="color:#ffdfa8">'+n+'</b><p>'+msg+'.</p></div>').join('')+
+ [['Charlette R.','Verify emergency-contact number']].map(([n,msg])=>'<div class="info" style="border-color:#695337"><b style="color:#ffdfa8">'+n+'</b><p>'+msg+'.</p></div>').join('')+
  '</div><p style="color:var(--mute);font-size:12px;line-height:1.6">All 17 respondents submitted the required acknowledgements and confirmed comfort with the route. Resolve any corrections privately.</p><p style="color:var(--mute);font-size:12px"><b>Payments:</b> Friday, October 30 · <b>Hike:</b> Sunday, November 1</p></section>';
  add(roster,reviews);
- const core=new Set(['Lyrae M.','Romario L.','Joel N.','Shane G.','Bree B.']);
+ const core=new Set(['Lyrae M.','Romario L.','Joel N.','Shane G.','Brittany B.']);
  active.querySelectorAll('.person').forEach(item=>{
    const name=item.querySelector('strong')?.textContent?.trim();
    if(core.has(name)){
