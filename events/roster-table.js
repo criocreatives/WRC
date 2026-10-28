@@ -30,6 +30,9 @@
   .roster-table th:not(:first-child),.roster-table td:not(:first-child){width:19.666%;text-align:center}
   .roster-table td:first-child strong{font-size:13px;line-height:1.25;display:block;overflow-wrap:anywhere}
   .roster-table tbody tr:nth-child(4n+3){background:rgba(255,255,255,.025)}
+  .roster-table tbody tr.person-clickable{cursor:pointer;touch-action:manipulation}
+  .roster-table tbody tr.person-clickable:hover,.roster-table tbody tr.person-clickable[aria-expanded="true"]{background:#153a3c}
+  .roster-table tbody tr.person-clickable:focus-visible{outline:2px solid var(--lime);outline-offset:-2px}
   .roster-heading-icon{display:inline-flex;color:var(--teal);align-items:center;justify-content:center;vertical-align:middle}
   .roster-heading-icon svg{width:18px;height:18px}
   .roster-state{appearance:none;border:1px solid transparent;display:inline-flex;align-items:center;justify-content:center;width:36px;height:34px;padding:0;border-radius:9px;cursor:pointer;transition:border-color .15s,background .15s}
@@ -93,6 +96,10 @@
     const registration = needsAttention ? "Follow-up needed" : "All good";
     const travelIsCarpool = /carpool/i.test(travel);
     const row = document.createElement("tr");
+    row.className="person-clickable";
+    row.tabIndex=0;
+    row.setAttribute("aria-label",name+" — press Enter or Space to toggle details");
+    row.setAttribute("aria-expanded","false");
     const nameCell = document.createElement("td");
     const strong = document.createElement("strong");strong.textContent = name;nameCell.appendChild(strong);
     const paymentCell = document.createElement("td");
@@ -108,7 +115,7 @@
     const buttons = [paymentButton,registrationButton,travelButton];
     const reveal = () => {
       const isOpen = expandedRow?.previousElementSibling === row;
-      if(expandedRow){expandedRow.remove();expandedRow=null;}
+      if(expandedRow){expandedRow.previousElementSibling?.setAttribute("aria-expanded","false");expandedRow.remove();expandedRow=null;}
       tbody.querySelectorAll('.roster-state[aria-expanded="true"]').forEach(b=>b.setAttribute("aria-expanded","false"));
       if(isOpen)return;
       const details = document.createElement("tr");details.className="roster-detail-row";
@@ -122,8 +129,17 @@
       if(issue){const div=document.createElement("div");const label=document.createElement("span");label.className="detail-label";label.textContent="Follow-up: ";div.append(label,document.createTextNode(issue));cell.appendChild(div);}
       details.appendChild(cell);row.insertAdjacentElement("afterend",details);expandedRow=details;
       buttons.forEach(btn=>btn.setAttribute("aria-expanded","true"));
+      row.setAttribute("aria-expanded","true");
     };
     buttons.forEach(btn=>btn.addEventListener("click",reveal));
+    row.addEventListener("click",ev=>{
+      if(!ev.target.closest(".roster-state"))paymentButton.click();
+    });
+    row.addEventListener("keydown",ev=>{
+      if(ev.target===row&&(ev.key==="Enter"||ev.key===" ")){
+        ev.preventDefault();paymentButton.click();
+      }
+    });
     tbody.appendChild(row);
   }
   table.appendChild(tbody);wrapper.appendChild(table);list.replaceWith(wrapper);
