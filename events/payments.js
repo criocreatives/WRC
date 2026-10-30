@@ -6,7 +6,7 @@
  if(!root)return;
  const registration=root.querySelector("#snapshot-title")?.closest(".section");
  if(!registration)return;
- const statuses=new Map([["Lyrae M.","Exempt"],["Christina D.","Pending"],["Romario L.","Exempt"],["Janielle S.","Pending"],["Charlette R.","Paid"],["Heba E.","Pending"],["Venessa C.","Pending"],["Tenelle C.","Paid"],["Shantae L.","Paid"],["Andre F.","Paid"],["Roberto E.","Pending"],["Joel N.","Exempt"],["Shane G.","Exempt"],["Brittany B.","Exempt"],["Karen O.","Paid"],["Anna-Marie O.","Paid"],["Krisann T.","Paid"],["Marsha-Gaye W.","Pending"]]);
+ const statuses=new Map([["Lyrae M.","Exempt"],["Christina D.","Paid"],["Romario L.","Exempt"],["Janielle S.","Pending"],["Charlette R.","Paid"],["Heba E.","Pending"],["Venessa C.","Pending"],["Tenelle C.","Paid"],["Shantae L.","Paid"],["Andre F.","Paid"],["Roberto E.","Pending"],["Joel N.","Exempt"],["Shane G.","Exempt"],["Brittany B.","Exempt"],["Karen O.","Paid"],["Anna-Marie O.","Paid"],["Krisann T.","Paid"],["Marsha-Gaye W.","Pending"]]);
  const totals={Paid:0,Pending:0,Exempt:0,Unrecorded:0};
  root.querySelectorAll(".person").forEach(person=>{
    const name=person.querySelector(".person-top strong")?.textContent?.trim();
