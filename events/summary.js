@@ -10,17 +10,17 @@
  if(!registration||!logistics||!roster)return;
  const add=(anchor,markup)=>anchor.insertAdjacentHTML("afterend",markup);
  const experience='<section class="section"><h3>EXPERIENCE BREAKDOWN.</h3><div class="info" style="display:grid;gap:13px">'+
-   [['Occasional hikers',13],['Regular hikers',2],['First-time hikers',2]].map(([n,v])=>'<div><div style="display:flex;justify-content:space-between;gap:10px;font-size:12px;margin-bottom:5px"><span>'+n+'</span><b>'+v+' ('+Math.round(v/17*100)+'%)</b></div><div style="height:9px;border-radius:50px;background:#24494a;overflow:hidden"><div style="height:100%;width:'+(v/17*100)+'%;border-radius:50px;background:linear-gradient(90deg,#c9ff3d,#15e6c1)"></div></div></div>').join('')+'</div></section>';
+   [['Occasional hikers',14],['Regular hikers',2],['First-time hikers',2]].map(([n,v])=>'<div><div style="display:flex;justify-content:space-between;gap:10px;font-size:12px;margin-bottom:5px"><span>'+n+'</span><b>'+v+' ('+Math.round(v/18*100)+'%)</b></div><div style="height:9px;border-radius:50px;background:#24494a;overflow:hidden"><div style="height:100%;width:'+(v/18*100)+'%;border-radius:50px;background:linear-gradient(90deg,#c9ff3d,#15e6c1)"></div></div></div>').join('')+'</div></section>';
  add(registration,experience);
  const money='<section class="section"><h3>FINANCIAL OUTLOOK.</h3><div class="info-grid">'+
- '<div class="info"><div class="kicker">POTENTIAL FEE REVENUE</div><span class="value">J$55,000</span><p>11 non-core registrations × J$5,000. Six registered core members are exempt.</p></div>'+
+ '<div class="info"><div class="kicker">POTENTIAL FEE REVENUE</div><span class="value">J$60,000</span><p>12 non-core registrations × J$5,000. Six registered core members are exempt.</p></div>'+
  '<div class="info"><div class="kicker">PAID IN TRACKER</div><span class="value">J$40,000</span><p>8 non-core registrations marked Paid; no independent receipt verification.</p></div>'+ 
- '<div class="info"><div class="kicker">REFRESHMENTS · 20 KITS</div><span class="value">J$9,000–13,000</span><p>17 hikers plus 3 spares · J$450–650 per kit</p></div>'+
+ '<div class="info"><div class="kicker">REFRESHMENTS · 21 KITS</div><span class="value">J$9,450–13,650</span><p>18 hikers plus 3 spares · J$450–650 per kit</p></div>'+
  '</div><p style="font-size:12px;color:var(--mute);line-height:1.6">Potential revenue is not confirmed collections. The form does not record payments. Eleven hikers making their own way does not imply eleven cars; confirm drivers and parking capacity.</p></section>';
  add(logistics,money);
  const reviews='<section class="section"><h3>ITEMS REQUIRING ATTENTION.</h3><div class="info-grid">'+
- [['Charlette R.','Verify emergency-contact number'],['Randall R.','Core membership confirmed; fee exempt']].map(([n,msg])=>'<div class="info" style="border-color:#695337"><b style="color:#ffdfa8">'+n+'</b><p>'+msg+'.</p></div>').join('')+
- '</div><p style="color:var(--mute);font-size:12px;line-height:1.6">All 17 active hikers submitted the required acknowledgements and confirmed comfort with the route. Resolve any corrections privately.</p><p style="color:var(--mute);font-size:12px"><b>Payments:</b> Friday, October 30 · <b>Hike:</b> Sunday, November 1</p></section>';
+ [['Charlette R.','Verify emergency-contact number'],['Toni S.','Confirm registration name privately']].map(([n,msg])=>'<div class="info" style="border-color:#695337"><b style="color:#ffdfa8">'+n+'</b><p>'+msg+'.</p></div>').join('')+
+ '</div><p style="color:var(--mute);font-size:12px;line-height:1.6">All 18 active hikers submitted the required acknowledgements and confirmed comfort with the route. Resolve any corrections privately.</p><p style="color:var(--mute);font-size:12px"><b>Payments:</b> Friday, October 30 · <b>Hike:</b> Sunday, November 1</p></section>';
  add(roster,reviews);
  const core=new Set(['Lyrae M.','Romario L.','Joel N.','Shane G.','Brittany B.','Randall R.']);
  active.querySelectorAll('.person').forEach(item=>{
