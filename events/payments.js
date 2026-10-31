@@ -6,7 +6,7 @@
  if(!root)return;
  const registration=root.querySelector("#snapshot-title")?.closest(".section");
  if(!registration)return;
- const statuses=new Map([["Lisa-Gaye","Paid"],["Marsha-Gaye W.","Paid"],["Randall R.","Exempt"],["Roberto E.","Pending"],["Toni S.","Paid"],["Venessa C.","Paid"],["Andre F.","Paid"],["Anna-Marie O.","Paid"],["Charlette R.","Paid"],["Christina D.","Paid"],["Karen O.","Paid"],["Krisann T.","Paid"],["Shantae L.","Paid"],["Tenelle C.","Paid"],["Brittany B.","Exempt"],["Joel N.","Exempt"],["Lyrae M.","Exempt"],["Romario L.","Exempt"],["Shane G.","Exempt"]]);
+ const statuses=new Map([["Lisa-Gaye","Paid"],["Marsha-Gaye W.","Paid"],["Randall R.","Exempt"],["Roberto E.","Paid"],["Toni S.","Paid"],["Venessa C.","Paid"],["Andre F.","Paid"],["Anna-Marie O.","Paid"],["Charlette R.","Paid"],["Christina D.","Paid"],["Karen O.","Paid"],["Krisann T.","Paid"],["Shantae L.","Paid"],["Tenelle C.","Paid"],["Brittany B.","Exempt"],["Joel N.","Exempt"],["Lyrae M.","Exempt"],["Romario L.","Exempt"],["Shane G.","Exempt"]]);
  const totals={Paid:0,Pending:0,Exempt:0,Unrecorded:0};
  root.querySelectorAll(".person").forEach(person=>{
    const name=person.querySelector(".person-top strong")?.textContent?.trim();
@@ -35,7 +35,7 @@
    tile.append(num,desc);metrics.appendChild(tile);
  }
  const note=document.createElement("p");note.className="muted";
- note.textContent="Checked against the organiser's payment tracker on October 31, 2026. Only recorded payments count as Paid; registration alone is not payment confirmation."+
+ note.textContent="Checked against the organiser's payment tracker on October 31, 2026. Statuses reflect the organiser's latest payment confirmations; Roberto E. awaits Payments-sheet reconciliation."+
    (totals.Unrecorded?" "+totals.Unrecorded+" registration(s) have no payment record.":"");
  section.append(title,metrics,note);
  registration.insertAdjacentElement("afterend",section);
