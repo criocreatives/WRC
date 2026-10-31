@@ -4,7 +4,9 @@
   const section = document.getElementById("roster-title")?.closest(".section");
   const list = section?.querySelector("ul.roster");
   if (!list || section.querySelector(".roster-table")) return;
-  const people = [...list.querySelectorAll("li.person")];
+  const people = [...list.querySelectorAll("li.person")].sort((a,b) => { const name = item => item.querySelector(".person-top strong")?.textContent?.trim() || ""; return name(a).localeCompare(name(b), "en", {sensitivity:"base"}); });
+  // Keep the source list and rendered table in the same alphabetical order, regardless of payment status.
+  people.forEach(person => list.appendChild(person));
   if (!people.length) return;
 
   const paths = {
