@@ -14,7 +14,7 @@
  add(registration,experience);
  const money='<section class="section"><h3>FINANCIAL OUTLOOK.</h3><div class="info-grid">'+
  '<div class="info"><div class="kicker">POTENTIAL FEE REVENUE</div><span class="value">J$65,000</span><p>13 non-core registrations × J$5,000. Six registered core members are exempt.</p></div>'+
- '<div class="info"><div class="kicker">PAID IN TRACKER</div><span class="value">J$50,000</span><p>10 non-core registrations marked Paid; no independent receipt verification.</p></div>'+ 
+ '<div class="info"><div class="kicker">PAID IN TRACKER</div><span class="value">J$55,000</span><p>11 non-core registrations marked Paid; no independent receipt verification.</p></div>'+ 
  '<div class="info"><div class="kicker">REFRESHMENTS · 22 KITS</div><span class="value">J$9,790–17,600</span><p>19 hikers plus 3 spares · J$445–800 per kit (banana, protein bar, electrolyte sachet, labelled ziplock bag)</p></div>'+
  '</div><p style="font-size:12px;color:var(--mute);line-height:1.6">Potential revenue is not confirmed collections. The form does not record payments. Eleven hikers making their own way does not imply eleven cars; confirm drivers and parking capacity.</p></section>';
  add(logistics,money);
