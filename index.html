@@ -35,6 +35,7 @@ p,li{font-weight:400}
 .hike-feature-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 .hike-feature-cta{display:inline-flex;min-height:38px;align-items:center;justify-content:center;gap:10px;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--lime),var(--teal));color:#06251f;text-decoration:none;font-size:11px;font-weight:900;letter-spacing:.035em;transition:transform .18s ease,filter .18s ease}
 .hike-feature-cta:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.hike-feature-cta:disabled{font-family:inherit;border:1px solid #4b6060;background:#2c4144;color:#cadad4;box-shadow:none;cursor:not-allowed;transform:none;filter:none}
 .hike-feature-cta:focus-visible{outline:3px solid #fff;outline-offset:4px}
 .hike-feature-details{color:#d7eee5;font-size:11px;font-weight:800;text-underline-offset:3px;text-decoration-thickness:1px}
 .hike-feature-details:hover,.hike-feature-details:focus-visible{color:var(--lime)}
@@ -75,10 +76,10 @@ p,li{font-weight:400}
    <path d="m-10 321 92-94 79 45 71-99 71 88 72-37v99H-10Z" fill="#0a303e"/>
  </svg>
  <div class="hike-feature-copy">
-   <div class="hike-feature-top"><span class="hike-feature-label">WRC · FEATURED EVENT</span><span class="hike-feature-status">REGISTRATION OPEN</span></div>
+   <div class="hike-feature-top"><span class="hike-feature-label">WRC · FEATURED EVENT</span><span class="hike-feature-status">REGISTRATION CLOSED</span></div>
    <h2 id="rafjam-title"><span>RAFJAM</span> HIKE.</h2>
    <p class="hike-feature-desc"><strong>Sunday, November 1</strong> · Meet 4:45 AM · Start 5:00 AM · Gordon Town Square<span class="hike-feature-extra">~10 km round trip · JMD $5,000 per person</span></p>
-   <div class="hike-feature-actions"><a class="hike-feature-cta" href="/calendar/rafjam-hike/#signup" aria-label="Go to registration for the WRC RafJam hike">REGISTER FOR HIKE <span aria-hidden="true">↗</span></a><a class="hike-feature-details" href="/calendar/rafjam-hike/" aria-label="View full WRC RafJam hike details">VIEW HIKE DETAILS</a></div>
+   <div class="hike-feature-actions"><button type="button" class="hike-feature-cta" disabled aria-label="RafJam hike registration is closed">REGISTRATION CLOSED</button><a class="hike-feature-details" href="/calendar/rafjam-hike/" aria-label="View full WRC RafJam hike details">VIEW HIKE DETAILS</a></div>
  </div>
 </aside><section class="grid"><a class="card" href="/calendar/"><span class="num">01</span><span class="pill">RUN SCHEDULE</span><h2>Calendar</h2><p>Club runs and race dates in one clean schedule.</p><span class="arrow">VIEW CALENDAR →</span></a><a class="card" href="/race-day/"><span class="num">02</span><span class="pill">RESULTS + RECAPS</span><h2>Race Day</h2><p>Race-day updates, WRC performances, results, photos and post-race recaps.</p><span class="arrow">VIEW RACE DAY →</span></a><a class="card" href="/gear/"><span class="num">03</span><span class="pill">GEAR GUIDES</span><h2>Gear</h2><p>WRC running shoe and watch rankings, comparisons and value guides.</p><span class="arrow">VIEW GEAR →</span></a><a class="card runlab" href="/runlab/"><span class="num">04</span><span class="pill">TRAIN SMARTER</span><h2>RUNLAB</h2><p>Training plans, heart-rate zone setup and fueling tools for runners.</p><span class="arrow">OPEN RUNLAB →</span></a></section><footer class="footer"><img class="footer-logo" src="assets/logos/WRC Logo Text Gradient - Copy.png" alt="Wadada Run Club" decoding="async" loading="lazy"><p>SHOW UP • PUT IN THE WORK • RUN TOGETHER</p></footer></main>
 <!-- Invisible LibreCounter page-view analytics -->
