@@ -19,8 +19,8 @@
  '</div><p style="font-size:12px;color:var(--mute);line-height:1.6">Potential revenue is not confirmed collections. The form does not record payments. Thirteen hikers making their own way does not imply thirteen cars; confirm drivers and parking capacity.</p></section>';
  add(logistics,money);
  const reviews='<section class="section"><h3>ITEMS REQUIRING ATTENTION.</h3><div class="info-grid">'+
- [['Charlette R.','Verify emergency-contact number']].map(([n,msg])=>'<div class="info" style="border-color:#695337"><b style="color:#ffdfa8">'+n+'</b><p>'+msg+'.</p></div>').join('')+
- '</div><p style="color:var(--mute);font-size:12px;line-height:1.6">All 20 active hikers submitted the required acknowledgements and confirmed comfort with the route. Resolve any corrections privately.</p><p style="color:var(--mute);font-size:12px"><b>Payments:</b> Friday, October 30 · <b>Hike:</b> Sunday, November 1</p></section>';
+ [['Charlette R.','Verify emergency-contact number'],['Dushane C.','Post-closure submission; approval, emergency phone and typed name require review before inclusion']].map(([n,msg])=>'<div class="info" style="border-color:#695337"><b style="color:#ffdfa8">'+n+'</b><p>'+msg+'.</p></div>').join('')+
+ '</div><p style="color:var(--mute);font-size:12px;line-height:1.6">All 20 confirmed active hikers submitted the required acknowledgements and confirmed comfort with the route. Charlette R. is the only active-roster follow-up. Dushane C. is not part of the active roster; review the late submission privately.</p><p style="color:var(--mute);font-size:12px"><b>Payments:</b> Friday, October 30 · <b>Hike:</b> Sunday, November 1</p></section>';
  add(roster,reviews);
  const core=new Set(['Lyrae M.','Romario L.','Joel N.','Shane G.','Brittany B.','Randall R.']);
  active.querySelectorAll('.person').forEach(item=>{
