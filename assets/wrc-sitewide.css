@@ -1,0 +1,5 @@
+/* WRC global typography — Montserrat, with system-font fallback. */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+html,body,body *:not(.material-icons):not(.material-symbols-outlined):not([class*="fa-"]){
+  font-family:"Montserrat",Arial,Helvetica,sans-serif !important;
+}

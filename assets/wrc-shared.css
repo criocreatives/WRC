@@ -18,7 +18,7 @@
 .wrc-global-nav summary::-webkit-details-marker{display:none}
 .wrc-global-nav summary:after{content:" + ";margin-left:6px;font-weight:400}
 .wrc-global-nav details[open] summary:after{content:" − "}
-@media(max-width:800px){
+@media(max-width:900px){
  .wrc-global-nav .wrc-nav-links--desktop{display:none}
  .wrc-global-nav details{display:block}
  .wrc-global-nav .wrc-nav-links--mobile{
@@ -43,7 +43,7 @@
    border-top:1px solid #24464a;border-top-left-radius:0;border-top-right-radius:0
  }
 }
-@media(min-width:801px) and (max-width:1010px){.wrc-global-nav .wrc-nav-links{gap:1px}.wrc-global-nav .wrc-nav-links a{padding:7px 8px}}
+@media(min-width:901px) and (max-width:1010px){.wrc-global-nav .wrc-nav-links{gap:1px}.wrc-global-nav .wrc-nav-links a{padding:7px 8px}}
 @media(prefers-reduced-motion:reduce){.wrc-global-nav a{transition:none}}
 @media print{.wrc-global-nav,.wrc-skip-link{display:none!important}}
 
@@ -51,3 +51,11 @@
 .wrc-global-nav .wrc-nav-whatsapp{display:inline-flex;align-items:center;gap:7px}
 .wrc-global-nav .wrc-nav-whatsapp img{display:block;width:17px;height:17px;flex:none}
 
+
+/* Compact WRC wordmark in the global site header. */
+.wrc-global-nav .wrc-nav-brand{flex:none;min-width:0;letter-spacing:normal}
+.wrc-global-nav .wrc-nav-wordmark{display:block;width:235px;max-width:100%;height:auto;object-fit:contain}
+@media(max-width:900px){.wrc-global-nav .wrc-nav-wordmark{width:190px}}
+@media(max-width:380px){.wrc-global-nav .wrc-nav-wordmark{width:160px}}
+
+@media(min-width:901px) and (max-width:1100px){.wrc-global-nav .wrc-nav-wordmark{width:210px}}
