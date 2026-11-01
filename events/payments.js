@@ -1,4 +1,4 @@
-/* WRC RafJam payment snapshot — verified against private Payments tab, 31 October 2026.
+/* WRC RafJam payment snapshot — reconciled with private Payments tab on 1 November 2026.
    Display abbreviated names only; no contacts, receipts, or private notes. */
 (function(){
  "use strict";
@@ -35,7 +35,7 @@
    tile.append(num,desc);metrics.appendChild(tile);
  }
  const note=document.createElement("p");note.className="muted";
- note.textContent="Statuses reflect the organiser's confirmations as of October 31, 2026. Siobhan D. is confirmed Paid by the organiser but awaits entry in the Payments sheet."+
+ note.textContent="Payments tab rechecked November 1, 2026: 13 Paid, 6 Exempt, and 1 Pending (excluded from active attendance). Siobhan D. remains organiser-confirmed Paid but has no Payments-tab entry."+
    (totals.Unrecorded?" "+totals.Unrecorded+" registration(s) have no payment record.":"");
  section.append(title,metrics,note);
  registration.insertAdjacentElement("afterend",section);
