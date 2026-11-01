@@ -19,8 +19,7 @@ radial-gradient(circle at 85% 0%,rgba(21,230,193,.15),transparent 28rem),
 linear-gradient(180deg,#0d2229 0,#08171d 100%);}
 .wrap{max-width:760px;margin:auto;min-height:100vh;overflow:hidden}
 .hero{padding:28px 18px 24px;border-bottom:1px solid var(--line);position:relative}
-.hero:after{content:"";position:absolute;inset:0;opacity:.10;pointer-events:none;
-background-image:repeating-radial-gradient(ellipse at 0 0,transparent 0 17px,#8aff74 18px 19px,transparent 20px 34px)}
+
 .logo{display:block;width:min(520px,94%);height:auto;margin:0 auto 8px;position:relative;z-index:1}
 .kicker{position:relative;z-index:1;text-align:center;font-size:11px;letter-spacing:.24em;font-weight:800;color:#dce9e5}
 h1{position:relative;z-index:1;margin:24px 0 4px;font-size:clamp(34px,8vw,62px);line-height:.9;letter-spacing:-.055em;text-transform:uppercase}
@@ -124,11 +123,11 @@ p,li{font-weight:400}
 
 
 <h1>October<br><span>Run Calendar</span> ⚡</h1>
-<p class="sub">Club runs, social miles, RunLab race day and October races — all in one place.</p>
+<p class="sub">Club events, social miles, RunLab race day and October races — all in one place.</p>
 </header>
 
 <main id="wrc-main" class="content">
-<div class="section-head"><div><h2>Club Runs</h2></div><div class="count">7 EVENTS</div></div>
+<div class="section-head"><div><h2>Club Events</h2></div><div class="count">7 EVENTS</div></div>
 
 <article class="card featured" data-event-end="2026-10-03T06:30:00-05:00"><div class="date"><span class="day">SAT</span><strong>OCTOBER 03</strong></div>
 <div class="title">RUNNERS UNITE</div><div class="place"><b>Location:</b> Scotiabank, Downtown<br><b>Meet Up:</b> 5:00 AM<br><b>Cover Charge:</b> $1,000 — pay at location</div><div class="cal-actions"><span class="cal-label">ADD TO CALENDAR</span><a class="cal-os" href="events/wrc-runners-unite-oct-03.ics">iOS</a><a class="cal-os" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=WRC%20%E2%80%94%20Runners%20Unite&dates=20261003T050000/20261003T063000&ctz=America%2FJamaica&details=Wadada%20Run%20Club%20%E2%80%94%20Runners%20Unite.%0A%0AMeet%20up%3A%205%3A00%20AM%0ACover%20charge%3A%20%241%2C000%20%E2%80%94%20pay%20at%20location.%0A%0ABefore%20the%20run%3A%0A%E2%80%A2%20Arrive%2010%E2%80%9315%20minutes%20early%0A%E2%80%A2%20Bring%20water%20%2F%20hydration%0A%E2%80%A2%20Wear%20appropriate%20running%20shoes%0A%0A%0AWRC%20%E2%80%94%20Show%20Up%20%E2%80%A2%20Put%20In%20The%20Work%20%E2%80%A2%20Run%20Together&location=Scotiabank%2C%20Downtown%2C%20Kingston%2C%20Jamaica" target="_blank" rel="noopener noreferrer">ANDROID</a></div></article>
@@ -225,7 +224,7 @@ p,li{font-weight:400}
     const label = document.createElement('span');
     label.className = 'past-events-label';
     const title = document.createElement('strong');
-    title.textContent = heading.querySelector('h2')?.textContent.includes('Race') ? 'Past races' : 'Past club runs';
+    title.textContent = heading.querySelector('h2')?.textContent.includes('Race') ? 'Past races' : 'Past club events';
     const count = document.createElement('span');
     count.className = 'past-events-count';
     count.textContent = past.length + (past.length === 1 ? ' event' : ' events');
