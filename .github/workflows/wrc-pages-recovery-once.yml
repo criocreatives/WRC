@@ -29,8 +29,8 @@ jobs:
           status=$(python3 -c "import json;print(json.load(open('/tmp/pages-status.json')).get('status','unknown'))")
           echo "Deployment status: ${status}"
           case "$status" in
-            pending|in_progress|queued|building|deploying)
-              echo "Cancelling only the blocked deployment ${sha}."
+            pending|in_progress|queued|building|deploying|succeed)
+              echo "Attempting cancellation of exact stale deployment ${sha}; other deployments are untouched."
               cancel_code=$(curl -sS -X POST -o /tmp/cancel-status.json -w '%{http_code}' -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${GH_TOKEN}" "${url}/cancel")
               echo "Cancel response HTTP ${cancel_code}"
               cat /tmp/cancel-status.json || true
