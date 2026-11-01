@@ -1,0 +1,17 @@
+name: WRC static quality checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out WRC
+        uses: actions/checkout@v4
+      - name: Verify generated navigation and legal footer
+        run: python3 scripts/build_site.py --check
+      - name: Check content pages and internal links
+        run: python3 scripts/check_site.py
