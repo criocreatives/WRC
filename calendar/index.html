@@ -4,126 +4,35 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#031b1a">
-<title>WRC Run Calendar | October 2026 Runs &amp; Races in Jamaica</title>
-<style>
-:root {
-  --bg:#0b1c23; --panel:#062321; --panel2:#082c29; --line:#17443f;
-  --text:#f5fbf8; --muted:#9bb9b3; --lime:#c9ff3d; --green:#69f56f; --teal:#15e6c1;
-  --gold:#ffd84a;
-}
-*{box-sizing:border-box}
-html{background:#021211}
-body{margin:0;font-family:Helvetica,Arial,sans-serif;color:var(--text);
-background:
-radial-gradient(circle at 85% 0%,rgba(21,230,193,.15),transparent 28rem),
-linear-gradient(180deg,#0d2229 0,#08171d 100%);}
-.wrap{max-width:760px;margin:auto;min-height:100vh;overflow:hidden}
-.hero{padding:28px 18px 24px;border-bottom:1px solid var(--line);position:relative}
-
-.logo{display:block;width:min(520px,94%);height:auto;margin:0 auto 8px;position:relative;z-index:1}
-.kicker{position:relative;z-index:1;text-align:center;font-size:11px;letter-spacing:.24em;font-weight:800;color:#dce9e5}
-h1{position:relative;z-index:1;margin:24px 0 4px;font-size:clamp(34px,8vw,62px);line-height:.9;letter-spacing:-.055em;text-transform:uppercase}
-h1 span{color:var(--lime)}
-.sub{position:relative;z-index:1;margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.5}
-.content{padding:18px}
-.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:10px 2px 14px}
-.eyebrow{font-size:11px;font-weight:900;letter-spacing:.14em;color:var(--teal);text-transform:uppercase}
-h2{margin:3px 0 0;font-size:24px;letter-spacing:-.035em}
-.count{font-size:11px;font-weight:900;color:#051a17;background:var(--lime);padding:6px 9px;border-radius:999px;white-space:nowrap}
-.card{position:relative;background:linear-gradient(145deg,rgba(8,44,41,.97),rgba(4,30,28,.97));border:1px solid var(--line);
-border-radius:20px;padding:17px 16px 16px;margin:0 0 11px;box-shadow:0 10px 30px rgba(0,0,0,.18)}
-.card.featured{border-color:#57d9a9;box-shadow:0 0 0 1px rgba(201,255,61,.10),0 12px 34px rgba(0,0,0,.22)}
-.pink-run{border-color:#a04d74}.pink-run .day{background:linear-gradient(90deg,#ff8fca,#ffb4d3);color:#2b1322}.pink-run .tag--pink{background:#452637;border-color:#984e73;color:#ffd0e3}
-.pink-run--rae{border-color:#bb7095;background:linear-gradient(145deg,rgba(45,28,41,.98),rgba(7,34,35,.98))}
-.pink-run--rae .title{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.pink-run--rae .title .tag{margin:0;font-size:9px;letter-spacing:.07em}
-.pink-run--rae .rae-intro{margin:0 0 12px;font-size:13px;color:#f3c8dc;line-height:1.5}
-.pink-run--rae .rae-steps{margin:13px 0;padding:0 0 0 22px;color:#f5e2eb;font-size:13px;line-height:1.6}
-.pink-run--rae .rae-steps li{margin:0 0 7px;padding-left:3px}
-.pink-run--rae .rae-steps strong{overflow-wrap:anywhere}
-.pink-run--rae .rae-cancellation{margin:14px 0;padding:12px 14px;border:1px solid #9a5a70;border-left:4px solid #ff9cba;border-radius:10px;background:rgba(65,31,45,.58);color:#ffdde7;font-size:12px;line-height:1.55}
-.pink-run--rae .rae-cancellation strong{display:block;font-size:12px;color:#fff;margin-bottom:3px}
-.date{display:flex;align-items:center;gap:9px;margin-bottom:9px}
-.day{font-size:11px;font-weight:950;letter-spacing:.12em;color:#071b17;background:linear-gradient(90deg,var(--lime),var(--teal));padding:5px 8px;border-radius:7px}
-.date strong{font-size:14px;letter-spacing:.04em}
-.title{font-size:20px;line-height:1.12;font-weight:900;letter-spacing:-.025em;margin:0 0 8px}
-.place{color:#d9e7e3;font-size:14px;line-height:1.45}
-.place b{color:var(--teal)}
-.tag{display:inline-flex;margin-top:11px;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:6px 8px;border-radius:999px;background:#103c37;color:var(--lime);border:1px solid #20564f}
-.btn{display:flex;justify-content:space-between;align-items:center;text-decoration:none;margin-top:14px;padding:12px 14px;border-radius:12px;background:linear-gradient(90deg,var(--lime),var(--teal));color:#041b18;font-size:13px;font-weight:950}
-.rafjam-closed{width:100%;font-family:inherit;justify-content:center;border:1px solid #4b6060;background:#293e41;color:#c5d7d1;cursor:not-allowed;opacity:.9}
-.rafjam-details-link{display:inline-block;margin-top:9px;color:var(--teal);font-size:11px;font-weight:800;text-decoration:underline;text-underline-offset:3px}
-.divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:28px 0}
-.race .day{background:linear-gradient(90deg,#ffe866,#f5b932)}
-.race .title{font-size:18px}
-.medal{color:var(--gold);font-weight:900}
-.note{margin-top:10px;padding:10px 11px;border-radius:11px;background:rgba(255,216,74,.07);border:1px solid rgba(255,216,74,.17);font-size:12px;line-height:1.45;color:#f6e9b1}
-.footer{margin-top:28px;padding:22px 18px 34px;background:#01100f;border-top:1px solid var(--line);text-align:center}
-.footer .logo{width:min(330px,80%);margin-bottom:12px}
-.footer p{font-size:11px;line-height:1.6;color:#789a93;margin:0}
-.footer a{color:var(--teal);font-weight:800;text-decoration:none}
-.small{font-size:11px;color:var(--muted);margin-top:7px;line-height:1.5}
-
-.home-logo{display:block;text-decoration:none}.home-logo .logo{cursor:pointer}h1,h2,.title,.date strong,.overall strong,.rank,.price,.life strong,.dist strong,.stretch-name,.stretch-price{font-family:Helvetica,Arial,sans-serif;font-weight:400}.footer-logo{display:block;width:min(360px,85%);height:auto;margin:0 auto 12px}.card,.shoe,.method,.legend,.honorable,.stretch-section,.box{background-color:#06151b!important;background-image:linear-gradient(145deg,#081a21,#041116)!important;border-color:#17343c!important}
-
-/* WRC Helvetica type system */
-html,body{font-family:Helvetica,Arial,sans-serif;font-weight:400}
-h1,h2,h3,h4,h5,h6,.title,.headline,.card-title,.date strong,.overall strong,.rank,.price,.life strong,.dist strong,.stretch-name,.stretch-price,strong,b{font-family:Helvetica,Arial,sans-serif;font-weight:700}
-p,li,a,button,input,select,textarea{font-family:Helvetica,Arial,sans-serif}
-p,li{font-weight:400}
-.eyebrow,.kicker,.subtext,.subtitle,.meta,.note,.caption,.small,.label,.tag,.details,.footer-copy,small{font-family:Helvetica,Arial,sans-serif;font-weight:300}
-.site-home-btn{position:relative;z-index:1;display:inline-flex;margin:14px 0 8px 14px;align-items:center;gap:7px;padding:9px 12px;border:1px solid #29464d;border-radius:999px;background:rgba(4,17,22,.88);backdrop-filter:blur(10px);color:#dce9e5;text-decoration:none;font:700 9px/1 Helvetica,Arial,sans-serif;letter-spacing:.12em;transition:.18s ease}.site-home-btn:hover{border-color:#c9ff3d;color:#c9ff3d;transform:translateY(-1px)}.site-home-btn svg{width:13px;height:13px;fill:currentColor}@media(max-width:600px){.site-home-btn{padding:8px 10px}}.site-home-wrap{display:flex;justify-content:center;padding:26px 0 8px}.site-home-btn{position:static!important;margin:0!important;display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:9px 12px!important;border:1px solid #17343c!important;border-radius:12px!important;background-color:#06151b!important;background-image:linear-gradient(145deg,#081a21,#041116)!important;box-shadow:0 10px 24px rgba(0,0,0,.18);color:#dce9e5!important;text-decoration:none;font:700 9px/1 Helvetica,Arial,sans-serif;letter-spacing:.12em;transition:.18s ease}.site-home-btn:hover{border-color:#c9ff3d!important;color:#c9ff3d!important;transform:translateY(-1px)}.site-home-btn svg{width:13px;height:13px;fill:currentColor}
-.cal-btn{display:inline-flex;text-decoration:none;align-items:center;gap:7px;margin-top:12px;padding:9px 11px;border:1px solid #2c5550;border-radius:10px;background:#071b1b;color:var(--lime);font:700 10px/1 Helvetica,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;-webkit-appearance:none;appearance:none}.cal-btn:hover{border-color:var(--lime);background:#0b2926}.cal-btn svg{width:13px;height:13px;fill:currentColor}
-.cal-actions{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin-top:12px}.cal-label{font:700 10px/1 Helvetica,Arial,sans-serif;letter-spacing:.08em;color:#dce9e5;margin-right:2px}.cal-os{display:inline-flex;align-items:center;justify-content:center;padding:8px 10px;border:1px solid #2c5550;border-radius:9px;background:#071b1b;color:var(--lime);text-decoration:none;font:700 10px/1 Helvetica,Arial,sans-serif;letter-spacing:.06em}.cal-os:hover{border-color:var(--lime);background:#0b2926}
-/* Automatically archive completed events so upcoming runs stay in view. */
-.past-events{margin:10px 0 18px;border:1px solid #345157;border-radius:15px;background:linear-gradient(145deg,#10252b,#071a20);overflow:hidden}
-.past-events>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:13px 16px;list-style:none;cursor:pointer;font-size:12px;font-weight:800;color:#d3e1e0;letter-spacing:.015em}
-.past-events>summary::-webkit-details-marker{display:none}
-.past-events>summary::after{content:"";flex:none;width:9px;height:9px;border-right:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(45deg);transition:transform .16s ease;margin:0 3px 4px}
-.past-events[open]>summary::after{transform:rotate(225deg);margin:5px 3px 0}
-.past-events>summary:hover{background:rgba(21,230,193,.055)}
-.past-events>summary:focus-visible{outline:2px solid var(--lime);outline-offset:-3px}
-.past-events-label{display:flex;align-items:center;gap:9px;flex-wrap:wrap;min-width:0}
-.past-events-label strong{font-size:12px}
-.past-events-count{font-size:10px;color:#bed1ce;border:1px solid #365b5e;background:#132e34;border-radius:99px;padding:5px 8px;white-space:nowrap}
-.past-events-list{padding:0 11px 3px;border-top:1px solid #29434a}
-.past-events-list .card{padding:11px 12px;margin:10px 0;border-radius:12px;box-shadow:none;opacity:.82;filter:saturate(.58)}
-.past-events-list .card:hover{opacity:1;filter:saturate(.8)}
-.past-events-list .date{margin-bottom:5px}
-.past-events-list .date strong{font-size:12px}
-.past-events-list .day{font-size:9px;padding:4px 6px}
-.past-events-list .title,.past-events-list .race .title{font-size:16px;margin-bottom:5px}
-.past-events-list .place{font-size:12px}
-.past-events-list .cal-actions,.past-events-list .btn[aria-disabled="true"]{display:none}
-.past-events-list .note{font-size:11px}
-@media(prefers-reduced-motion:reduce){.past-events>summary::after{transition:none}}
-</style>
+<title>WRC Run Calendar | Runs &amp; Races in Jamaica</title>
+<link rel="stylesheet" href="/assets/page-styles/calendar.css">
 <link rel="stylesheet" href="/assets/wrc-policy-notices.css">
 <!-- WRC search, social and sharing metadata -->
-<meta name="description" content="Find Wadada Run Club's October 2026 group runs, hikes and Jamaica race dates, with event details, registration links and calendar downloads.">
+<meta name="description" content="Explore Wadada Run Club's runs, hikes and Jamaica race events, with schedules, details and calendar downloads. Updated monthly.">
 <link rel="canonical" href="https://updates.wadadarunclub.com/calendar/">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Wadada Run Club">
 <meta property="og:locale" content="en_JM">
-<meta property="og:title" content="WRC Run Calendar | October 2026 Runs &amp; Races in Jamaica">
-<meta property="og:description" content="Find Wadada Run Club's October 2026 group runs, hikes and Jamaica race dates, with event details, registration links and calendar downloads.">
+<meta property="og:title" content="WRC Run Calendar | Runs &amp; Races in Jamaica">
+<meta property="og:description" content="Explore Wadada Run Club's runs, hikes and Jamaica race events, with schedules, details and calendar downloads. Updated monthly.">
 <meta property="og:url" content="https://updates.wadadarunclub.com/calendar/">
 <meta property="og:image" content="https://updates.wadadarunclub.com/assets/logos/WRC%20Logo%20Stack.png">
 <meta property="og:image:alt" content="Wadada Run Club logo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WRC Run Calendar | October 2026 Runs &amp; Races in Jamaica">
-<meta name="twitter:description" content="Find Wadada Run Club's October 2026 group runs, hikes and Jamaica race dates, with event details, registration links and calendar downloads.">
+<meta name="twitter:title" content="WRC Run Calendar | Runs &amp; Races in Jamaica">
+<meta name="twitter:description" content="Explore Wadada Run Club's runs, hikes and Jamaica race events, with schedules, details and calendar downloads. Updated monthly.">
 <meta name="twitter:image" content="https://updates.wadadarunclub.com/assets/logos/WRC%20Logo%20Stack.png">
 <link rel="stylesheet" href="/assets/wrc-shared.css">
 <link rel="stylesheet" href="/assets/wrc-sitewide.css"><link rel="stylesheet" href="/assets/wrc-responsive-layout.css"></head>
-<body data-wrc-layout="calendar"><a class="wrc-skip-link" href="#wrc-main">Skip to content</a><nav class="wrc-global-nav" aria-label="WRC primary navigation"><div class="wrc-nav-inner"><a class="wrc-nav-brand" href="/" aria-label="Wadada Run Club homepage"><img class="wrc-nav-wordmark" src="/assets/logos/WRC%20Logo%20Text%20Gradient%20-%20Copy.png" width="235" height="14" alt="Wadada Run Club" decoding="async"></a><div class="wrc-nav-links wrc-nav-links--desktop"><a href="/">Home</a><a href="/calendar/" aria-current="page">Calendar</a><a href="/race-day/">Race Day</a><a href="/gear/">Gear</a><a href="/runlab/">RUNLAB</a><a href="/policies/">Policies</a><a class="wrc-nav-whatsapp" href="https://chat.whatsapp.com/IOCLfYb569AF5w0qwFYjKA" target="_blank" rel="noopener noreferrer" aria-label="Join the WRC WhatsApp community (opens in a new tab)"><img src="/assets/icons/whatsapp.svg" width="17" height="17" alt="" aria-hidden="true">WhatsApp</a></div><details class="wrc-nav-menu"><summary>MENU</summary><div class="wrc-nav-links wrc-nav-links--mobile"><a href="/">Home</a><a href="/calendar/" aria-current="page">Calendar</a><a href="/race-day/">Race Day</a><a href="/gear/">Gear</a><a href="/runlab/">RUNLAB</a><a href="/policies/">Policies</a><a class="wrc-nav-whatsapp" href="https://chat.whatsapp.com/IOCLfYb569AF5w0qwFYjKA" target="_blank" rel="noopener noreferrer" aria-label="Join the WRC WhatsApp community (opens in a new tab)"><img src="/assets/icons/whatsapp.svg" width="17" height="17" alt="" aria-hidden="true">WhatsApp</a></div></details></div></nav>
+<body data-wrc-layout="calendar"><a class="wrc-skip-link" href="#wrc-main">Skip to content</a><!-- WRC_NAV_BEGIN --><nav class="wrc-global-nav" aria-label="WRC primary navigation"><div class="wrc-nav-inner"><a class="wrc-nav-brand" href="/" aria-label="Wadada Run Club homepage"><img class="wrc-nav-wordmark" src="/assets/logos/WRC%20Logo%20Text%20Gradient%20-%20Copy.png" width="235" height="14" alt="Wadada Run Club" decoding="async"></a><div class="wrc-nav-links wrc-nav-links--desktop"><a href="/">Home</a><a href="/calendar/" aria-current="page">Calendar</a><a href="/race-day/">Race Day</a><a href="/gear/">Gear</a><a href="/runlab/">RUNLAB</a><a href="/policies/">Policies</a><a class="wrc-nav-whatsapp" href="https://chat.whatsapp.com/IOCLfYb569AF5w0qwFYjKA" target="_blank" rel="noopener noreferrer" aria-label="Join the WRC WhatsApp community (opens in a new tab)"><img src="/assets/icons/whatsapp.svg" width="17" height="17" alt="" aria-hidden="true">WhatsApp</a></div><details class="wrc-nav-menu"><summary>MENU</summary><div class="wrc-nav-links wrc-nav-links--mobile"><a href="/">Home</a><a href="/calendar/" aria-current="page">Calendar</a><a href="/race-day/">Race Day</a><a href="/gear/">Gear</a><a href="/runlab/">RUNLAB</a><a href="/policies/">Policies</a><a class="wrc-nav-whatsapp" href="https://chat.whatsapp.com/IOCLfYb569AF5w0qwFYjKA" target="_blank" rel="noopener noreferrer" aria-label="Join the WRC WhatsApp community (opens in a new tab)"><img src="/assets/icons/whatsapp.svg" width="17" height="17" alt="" aria-hidden="true">WhatsApp</a></div></details></div></nav><!-- WRC_NAV_END -->
 <div class="wrap">
 <header class="hero">
 
 
-<h1>October<br><span>Run Calendar</span> ⚡</h1>
-<p class="sub">Club events, social miles, RunLab race day and October races — all in one place.</p>
+<h1><span>Run Calendar</span> ⚡</h1>
+<p class="calendar-update">Updated monthly.</p>
+<p class="sub">Club events, social miles and races, all in one place.</p>
 </header>
 
 <main id="wrc-main" class="content">
@@ -261,5 +170,5 @@ p,li{font-weight:400}
 
 <!-- Invisible LibreCounter page-view analytics -->
 <img src="https://librecounter.org/hidden.svg" referrerpolicy="strict-origin-when-cross-origin" alt="" aria-hidden="true" width="1" height="1" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;">
-<div class="wrc-site-legal" role="contentinfo" aria-label="WRC site policies"><p class="wrc-legal-copy">© 2026 Wadada Run Club · Run smart. Run together.</p><details class="wrc-legal-disclosure"><summary>Policies &amp; information</summary><nav class="wrc-legal-links" aria-label="Legal and policy links"><a href="/policies/">Policies</a><a href="/policies/privacy/">Privacy</a><a href="/policies/terms/">Terms</a><a href="/policies/events/">Events & Refunds</a><a href="/policies/health/">Health & RUNLAB</a><a href="/policies/media/">Media & Photos</a><a href="/policies/cookies/">Cookies & Tracking</a><a href="/policies/accessibility/">Accessibility</a><a href="/policies/contact/">Contact</a></nav><div class="wrc-legal-meta"><a href="mailto:wadadarunclub@gmail.com">wadadarunclub@gmail.com</a> · <a href="/policies/copyright/">Copyright & content use</a></div></details></div></body>
+<!-- WRC_LEGAL_BEGIN --><div class="wrc-site-legal" role="contentinfo" aria-label="WRC site policies"><p class="wrc-legal-copy">© 2026 Wadada Run Club · Run smart. Run together.</p><details class="wrc-legal-disclosure"><summary>Policies &amp; information</summary><nav class="wrc-legal-links" aria-label="Legal and policy links"><a href="/policies/">Policies</a><a href="/policies/privacy/">Privacy</a><a href="/policies/terms/">Terms</a><a href="/policies/events/">Events & Refunds</a><a href="/policies/health/">Health & RUNLAB</a><a href="/policies/media/">Media & Photos</a><a href="/policies/cookies/">Cookies & Tracking</a><a href="/policies/accessibility/">Accessibility</a><a href="/policies/contact/">Contact</a></nav><div class="wrc-legal-meta"><a href="mailto:wadadarunclub@gmail.com">wadadarunclub@gmail.com</a> · <a href="/policies/copyright/">Copyright & content use</a></div></details></div><!-- WRC_LEGAL_END --></body>
 </html>
