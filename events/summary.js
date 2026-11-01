@@ -10,17 +10,17 @@
  if(!registration||!logistics||!roster)return;
  const add=(anchor,markup)=>anchor.insertAdjacentHTML("afterend",markup);
  const experience='<section class="section"><h3>EXPERIENCE BREAKDOWN.</h3><div class="info" style="display:grid;gap:13px">'+
-   [['Occasional hikers',16],['Regular hikers',2],['First-time hikers',2]].map(([n,v])=>'<div><div style="display:flex;justify-content:space-between;gap:10px;font-size:12px;margin-bottom:5px"><span>'+n+'</span><b>'+v+' ('+Math.round(v/20*100)+'%)</b></div><div style="height:9px;border-radius:50px;background:#24494a;overflow:hidden"><div style="height:100%;width:'+(v/20*100)+'%;border-radius:50px;background:linear-gradient(90deg,#c9ff3d,#15e6c1)"></div></div></div>').join('')+'</div></section>';
+   [['Occasional hikers',16],['Regular hikers',2],['First-time hikers',3]].map(([n,v])=>'<div><div style="display:flex;justify-content:space-between;gap:10px;font-size:12px;margin-bottom:5px"><span>'+n+'</span><b>'+v+' ('+Math.round(v/21*100)+'%)</b></div><div style="height:9px;border-radius:50px;background:#24494a;overflow:hidden"><div style="height:100%;width:'+(v/21*100)+'%;border-radius:50px;background:linear-gradient(90deg,#c9ff3d,#15e6c1)"></div></div></div>').join('')+'</div></section>';
  add(registration,experience);
  const money='<section class="section"><h3>FINANCIAL OUTLOOK.</h3><div class="info-grid">'+
- '<div class="info"><div class="kicker">POTENTIAL FEE REVENUE</div><span class="value">J$70,000</span><p>14 non-core registrations × J$5,000. Six registered core members are exempt.</p></div>'+
- '<div class="info"><div class="kicker">PAID IN TRACKER</div><span class="value">J$70,000</span><p>14 non-core registrations confirmed Paid by the organiser; 13 currently recorded in Payments; no independent receipt verification.</p></div>'+ 
- '<div class="info"><div class="kicker">REFRESHMENTS · 23 KITS</div><span class="value">J$10,235–18,400</span><p>20 hikers plus 3 spares · J$445–800 per kit (banana, protein bar, electrolyte sachet, labelled ziplock bag)</p></div>'+
+ '<div class="info"><div class="kicker">POTENTIAL FEE REVENUE</div><span class="value">J$75,000</span><p>15 non-core registrations × J$5,000. Six registered core members are exempt.</p></div>'+
+ '<div class="info"><div class="kicker">ORGANISER-CONFIRMED PAID</div><span class="value">J$70,000</span><p>13 recorded Paid in Payments (J$65,000) plus Siobhan D. confirmed Paid by organiser (J$5,000); no independent receipt verification.</p></div>'+ 
+ '<div class="info"><div class="kicker">REFRESHMENTS · 24 KITS</div><span class="value">J$10,680–19,200</span><p>21 hikers plus 3 spares · J$445–800 per kit (banana, protein bar, electrolyte sachet, labelled ziplock bag)</p></div>'+
  '</div><p style="font-size:12px;color:var(--mute);line-height:1.6">Potential revenue is not confirmed collections. The form does not record payments. Thirteen hikers making their own way does not imply thirteen cars; confirm drivers and parking capacity.</p></section>';
  add(logistics,money);
  const reviews='<section class="section"><h3>ITEMS REQUIRING ATTENTION.</h3><div class="info-grid">'+
- [['Charlette R.','Verify emergency-contact number'],['Dushane C.','Post-closure submission; approval, emergency phone and typed name require review before inclusion']].map(([n,msg])=>'<div class="info" style="border-color:#695337"><b style="color:#ffdfa8">'+n+'</b><p>'+msg+'.</p></div>').join('')+
- '</div><p style="color:var(--mute);font-size:12px;line-height:1.6">All 20 confirmed active hikers submitted the required acknowledgements and confirmed comfort with the route. Charlette R. is the only active-roster follow-up. Dushane C. is not part of the active roster; review the late submission privately.</p><p style="color:var(--mute);font-size:12px"><b>Payments:</b> Friday, October 30 · <b>Hike:</b> Sunday, November 1</p></section>';
+ [['Charlette R.','Verify emergency-contact number'],['Dushane C.','Approved for hike; verify submitted contact details and typed name privately']].map(([n,msg])=>'<div class="info" style="border-color:#695337"><b style="color:#ffdfa8">'+n+'</b><p>'+msg+'.</p></div>').join('')+
+ '</div><p style="color:var(--mute);font-size:12px;line-height:1.6">All 21 confirmed active hikers submitted the required acknowledgements and confirmed comfort with the route. Charlette R. and Dushane C. still need private follow-up; organiser approval does not verify the submitted details.</p><p style="color:var(--mute);font-size:12px"><b>Payments:</b> Friday, October 30 · <b>Hike:</b> Sunday, November 1</p></section>';
  add(roster,reviews);
  const core=new Set(['Lyrae M.','Romario L.','Joel N.','Shane G.','Brittany B.','Randall R.']);
  active.querySelectorAll('.person').forEach(item=>{
