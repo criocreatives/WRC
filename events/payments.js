@@ -6,7 +6,7 @@
  if(!root)return;
  const registration=root.querySelector("#snapshot-title")?.closest(".section");
  if(!registration)return;
- const statuses=new Map([["Lisa-Gaye","Paid"],["Marsha-Gaye W.","Paid"],["Randall R.","Exempt"],["Roberto E.","Paid"],["Toni-Ann S.","Paid"],["Venessa C.","Paid"],["Andre F.","Paid"],["Anna-Marie O.","Paid"],["Charlette R.","Paid"],["Christina D.","Paid"],["Karen O.","Paid"],["Krisann T.","Paid"],["Shantae L.","Paid"],["Siobhan D.","Paid"],["Tenelle C.","Paid"],["Brittany B.","Exempt"],["Joel N.","Exempt"],["Lyrae M.","Exempt"],["Romario L.","Exempt"],["Shane G.","Exempt"]]);
+ const statuses=new Map([["Lisa-Gaye","Paid"],["Marsha-Gaye W.","Paid"],["Randall R.","Exempt"],["Roberto E.","Paid"],["Toni-Ann S.","Paid"],["Venessa C.","Paid"],["Andre F.","Paid"],["Anna-Marie O.","Paid"],["Charlette R.","Paid"],["Christina D.","Paid"],["Dushane C.","Pending"],["Karen O.","Paid"],["Krisann T.","Paid"],["Shantae L.","Paid"],["Siobhan D.","Paid"],["Tenelle C.","Paid"],["Brittany B.","Exempt"],["Joel N.","Exempt"],["Lyrae M.","Exempt"],["Romario L.","Exempt"],["Shane G.","Exempt"]]);
  const totals={Paid:0,Pending:0,Exempt:0,Unrecorded:0};
  root.querySelectorAll(".person").forEach(person=>{
    const name=person.querySelector(".person-top strong")?.textContent?.trim();
@@ -35,7 +35,7 @@
    tile.append(num,desc);metrics.appendChild(tile);
  }
  const note=document.createElement("p");note.className="muted";
- note.textContent="Payments tab rechecked November 1, 2026: 13 Paid, 6 Exempt, and 1 Pending (excluded from active attendance). Siobhan D. remains organiser-confirmed Paid but has no Payments-tab entry."+
+ note.textContent="Payments tab updated November 1, 2026: 13 Paid, 6 Exempt and 2 Pending (Dushane C. approved and active; Janielle S. excluded from the active roster). Siobhan D. remains organiser-confirmed Paid but has no Payments-tab entry."+
    (totals.Unrecorded?" "+totals.Unrecorded+" registration(s) have no payment record.":"");
  section.append(title,metrics,note);
  registration.insertAdjacentElement("afterend",section);
