@@ -41,25 +41,27 @@ body[data-wrc-layout="event-dashboard"] .heading{padding-top:clamp(24px,3vw,38px
   body[data-wrc-layout="event-dashboard"] .roster{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 
-/* Calendar: two-column event cards on desktop, no change to archive JavaScript.
-   Headings, archives and notes retain full row width. */
+/* Calendar: stack every event vertically at all screen widths.
+   Keep the upcoming/past archive behavior and existing action-button layout. */
+body[data-wrc-layout="calendar"] .content{
+  display:flex;flex-direction:column;align-items:stretch;gap:var(--wrc-layout-gap);
+}
+body[data-wrc-layout="calendar"] .content>*{min-width:0}
+body[data-wrc-layout="calendar"] .content>.card{width:100%;margin:0}
+body[data-wrc-layout="calendar"] .past-events-list{
+  display:flex;flex-direction:column;gap:12px;padding:0 12px 12px;
+}
+body[data-wrc-layout="calendar"] .past-events-list>.card{width:100%;margin:0}
 @media(min-width:821px){
-  body[data-wrc-layout="calendar"] .content{
-    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:var(--wrc-layout-gap);align-items:stretch;
+  body[data-wrc-layout="calendar"] .content>.card{
+    min-height:220px;padding:clamp(18px,2.3vw,25px);
+    display:flex;flex-direction:column;align-items:flex-start
   }
-  body[data-wrc-layout="calendar"] .content>:not(.card){grid-column:1/-1;min-width:0}
-  body[data-wrc-layout="calendar"] .content>.card{margin:0;min-height:220px;padding:clamp(18px,2.3vw,25px);display:flex;flex-direction:column;align-items:flex-start}
-  body[data-wrc-layout="calendar"] .content>.card.featured,
-  body[data-wrc-layout="calendar"] .content>.card.pink-run--rae{grid-column:1/-1}
   body[data-wrc-layout="calendar"] .content>.card .cal-actions{margin-top:auto;padding-top:15px}
   body[data-wrc-layout="calendar"] .content>.section-head{margin-top:18px;margin-bottom:0}
   body[data-wrc-layout="calendar"] .content>.section-head:first-child{margin-top:0}
   body[data-wrc-layout="calendar"] .card .place{font-size:13px;line-height:1.6}
   body[data-wrc-layout="calendar"] .card .title{font-size:clamp(18px,2vw,22px)}
-  body[data-wrc-layout="calendar"] .past-events-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0 12px 12px}
-  body[data-wrc-layout="calendar"] .past-events-list>.card{margin:0}
-  body[data-wrc-layout="calendar"] .past-events-list>.card.pink-run--rae{grid-column:1/-1}
   body[data-wrc-layout="calendar"] .past-events-list .cal-actions{margin-top:auto}
 }
 
@@ -81,8 +83,6 @@ body[data-wrc-layout="event-dashboard"] .heading{padding-top:clamp(24px,3vw,38px
   body[data-wrc-layout="gear-ranking"] .shoe{padding:clamp(24px,2.7vw,32px)}
 }
 @media(max-width:820px){
-  body[data-wrc-layout="calendar"] .content{display:block}
-  body[data-wrc-layout="calendar"] .content>.card{margin-bottom:12px}
   body[data-wrc-layout="race-index"] .wrc-race-grid>.race{margin-top:16px}
 }
 @media(max-width:600px){
@@ -114,9 +114,4 @@ body[data-wrc-layout="calendar"] footer.footer .footer-logo{
 }
 body[data-wrc-layout="calendar"] footer.footer p{
   margin:0;color:#789a93;font-size:9px;letter-spacing:.18em;line-height:1.6
-}
-/* Keep Calendar action pairs vertical, rather than side-by-side, when space is tight. */
-@media(max-width:600px){
-  body[data-wrc-layout="calendar"] .cal-actions{display:flex;flex-direction:column;align-items:stretch}
-  body[data-wrc-layout="calendar"] .cal-actions :is(a,button){max-width:100%;justify-content:center}
 }
