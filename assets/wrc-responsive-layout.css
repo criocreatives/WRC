@@ -92,3 +92,31 @@ body[data-wrc-layout="event-dashboard"] .heading{padding-top:clamp(24px,3vw,38px
   body[data-wrc-layout="calendar"] .content{padding:16px 16px 40px}
   body[data-wrc-layout="calendar"] .card .cal-actions{flex-wrap:wrap}
 }
+
+
+/* Non-RUNLAB pages follow the home page's exact gradient and contour texture. */
+html:has(>body[data-wrc-layout]){background:#021211}
+body[data-wrc-layout]{
+  background:radial-gradient(circle at 85% 0%,rgba(21,230,193,.15),transparent 30rem),
+    linear-gradient(180deg,#0d2229,#08171d)!important;
+  min-height:100vh;
+}
+body[data-wrc-layout]::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-color:#0b1c23;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='360' viewBox='0 0 520 360'%3E%3Cg fill='none' stroke='%236b7f86' stroke-width='1'%3E%3Cpath d='M-30 45 C55 4 118 83 205 39 S360 5 550 52'/%3E%3Cpath d='M-35 72 C55 30 126 111 214 67 S371 33 555 80'/%3E%3Cpath d='M-38 103 C49 62 130 142 220 98 S382 65 558 111'/%3E%3Cpath d='M-42 139 C45 96 133 177 228 133 S390 101 562 147'/%3E%3Cpath d='M-45 180 C41 137 138 216 238 173 S402 142 565 188'/%3E%3Cpath d='M-48 226 C38 183 145 260 250 218 S416 187 568 234'/%3E%3Cpath d='M-52 276 C35 233 151 307 263 266 S431 236 572 284'/%3E%3Cpath d='M-56 330 C32 286 160 359 278 319 S447 290 576 338'/%3E%3C/g%3E%3C/svg%3E");background-size:520px 360px}
+/* Keep the page-end logo above its supporting caption. */
+body[data-wrc-layout] footer.footer{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+body[data-wrc-layout] footer.footer img{display:block;height:auto;max-width:100%;margin-inline:auto}
+body[data-wrc-layout="calendar"] footer.footer{
+  margin-top:0;padding:52px 16px 0;background:transparent;border:0;
+  box-shadow:none;gap:12px;text-align:center
+}
+body[data-wrc-layout="calendar"] footer.footer .footer-logo{
+  width:min(330px,78%);height:auto;max-width:100%;margin:0;opacity:.95
+}
+body[data-wrc-layout="calendar"] footer.footer p{
+  margin:0;color:#789a93;font-size:9px;letter-spacing:.18em;line-height:1.6
+}
+/* Keep Calendar action pairs vertical, rather than side-by-side, when space is tight. */
+@media(max-width:600px){
+  body[data-wrc-layout="calendar"] .cal-actions{display:flex;flex-direction:column;align-items:stretch}
+  body[data-wrc-layout="calendar"] .cal-actions :is(a,button){max-width:100%;justify-content:center}
+}

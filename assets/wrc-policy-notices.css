@@ -37,3 +37,25 @@
 .wrc-bottom-notice__body a{color:#c9ff3d;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:600px){.wrc-bottom-notice{margin:22px auto 8px}.wrc-bottom-notice summary{padding:14px}}
 @media(prefers-reduced-motion:reduce){.wrc-bottom-notice summary::after{transition:none}}
+
+
+/* Collapsible legal navigation; copyright stays visible even when closed. */
+.wrc-site-legal{display:flex;flex-direction:column;align-items:center;gap:9px;padding:20px 15px 23px}
+.wrc-site-legal .wrc-legal-copy{order:0;max-width:900px;margin:0;font-size:11px;color:#b5c8c5}
+.wrc-site-legal .wrc-legal-disclosure{order:1;width:100%;max-width:1000px}
+.wrc-site-legal .wrc-legal-disclosure summary{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  list-style:none;cursor:pointer;padding:7px 12px;border-radius:8px;
+  font-size:11px;font-weight:700;color:#c5dad4;user-select:none
+}
+.wrc-site-legal .wrc-legal-disclosure summary::-webkit-details-marker{display:none}
+.wrc-site-legal .wrc-legal-disclosure summary::after{
+  content:"";width:7px;height:7px;border-right:1.5px solid #15e6c1;
+  border-bottom:1.5px solid #15e6c1;transform:rotate(45deg);margin-top:-4px
+}
+.wrc-site-legal .wrc-legal-disclosure[open] summary::after{transform:rotate(225deg);margin-top:3px}
+.wrc-site-legal .wrc-legal-disclosure summary:hover{color:#c9ff3d}
+.wrc-site-legal .wrc-legal-disclosure summary:focus-visible{outline:2px solid #c9ff3d;outline-offset:3px}
+.wrc-site-legal .wrc-legal-disclosure .wrc-legal-links{margin:10px auto 7px;padding-top:13px;border-top:1px solid #285158}
+.wrc-site-legal .wrc-legal-meta{font-size:11px;color:#b5c8c5;line-height:1.8}
+@media(max-width:600px){.wrc-site-legal{padding:20px 12px 23px}}
