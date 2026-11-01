@@ -1,0 +1,42 @@
+name: One-time WRC Pages deployment diagnostic
+on:
+  push:
+    branches:
+      - wrc-pages-recovery-20261101
+permissions:
+  contents: read
+  pages: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inspect stale GitHub Pages deployment
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          sha="d38e4c41af7ebcde7cc29e1b72c0e05b25cd111b"
+          url="https://api.github.com/repos/${GH_REPO}/pages/deployments/${sha}"
+          code=$(curl -sS -o /tmp/pages-status.json -w '%{http_code}' -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${GH_TOKEN}" "$url")
+          echo "Pages status endpoint: HTTP ${code}"
+          cat /tmp/pages-status.json
+          echo
+          if [ "$code" != "200" ]; then
+            echo "Pages deployment inspection unsuccessful; no cancellation attempted."
+            exit 0
+          fi
+          status=$(python3 -c "import json;print(json.load(open('/tmp/pages-status.json')).get('status','unknown'))")
+          echo "Deployment status: ${status}"
+          case "$status" in
+            pending|in_progress|queued|building|deploying)
+              echo "Cancelling only the blocked deployment ${sha}."
+              cancel_code=$(curl -sS -X POST -o /tmp/cancel-status.json -w '%{http_code}' -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${GH_TOKEN}" "${url}/cancel")
+              echo "Cancel response HTTP ${cancel_code}"
+              cat /tmp/cancel-status.json || true
+              if [ "${cancel_code}" != "204" ]; then exit 1; fi
+              ;;
+            *)
+              echo "No cancellation attempted; reported state is not actively deploying."
+              ;;
+          esac
