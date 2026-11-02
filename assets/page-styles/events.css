@@ -1,0 +1,32 @@
+/* WRC events: clean, reusable holding page. No participant data or scripts. */
+body[data-wrc-layout="event-dashboard"]{display:flex;flex-direction:column;min-height:100vh;min-height:100svh;color:#f5fbf8}
+body[data-wrc-layout="event-dashboard"] .wrc-global-nav{flex:none}
+body[data-wrc-layout="event-dashboard"] #wrc-main.events-reset{
+  flex:1;width:min(100%,var(--wrc-content-max));max-width:var(--wrc-content-max);
+  margin-inline:auto;padding:clamp(64px,11vh,144px) var(--wrc-page-gutter);
+  display:flex;align-items:center;min-height:0
+}
+.events-reset-content{max-width:950px;width:100%;position:relative}
+.events-reset-content::before{content:"";display:block;width:82px;height:3px;margin-bottom:clamp(24px,4vw,45px);
+  background:linear-gradient(90deg,#c9ff3d,#15e6c1)}
+.events-reset h1{margin:0;font-weight:850;font-size:clamp(48px,9.1vw,118px);
+  line-height:.92;letter-spacing:-.075em;text-wrap:balance}
+.events-reset h1 span{display:block;color:#c9ff3d}
+.events-reset p{margin:clamp(23px,3vw,34px) 0 0;color:#a8c3bd;font-size:clamp(14px,1.45vw,17px);line-height:1.6}
+.events-reset-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.events-reset-actions a{display:inline-flex;align-items:center;justify-content:center;gap:20px;
+  min-height:47px;padding:12px 18px;border-radius:9px;font-weight:750;font-size:12px;
+  text-decoration:none;transition:background-color .18s,border-color .18s,color .18s,transform .18s}
+.events-reset-primary{color:#071b19;background:#c9ff3d;border:1px solid #c9ff3d}
+.events-reset-primary:hover{background:#e0ff94;border-color:#e0ff94;transform:translateY(-1px)}
+.events-reset-secondary{color:#e6f7ef;background:rgba(5,23,25,.3);border:1px solid #3a5857}
+.events-reset-secondary:hover{border-color:#15e6c1;color:#c9ff3d;transform:translateY(-1px)}
+.events-reset-actions a:focus-visible{outline:2px solid #c9ff3d;outline-offset:4px}
+body[data-wrc-layout="event-dashboard"] .wrc-site-legal{flex:none;margin-top:0}
+@media(max-width:600px){
+  body[data-wrc-layout="event-dashboard"] #wrc-main.events-reset{padding-top:72px;padding-bottom:72px}
+  .events-reset h1{font-size:clamp(44px,12vw,70px)}
+  .events-reset-actions{flex-direction:column;align-items:stretch}
+  .events-reset-actions a{justify-content:space-between}
+}
+@media(prefers-reduced-motion:reduce){.events-reset-actions a{transition:none}.events-reset-actions a:hover{transform:none}}

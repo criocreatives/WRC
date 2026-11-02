@@ -5,7 +5,7 @@ WRC uses regular GitHub Pages HTML. This build step checks shared partials into
 each page so navigation and policy links remain visible without JavaScript.
 Run: python3 scripts/build_site.py
 Validate: python3 scripts/build_site.py --check
-RUNLAB and the temporary /events/ dashboard are intentionally excluded.
+RUNLAB and legacy /shoes/ redirect pages are excluded.
 """
 from pathlib import Path
 import argparse
@@ -20,7 +20,7 @@ LEGAL_START, LEGAL_END = "<!-- WRC_LEGAL_BEGIN -->", "<!-- WRC_LEGAL_END -->"
 def content_pages():
     for path in sorted(ROOT.rglob("index.html")):
         rel = path.relative_to(ROOT).as_posix()
-        if rel.startswith(("runlab/", "shoes/", "events/")):
+        if rel.startswith(("runlab/", "shoes/")):
             continue
         if any(part.startswith(".") for part in path.relative_to(ROOT).parts):
             continue

@@ -24,3 +24,9 @@ Current canonical host: https://updates.wadadarunclub.com
 - Submit `/sitemap.xml` using Search Console after verifying site ownership.
 - Legacy paths under `/shoes/` are client-side redirects and intentionally excluded from the sitemap.
 - The Open Graph image currently uses the WRC logo; replacing it with a 1200x630 share card is a future enhancement.
+
+## Events holding page
+- `/events/` displays a static "Stay tuned" message between events; it does not embed participant or payment data.
+- Update the shared page navigation/footer through `site/partials/` and run `python3 scripts/build_site.py` when changing them.
+- Event registrant and payment data belong in a private system; never publish them as JavaScript/HTML in the public GitHub Pages repository.
+- Old event snapshots may remain accessible in Git commit history; deleting current files is not a history purge.
