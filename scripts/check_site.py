@@ -66,7 +66,7 @@ def main():
             if missing:
                 errors.append(rel + ": missing " + missing)
     events_html = (ROOT / "events/index.html").read_text(encoding="utf-8")
-    if "STAY TUNED." not in events_html or "WHAT'S NEXT." not in events_html:
+    if "STAY TUNED FOR " not in events_html or "WHAT'S NEXT." not in events_html:
         errors.append("events: missing default holding message")
     if re.search(r"<script\b|data-expires-at|roster-table|payments\.js|current-events", events_html, re.I):
         errors.append("events: legacy roster, payments or scripts must not be public")
