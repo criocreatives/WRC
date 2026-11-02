@@ -47,7 +47,7 @@ def main():
     checked = 0
     for page in sorted(ROOT.rglob("index.html")):
         rel = page.relative_to(ROOT).as_posix()
-        if rel.startswith(("runlab/", "events/", "shoes/")):
+        if rel.startswith(("runlab/", "shoes/")):
             continue
         checked += 1
         source = page.read_text(encoding="utf-8")
@@ -65,6 +65,11 @@ def main():
             missing = check_reference(page, ref)
             if missing:
                 errors.append(rel + ": missing " + missing)
+    events_html = (ROOT / "events/index.html").read_text(encoding="utf-8")
+    if "STAY TUNED." not in events_html or "WHAT'S NEXT." not in events_html:
+        errors.append("events: missing default holding message")
+    if re.search(r"<script\b|data-expires-at|roster-table|payments\.js|current-events", events_html, re.I):
+        errors.append("events: legacy roster, payments or scripts must not be public")
     calendar = (ROOT / "calendar/index.html").read_text(encoding="utf-8")
     if "<span>Run Calendar</span> ⚡" not in calendar or "Updated monthly." not in calendar:
         errors.append("calendar: expected month-neutral header and update note")
