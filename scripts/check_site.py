@@ -73,6 +73,21 @@ def main():
     calendar = (ROOT / "calendar/index.html").read_text(encoding="utf-8")
     if "<span>Run Calendar</span> ⚡" not in calendar or "Updated monthly." not in calendar:
         errors.append("calendar: expected month-neutral header and update note")
+    # Verify downloadable Apple/iPhone calendar assets, including older archives.
+    for ics in sorted((ROOT / "calendar/events").glob("*.ics")):
+        calendar_text = ics.read_text(encoding="utf-8")
+        unfolded = re.sub(r"\r?\n[ \t]", "", calendar_text)
+        rel = ics.relative_to(ROOT).as_posix()
+        for required in ("BEGIN:VCALENDAR", "BEGIN:VEVENT", "END:VEVENT",
+                         "END:VCALENDAR", "SUMMARY:", "UID:"):
+            if required not in unfolded:
+                errors.append(rel + ": missing " + required)
+        for field in ("DTSTART", "DTEND"):
+            if not re.search(r"(?m)^" + field + r"(?:;[^:\r\n]+)?:", unfolded):
+                errors.append(rel + ": missing " + field)
+    if not list((ROOT / "calendar/events").glob("*.ics")):
+        errors.append("calendar: no iPhone calendar downloads found")
+
     if errors:
         print("\n".join(errors))
         return 1

@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//2026 November Schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jf-run-for-rights-5k-nov-29@updates.wadadarunclub.com
+DTSTAMP:20261103T162500Z
+SUMMARY:Jamaicans For Justice Run for Rights 5K
+DESCRIPTION:Community event listed in the Wadada Run Club calendar.\nJamaic
+ ans For Justice Run for Rights 5K\nLocation: Hope Gardens\, Kingston\nEven
+ t time not supplied. Calendar entry is all-day until the organiser confirm
+ s the time.\nDetails: https://my.raceresult.com/409859/registration\nConfi
+ rm final logistics and any changes with the event organiser.
+LOCATION:Hope Gardens\, Kingston
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+URL:https://my.raceresult.com/409859/registration
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

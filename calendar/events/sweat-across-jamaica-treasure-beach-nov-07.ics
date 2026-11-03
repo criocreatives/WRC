@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//2026 November Schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sweat-across-jamaica-treasure-beach-nov-07@updates.wadadarunclub.com
+DTSTAMP:20261103T162500Z
+SUMMARY:Sweat Across Jamaica x SSRC — Treasure Beach\, St. Elizabeth
+DESCRIPTION:Community event listed in the Wadada Run Club calendar.\nSweat 
+ Across Jamaica x SSRC\nLocation: Treasure Beach\, St. Elizabeth\nEvent tim
+ e not supplied. Calendar entry is all-day until the organiser confirms the
+  time.\nDistances / format: Community 5K\nFREE community run.\nConfirm fin
+ al logistics and any changes with the event organiser.
+LOCATION:Treasure Beach\, St. Elizabeth
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

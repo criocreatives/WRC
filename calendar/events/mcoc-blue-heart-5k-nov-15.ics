@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//2026 November Schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:mcoc-blue-heart-5k-nov-15@updates.wadadarunclub.com
+DTSTAMP:20261103T162500Z
+SUMMARY:MCOC Blue Heart 5K
+DESCRIPTION:Community event listed in the Wadada Run Club calendar.\nMCOC B
+ lue Heart 5K\nLocation: Manchester Shopping Centre\, Mandeville\nAnnounced
+  time: 6:30 AM\nCalendar end time is a 60-minute placeholder\; the organis
+ er did not provide a finish time.\nDetails: https://mcocjamaica.com/5k-reg
+ istration/\nConfirm final logistics and any changes with the event organis
+ er.
+LOCATION:Manchester Shopping Centre\, Mandeville
+DTSTART:20261115T113000Z
+DTEND:20261115T123000Z
+URL:https://mcocjamaica.com/5k-registration/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

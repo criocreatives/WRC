@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//2026 November Schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pacers-annual-charity-run-nov-21@updates.wadadarunclub.com
+DTSTAMP:20261103T162500Z
+SUMMARY:Pacers Annual Charity Run
+DESCRIPTION:Community event listed in the Wadada Run Club calendar.\nPacers
+  Annual Charity Run\nLocation: Hope Gardens\, Kingston\nAnnounced time: 5:
+ 00 AM\nCalendar end time is a 60-minute placeholder\; the organiser did no
+ t provide a finish time.\nDistances / format: Half Marathon / 10K Run / 3K
+  Walk\nReported medals: all finishers.\nDetails: https://goodfinish.com/di
+ scover/pacers-annual-charity-run-2026\nConfirm final logistics and any cha
+ nges with the event organiser.
+LOCATION:Hope Gardens\, Kingston
+DTSTART:20261121T100000Z
+DTEND:20261121T110000Z
+URL:https://goodfinish.com/discover/pacers-annual-charity-run-2026
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

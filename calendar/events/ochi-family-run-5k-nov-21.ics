@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//2026 November Schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ochi-family-run-5k-nov-21@updates.wadadarunclub.com
+DTSTAMP:20261103T162500Z
+SUMMARY:Ochi Family Run 5K
+DESCRIPTION:Community event listed in the Wadada Run Club calendar.\nOchi F
+ amily Run 5K\nLocation: Ocean Village Shopping Centre\, Ocho Rios\nAnnounc
+ ed time: 6:30 AM\nCalendar end time is a 60-minute placeholder\; the organ
+ iser did not provide a finish time.\nReported medals: top finishers only (
+ not all participants).\nDetails: https://ochorios5k.com/\nConfirm final lo
+ gistics and any changes with the event organiser.
+LOCATION:Ocean Village Shopping Centre\, Ocho Rios
+DTSTART:20261121T113000Z
+DTEND:20261121T123000Z
+URL:https://ochorios5k.com/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//2026 November Schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sweat-across-jamaica-montego-bay-nov-22@updates.wadadarunclub.com
+DTSTAMP:20261103T162500Z
+SUMMARY:Sweat Across Jamaica x SSRC — Montego Bay
+DESCRIPTION:Community event listed in the Wadada Run Club calendar.\nSweat 
+ Across Jamaica x SSRC\nLocation: Montego Bay\nEvent time not supplied. Cal
+ endar entry is all-day until the organiser confirms the time.\nDistances /
+  format: Community Run\nFREE community run.\nDetails: https://sweatpals.co
+ m/event/sweat-across-jamaica-montego-bay/2026-11-22\nConfirm final logisti
+ cs and any changes with the event organiser.
+LOCATION:Montego Bay
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+URL:https://sweatpals.com/event/sweat-across-jamaica-montego-bay/2026-11-22
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

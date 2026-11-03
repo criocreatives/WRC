@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//2026 November Schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:rockfort-moving-forward-5k-nov-15@updates.wadadarunclub.com
+DTSTAMP:20261103T162500Z
+SUMMARY:Rockfort Moving Forward 5K
+DESCRIPTION:Community event listed in the Wadada Run Club calendar.\nRockfo
+ rt Moving Forward 5K\nLocation: Windward Road Primary School\, Kingston\nA
+ nnounced time: 6:30 AM\nCalendar end time is a 60-minute placeholder\; the
+  organiser did not provide a finish time.\nReported medals: top finishers 
+ only (not all participants).\nDetails: https://www.jamaicaobserver.com/202
+ 6/10/02/rockfort-moving-forward-5k-set-november-15/\nConfirm final logisti
+ cs and any changes with the event organiser.
+LOCATION:Windward Road Primary School\, Kingston
+DTSTART:20261115T113000Z
+DTEND:20261115T123000Z
+URL:https://www.jamaicaobserver.com/2026/10/02/rockfort-moving-forward-5k-s
+ et-november-15/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
