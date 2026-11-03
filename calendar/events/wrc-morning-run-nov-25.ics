@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//2026 November Schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:wrc-morning-run-nov-25@updates.wadadarunclub.com
+DTSTAMP:20261103T162500Z
+SUMMARY:WRC — Morning Run
+DESCRIPTION:Wadada Run Club calendar event.\nMorning Run\nLocation: Norbroo
+ k Loop\nMeeting point: Express Fitness\, Constant Spring Golf Club\nMeet u
+ p: 5:00 AM\nCalendar end time is a 60-minute placeholder\; the organiser d
+ id not provide a finish time.\nBeginner-friendly\; run at your own pace.\n
+ Confirm final logistics and any changes with the event organiser.
+LOCATION:Express Fitness\, Constant Spring Golf Club\, Norbrook Loop
+DTSTART:20261125T100000Z
+DTEND:20261125T110000Z
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

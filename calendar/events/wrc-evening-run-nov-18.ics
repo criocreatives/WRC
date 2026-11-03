@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//2026 November Schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:wrc-evening-run-nov-18@updates.wadadarunclub.com
+DTSTAMP:20261103T162500Z
+SUMMARY:WRC — Evening Run
+DESCRIPTION:Wadada Run Club calendar event.\nEvening Run\nLocation: Emancip
+ ation Park\nMeet up: 5:45 PM\nCalendar end time is a 60-minute placeholder
+ \; the organiser did not provide a finish time.\nBeginner-friendly\; run a
+ t your own pace.\nConfirm final logistics and any changes with the event o
+ rganiser.
+LOCATION:Emancipation Park
+DTSTART:20261118T224500Z
+DTEND:20261118T234500Z
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

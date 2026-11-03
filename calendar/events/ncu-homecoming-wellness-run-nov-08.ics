@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//2026 November Schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ncu-homecoming-wellness-run-nov-08@updates.wadadarunclub.com
+DTSTAMP:20261103T162500Z
+SUMMARY:NCU Homecoming Cross-Country Wellness Run/Walk
+DESCRIPTION:Community event listed in the Wadada Run Club calendar.\nNCU Ho
+ mecoming Cross-Country Wellness Run/Walk\nLocation: Mandeville\, Mancheste
+ r\nEvent time not supplied. Calendar entry is all-day until the organiser 
+ confirms the time.\nDetails: https://graduation.ncu.edu.jm/aftergraduation
+ \nConfirm final logistics and any changes with the event organiser.
+LOCATION:Mandeville\, Manchester
+DTSTART;VALUE=DATE:20261108
+DTEND;VALUE=DATE:20261109
+URL:https://graduation.ncu.edu.jm/aftergraduation
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

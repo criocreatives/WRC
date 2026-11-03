@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//2026 November Schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ncu-fm-wellness-5k-nov-22@updates.wadadarunclub.com
+DTSTAMP:20261103T162500Z
+SUMMARY:NCU FM Wellness 5K
+DESCRIPTION:Community event listed in the Wadada Run Club calendar.\nNCU FM
+  Wellness 5K\nLocation: Mandeville\, Manchester\nEvent time not supplied. 
+ Calendar entry is all-day until the organiser confirms the time.\nDetails:
+  https://my.raceresult.com/424034/registration\nConfirm final logistics an
+ d any changes with the event organiser.
+LOCATION:Mandeville\, Manchester
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+URL:https://my.raceresult.com/424034/registration
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

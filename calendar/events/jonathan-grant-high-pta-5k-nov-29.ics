@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//2026 November Schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:jonathan-grant-high-pta-5k-nov-29@updates.wadadarunclub.com
+DTSTAMP:20261103T162500Z
+SUMMARY:Jonathan Grant High School PTA 5K
+DESCRIPTION:Community event listed in the Wadada Run Club calendar.\nJonath
+ an Grant High School PTA 5K\nLocation: Spanish Town\, St. Catherine\nAnnou
+ nced time: 6:00 AM\nCalendar end time is a 60-minute placeholder\; the org
+ aniser did not provide a finish time.\nDetails: https://spurropen.com/prm.
+ php?eid=19511&vu=event\nConfirm final logistics and any changes with the e
+ vent organiser.
+LOCATION:Spanish Town\, St. Catherine
+DTSTART:20261129T110000Z
+DTEND:20261129T120000Z
+URL:https://spurropen.com/prm.php?eid=19511&vu=event
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

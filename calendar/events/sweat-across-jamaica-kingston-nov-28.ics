@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//2026 November Schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sweat-across-jamaica-kingston-nov-28@updates.wadadarunclub.com
+DTSTAMP:20261103T162500Z
+SUMMARY:WRC — Sweat Across Jamaica x SSRC
+DESCRIPTION:Wadada Run Club calendar event.\nSweat Across Jamaica x SSRC\nL
+ ocation: Digicel HQ\, Downtown Kingston\nMeet up: 6:00 AM\nCalendar end ti
+ me is a 60-minute placeholder\; the organiser did not provide a finish tim
+ e.\nFREE community run.\nBeginner-friendly\; run at your own pace.\nDetail
+ s: https://sweatpals.com/event/sweat-across-jamaica-kingston-finale/2026-1
+ 1-28\nConfirm final logistics and any changes with the event organiser.
+LOCATION:Digicel HQ\, Downtown Kingston
+DTSTART:20261128T110000Z
+DTEND:20261128T120000Z
+URL:https://sweatpals.com/event/sweat-across-jamaica-kingston-finale/2026-1
+ 1-28
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

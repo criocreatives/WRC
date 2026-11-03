@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wadada Run Club//2026 November Schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cb-group-uwi-5k-kids-k-nov-22@updates.wadadarunclub.com
+DTSTAMP:20261103T162500Z
+SUMMARY:CB Group UWI 5K & Kids K
+DESCRIPTION:Community event listed in the Wadada Run Club calendar.\nCB Gro
+ up UWI 5K & Kids K\nLocation: UWI Mona Campus\, Kingston\nAnnounced time: 
+ 6:30 AM\nCalendar end time is a 60-minute placeholder\; the organiser did 
+ not provide a finish time.\nDetails: https://www.runningeventsja.com/\nCon
+ firm final logistics and any changes with the event organiser.
+LOCATION:UWI Mona Campus\, Kingston
+DTSTART:20261122T113000Z
+DTEND:20261122T123000Z
+URL:https://www.runningeventsja.com/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
