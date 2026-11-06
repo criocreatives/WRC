@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#090b0d">
+<meta name="description" content="Interactive analysis of a 9 x 400 m interval running session in Kingston, Jamaica on November 5, 2026.">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>400 METRES — November 05 Run Analysis</title>
+<style>
+:root{--bg:#090b0d;--panel:#14181c;--panel2:#1a2024;--border:#2a3034;--text:#f4f4f1;--mute:#9ba6a8;--acid:#c4ff62;--blue:#6cdafa;--red:#ff705d;--orange:#ffab5e;--violet:#ad81ff;--safe:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.45;-webkit-font-smoothing:antialiased}
+button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+::selection{background:var(--acid);color:#10120d}.wrap{max-width:1240px;margin:auto;padding:0 clamp(18px,4vw,54px)}
+.top{position:sticky;top:0;z-index:12;background:#090b0de9;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff18}
+.top-inner{height:60px;display:flex;align-items:center;justify-content:space-between;gap:15px}.wordmark{font-size:13px;letter-spacing:.13em;font-weight:900}.wordmark b{color:var(--acid)}
+.nav{display:flex;gap:22px;align-items:center;overflow:auto;white-space:nowrap;scrollbar-width:none;font-size:12px;color:#bec5c6}.nav a:hover{color:var(--acid)}
+.btn{border:1px solid #555d60;border-radius:999px;background:transparent;color:var(--text);padding:9px 16px;font-size:12px;font-weight:700;transition:.15s}.btn:hover,.btn.active{color:#0b100b;background:var(--acid);border-color:var(--acid)}.btn.soft{background:#20262a;border-color:#333b40}.btn.soft:hover{background:var(--acid)}
+.hero{position:relative;isolation:isolate;border-bottom:1px solid var(--border);overflow:hidden}.hero:before{content:"";position:absolute;inset:-15% -20% auto 20%;height:720px;z-index:-1;background:radial-gradient(ellipse at 68% 40%,#34492970,transparent 45%),radial-gradient(ellipse at 28% 45%,#153c4770,transparent 48%);filter:blur(30px)}.hero .wrap{padding-top:clamp(38px,7vw,96px);padding-bottom:60px}
+.eyebrow{font-size:11px;letter-spacing:.18em;color:var(--acid);font-weight:800;text-transform:uppercase}.display{font-size:clamp(77px,16vw,210px);line-height:.75;letter-spacing:-.102em;font-weight:850;margin:32px 0 32px;font-variant-numeric:tabular-nums}.display span{font-size:.22em;letter-spacing:-.04em;color:var(--acid);vertical-align:top;padding-left:.12em}
+.hero-bottom{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:end}.hero h1{font-size:clamp(26px,4vw,52px);font-weight:650;letter-spacing:-.05em;line-height:1.1;margin:0 0 12px}.hero p{color:var(--mute);margin:0;font-size:14px}.hero-line{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.pill{border:1px solid #ffffff34;border-radius:100px;padding:8px 13px;font-size:12px;color:#d3d8d7}
+.stats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1px;background:var(--border);border-bottom:1px solid var(--border)}
+.stat{min-width:0;padding:23px 14px;background:#111517}.stat small{color:var(--mute);display:block;font-size:10px;letter-spacing:.09em;text-transform:uppercase;font-weight:700}.stat strong{font-size:clamp(21px,2.6vw,34px);font-weight:750;letter-spacing:-.06em;display:block;margin-top:6px;font-variant-numeric:tabular-nums}.stat em{font-style:normal;font-size:11px;color:var(--mute)}
+section.block{padding-top:clamp(65px,8vw,110px);scroll-margin-top:76px}.head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:28px}.head h2{font-size:clamp(36px,6vw,72px);line-height:.95;letter-spacing:-.075em;font-weight:750;margin:9px 0 0}.head p{font-size:13px;color:var(--mute);max-width:380px;margin:0}.n{font-size:11px;color:var(--acid);letter-spacing:.14em}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:clamp(16px,2.5vw,27px);min-width:0}.panel.inset{background:#111517}.label{font-size:11px;letter-spacing:.1em;color:#9eabad;text-transform:uppercase;font-weight:750}.panel h3{margin:0;font-size:19px;letter-spacing:-.03em}.two{display:grid;grid-template-columns:1.5fr 1fr;gap:16px}.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.controls{display:flex;align-items:center;flex-wrap:wrap;gap:8px}.segment{display:inline-flex;border:1px solid var(--border);border-radius:100px;padding:3px;gap:3px}.segment button{background:transparent;color:var(--mute);padding:8px 12px;border:0;border-radius:100px;font-size:12px}.segment button.active{color:#101510;background:var(--acid);font-weight:800}.chart-wrap{width:100%;overflow:hidden}.chart-wrap svg{display:block;width:100%;height:auto}.chart-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:11px;color:var(--mute)}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}.dot.work{background:var(--acid)}.dot.hr{background:var(--red)}.dot.rec{background:var(--blue)}
+.focus{display:flex;flex-direction:column;justify-content:space-between;min-height:100%}.focus .big{font-size:clamp(68px,9vw,122px);font-weight:800;letter-spacing:-.1em;line-height:1;color:var(--acid);margin:20px 0}.focus .big small{font-size:16px;letter-spacing:0;color:var(--mute)}.focus-meta{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}.focus-meta strong{display:block;font-size:23px;letter-spacing:-.04em}.focus p{font-size:13px;color:#b1bbba;margin:10px 0 0}
+.timeline{display:flex;overflow:hidden;border-radius:7px;height:52px;background:#263038;gap:2px}.timeline button{border:0;min-width:3px;height:100%;padding:0;background:var(--acid);position:relative}.timeline button.rest{background:#367f96}.timeline button.on{box-shadow:inset 0 0 0 3px #fff}.timeline button:focus-visible{z-index:4}.timeline button:hover{filter:brightness(1.35)}.ruler{display:flex;justify-content:space-between;color:var(--mute);font-size:10px;margin-top:10px}
+.gridline{stroke:#ffffff23;stroke-width:1}.axtext{fill:#90a0a3;font:13px Arial,sans-serif}.bar{transition:opacity .15s}.bar:focus{outline:0}.bar:hover{filter:brightness(1.27);cursor:pointer}.chart-svg{overflow:visible}
+.table-scroll{overflow-x:auto}.t{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:12px}.t thead th{font-size:10px;color:var(--mute);letter-spacing:.08em;text-align:right;text-transform:uppercase;padding:12px 11px;border-bottom:1px solid var(--border)}.t thead th:first-child,.t tbody td:first-child{text-align:left}.t tbody td{text-align:right;padding:13px 11px;border-bottom:1px solid #ffffff10}.t tbody tr{cursor:pointer}.t tbody tr:hover,.t tbody tr.chosen{background:#c4ff6210}.t tbody tr.chosen td:first-child{box-shadow:inset 3px 0 var(--acid)}.t .pace{color:var(--blue);font-weight:700}.t .danger{color:var(--red)}
+.info-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:15px;overflow:hidden}.info-grid>div{padding:21px;background:#151a1e}.info-grid strong{font-size:clamp(25px,3.8vw,48px);line-height:1.2;letter-spacing:-.05em;display:block;margin:8px 0}.info-grid small{font-size:12px;color:var(--mute)}
+.zone{margin:19px 0}.zone-top{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:12px;margin-bottom:8px}.zone-top span:last-child{color:var(--mute)}.zone-track{height:12px;background:#2b3235;border-radius:100px;overflow:hidden}.zone-track div{height:100%;border-radius:100px}.metric-pair{display:flex;gap:24px;margin-bottom:20px}.metric-pair strong{font-size:clamp(32px,5vw,65px);line-height:1;letter-spacing:-.07em}.metric-pair small{font-size:12px;color:var(--mute);display:block;margin-top:9px}
+.note{background:#1c2224;border-left:2px solid var(--blue);padding:14px 16px;font-size:12px;color:#bdc7c7;margin-top:20px;line-height:1.6}.note strong{color:var(--text)}
+.stack{display:grid;gap:16px}.insight{display:grid;grid-template-columns:50px 1fr;gap:10px;border-top:1px solid var(--border);padding:21px 0}.insight b{font-size:22px;color:var(--acid)}.insight h3{font-size:20px;margin:0 0 6px}.insight p{font-size:13px;color:var(--mute);margin:0;max-width:760px}
+input[type=range]{width:100%;accent-color:var(--acid);margin:16px 0}.calculator{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.calc-head{display:flex;align-items:center;justify-content:space-between;gap:15px}.calc-head output{color:var(--acid);font-weight:800;font-size:23px;font-variant-numeric:tabular-nums}.calc-result{background:#20292a;border-radius:12px;padding:22px;text-align:center}.calc-result strong{display:block;font-size:clamp(45px,7vw,84px);line-height:1.1;letter-spacing:-.08em}.calc-result span{font-size:12px;color:var(--mute)}.checks{display:flex;align-items:center;gap:8px;font-size:12px;color:#b9c2c2}.checks input{accent-color:var(--acid)}
+.footer{border-top:1px solid var(--border);margin-top:100px;padding:32px 0 calc(40px + var(--safe));color:var(--mute);font-size:11px}.footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer p{max-width:830px;line-height:1.65;margin:0}.route-art{width:100%;height:245px;display:block;border-radius:12px;background:#111c23;overflow:hidden}.export{margin-top:25px;display:flex;gap:8px;flex-wrap:wrap}
+@media(max-width:940px){.stats{grid-template-columns:repeat(3,1fr)}.two,.calculator{grid-template-columns:1fr}.three{grid-template-columns:1fr 1fr}.info-grid{grid-template-columns:repeat(2,1fr)}.nav{gap:13px}}
+@media(max-width:600px){.top-inner{height:54px}.nav{display:none}.hero .wrap{padding-top:54px;padding-bottom:40px}.display{font-size:clamp(70px,23vw,118px);margin:30px 0}.hero-bottom{grid-template-columns:1fr}.hero-line{justify-content:flex-start}.stats{grid-template-columns:repeat(2,1fr)}.stat{padding:16px}.stat strong{font-size:27px}.head{display:block}.head p{margin:18px 0 0}.three{grid-template-columns:1fr}.panel{border-radius:12px}.focus .big{font-size:85px}.info-grid strong{font-size:32px}.table-scroll{margin:0 -15px}.route-art{height:190px}.section.block{padding-top:64px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+@media print{.top,.controls,.export,.calculator input,.btn{display:none!important}body{background:white;color:#151515}.panel,.stat{break-inside:avoid;background:#f6f7f6;color:#151515}.wrap{max-width:100%}.head p,.panel p,.label,.stat small{color:#515151}section.block{padding-top:28px}.footer{margin-top:30px}.display{font-size:100px;color:#151515}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap top-inner"><a class="wordmark" href="#top" aria-label="Return to top">400 <b>METRES.</b></a><nav class="nav" aria-label="Report sections"><a href="#breakdown">Intervals</a><a href="#heart">Heart rate</a><a href="#dynamics">Dynamics</a><a href="#findings">Findings</a><a href="#lab">Pace lab</a></nav><button class="btn soft" id="shareBtn" type="button">Share</button></div></header>
+<main id="top">
+<div class="hero"><div class="wrap">
+<div class="eyebrow">Training session / Kingston, Jamaica / 05.11.2026</div>
+<div class="display">400<span>M</span></div>
+<div class="hero-bottom"><div><h1>SPEED<br>WORK.</h1><p>Thursday, November 5, 2026 · 8:46–9:10 PM · Apple Watch</p></div><div class="hero-line"><span class="pill">09 × 400 m</span><span class="pill">100 m recoveries</span><span class="pill">24°C / 91% humidity</span></div></div>
+</div></div>
+<div class="stats">
+<div class="stat"><small>Distance</small><strong style="color:var(--blue)">4.50 <small style="display:inline;color:inherit">km</small></strong><em>Recorded total</em></div>
+<div class="stat"><small>Elapsed</small><strong>24:04</strong><em>24 min 04 sec</em></div>
+<div class="stat"><small>Mean 400m</small><strong style="color:var(--acid)" id="meanTop">1:51</strong><em>9 measured efforts</em></div>
+<div class="stat"><small>Mean HR</small><strong style="color:var(--red)">173 <small style="display:inline;color:inherit">bpm</small></strong><em>189 bpm recorded peak</em></div>
+<div class="stat"><small>VO₂ max</small><strong>43.2</strong><em>Apple Watch estimate, after session</em></div>
+<div class="stat"><small>Active energy</small><strong>354 <small style="display:inline;color:inherit">kcal</small></strong><em>398 kcal total</em></div>
+</div>
+<section class="block wrap" id="breakdown">
+<div class="head"><div><span class="n">01 / INTERVAL STRUCTURE</span><h2>Every rep.<br>Every second.</h2></div><p>Nine fast 400m repetitions and nine recovery segments. Select a repetition to inspect it; use the charts to compare pacing and cardiac response.</p></div>
+<div class="panel" style="margin-bottom:16px">
+<div class="chart-title"><h3>Session timeline</h3><div class="legend"><span><i class="dot work"></i>400 m</span><span><i class="dot rec"></i>Recovery</span></div></div>
+<div class="timeline" id="timeline" aria-label="Clickable timeline of work and recovery segments"></div><div class="ruler"><span>0:00</span><span>6:00</span><span>12:00</span><span>18:00</span><span>23:59*</span></div>
+</div>
+<div class="two">
+<div class="panel">
+<div class="chart-title"><h3>400m performance</h3><div class="controls"><div class="segment" role="group" aria-label="Chart mode"><button id="modeTime" class="active" type="button">Time</button><button id="modePace" type="button">Pace</button></div></div></div>
+<div class="legend" style="margin-bottom:4px"><span><i class="dot work"></i>Effort performance</span><span><i class="dot hr"></i>Interval mean HR</span></div>
+<div class="chart-wrap"><svg id="effortChart" class="chart-svg" viewBox="0 0 820 295" role="img" aria-label="Interactive chart of nine interval times and heart rates"></svg></div>
+<label class="checks"><input id="excludeEight" type="checkbox"> Exclude rep 8 from summary statistics (leave its data visible)</label>
+<div class="note" id="summaryNote"></div>
+</div>
+<div class="panel focus" aria-live="polite">
+<div><div class="label" id="focusLabel">REP 09 / 400 M</div><div class="big" id="focusTime">1:40 <small>min</small></div><h3 id="focusHeadline">Fastest effort.</h3><p id="focusNarrative"></p></div>
+<div class="focus-meta"><div><div class="label">Pace</div><strong style="color:var(--blue)" id="focusPace">4:10/km</strong></div><div><div class="label">Mean HR</div><strong style="color:var(--red)" id="focusHR">176 bpm</strong></div><div><div class="label">Next recovery</div><strong id="focusRecovery">0:50</strong></div><div><div class="label">Time vs mean</div><strong id="focusVs">−11 s</strong></div></div>
+</div></div>
+<div class="panel" style="margin-top:16px"><div class="chart-title"><h3>All nine repetitions</h3><div class="legend">Tap a row to inspect</div></div><div class="table-scroll"><table class="t"><thead><tr><th>Rep</th><th>400 m</th><th>Work pace</th><th>Mean HR</th><th>Recovery</th><th>Recovery HR</th><th>Difference</th></tr></thead><tbody id="repTable"></tbody></table></div></div>
+<div class="info-grid" style="margin-top:16px"><div><div class="label">Fastest 400m</div><strong style="color:var(--acid)">1:40</strong><small>Rep 9 · display pace 4:09/km</small></div><div><div class="label">Slowest 400m</div><strong>2:20</strong><small>Rep 8 · pace 5:50/km</small></div><div><div class="label">Work-only total</div><strong>16:39</strong><small>3.60 km of work</small></div><div><div class="label">Recovery total</div><strong>7:20</strong><small>894 m of recovery</small></div></div>
+</section>
+<section class="block wrap" id="heart">
+<div class="head"><div><span class="n">02 / CARDIAC RESPONSE</span><h2>High effort.<br>Fast recovery.</h2></div><p>Heart-rate zones and recovery are drawn from the Fitness screenshots. The interval plot uses interval averages, not second-by-second sensor samples.</p></div>
+<div class="two">
+<div class="panel"><div class="chart-title"><h3>Heart rate through the intervals</h3><div class="legend"><span><i class="dot hr"></i>Mean segment HR</span></div></div><div class="chart-wrap"><svg id="hrChart" viewBox="0 0 820 300" role="img" aria-label="Mean heart rate by elapsed interval segment"></svg></div><div class="note"><strong>173 bpm session average.</strong> The first work segment shows 132 bpm, substantially below subsequent work averages; initial sensor lag or a low starting heart rate may explain this, but the screenshots cannot distinguish them.</div></div>
+<div class="panel"><div class="chart-title"><h3>Time in zones</h3><div class="label">Apple Watch estimates</div></div><div id="zones"></div><div class="note"><strong>16:38 in Zone 4</strong> equals 69.1% of total recorded session time. The visible zone times add up to 23:12, leaving 52 seconds not allocated in the displayed breakdown. This is not evidence of a continuous 52-second recording failure.</div></div></div>
+<div class="three" style="margin-top:16px">
+<div class="panel"><div class="label">Post-run HR / finish</div><div style="font-size:56px;font-weight:800;letter-spacing:-.08em">179 <span style="font-size:16px;color:var(--mute)">bpm</span></div><p style="font-size:12px;color:var(--mute)">At workout end · 9:10 PM</p></div>
+<div class="panel"><div class="label">At 1 minute</div><div style="font-size:56px;font-weight:800;letter-spacing:-.08em;color:var(--acid)">−52 <span style="font-size:16px;color:var(--mute)">bpm</span></div><p style="font-size:12px;color:var(--mute)">179 → 127 bpm</p></div>
+<div class="panel"><div class="label">At 2 minutes</div><div style="font-size:56px;font-weight:800;letter-spacing:-.08em;color:var(--blue)">−63 <span style="font-size:16px;color:var(--mute)">bpm</span></div><p style="font-size:12px;color:var(--mute)">179 → 116 bpm</p></div></div>
+<div class="panel" style="margin-top:16px"><div class="chart-title"><h3>Post-workout heart-rate recovery</h3><div class="legend">Three labelled readings · not continuous samples</div></div><div class="chart-wrap"><svg id="recoveryChart" viewBox="0 0 820 220" role="img" aria-label="Post run heart rate from 179 bpm to 127 bpm at one minute and 116 bpm at two minutes"></svg></div><div class="note">A rapid fall is an encouraging recovery pattern for this session. It is not, by itself, a clinical cardiovascular test; post-exercise movement, posture, optical sensor fit and measurement conditions also affect readings.</div></div>
+</section>
+<section class="block wrap" id="dynamics">
+<div class="head"><div><span class="n">03 / RUNNING MECHANICS</span><h2>The mechanics.</h2></div><p>These are full-session averages, including the 100m recoveries. Do not interpret them as isolated fast-repetition values.</p></div>
+<div class="info-grid">
+<div><div class="label">Average power</div><strong style="color:var(--acid)">280 W</strong><small>94–440 W displayed range</small></div>
+<div><div class="label">Cadence</div><strong style="color:var(--blue)">152</strong><small>Steps per minute · 93–173 displayed</small></div>
+<div><div class="label">Ground contact</div><strong>243 ms</strong><small>191–357 ms displayed range</small></div>
+<div><div class="label">Vertical oscillation</div><strong>10.4 cm</strong><small>8.7–12.2 cm displayed range</small></div>
+<div><div class="label">Stride length</div><strong>1.3 m</strong><small>0.8–1.6 m displayed range</small></div>
+<div><div class="label">Elevation range</div><strong>16 m</strong><small>88–104 m elevation, not total ascent</small></div>
+<div><div class="label">Total energy</div><strong>398 kcal</strong><small>354 active kcal + 44 other kcal</small></div>
+<div><div class="label">Overall pace</div><strong>5:20</strong><small>Minutes/km · work + recoveries</small></div>
+</div>
+<div class="three" style="margin-top:16px">
+<div class="panel"><h3>Cadence and stride</h3><p style="font-size:13px;color:var(--mute)">152 spm is a blended session average. Slower 100m recoveries reduce it, so this number cannot establish your turnover at 4:10–4:40/km.</p></div>
+<div class="panel"><h3>Vertical motion</h3><p style="font-size:13px;color:var(--mute)">10.4 cm and 243 ms of ground contact offer baseline metrics. Evaluating efficiency needs pace-matched comparisons, not isolated averages or fixed universal thresholds.</p></div>
+<div class="panel"><h3>Power</h3><p style="font-size:13px;color:var(--mute)">280 W mean spans fast work and recovery. Without body mass or segment-level power, watts/kg and rep-by-rep power comparisons cannot be calculated reliably.</p></div>
+</div>
+</section>
+<section class="block wrap" id="findings">
+<div class="head"><div><span class="n">04 / INTERPRETATION</span><h2>What the<br>data says.</h2></div><p>Evidence-led observations, with uncertainty separated from what the screenshots actually measure.</p></div>
+<div class="insight"><b>01</b><div><h3>Eight repetitions were tightly grouped compared with the outlier.</h3><p>Excluding rep 8 (2:20), eight efforts average 1:47.4. Across those eight, recorded times span 1:40–1:52. The complete nine-rep average is 1:51.0.</p></div></div>
+<div class="insight"><b>02</b><div><h3>Rep 8 was a temporary slowdown, not a poor finish.</h3><p>You went from 2:20 on rep 8 to 1:40 on rep 9, a 40-second improvement over the same 400m distance. That rebound argues against interpreting the slowdown as a simple inability to run fast at the end. The reason is not established.</p></div></div>
+<div class="insight"><b>03</b><div><h3>The recoveries became slower later.</h3><p>The first two 100m recoveries each took 40 seconds. Recoveries 7 and 8 took 58 and 65 seconds. This suggests changing recovery behaviour under fatigue, but cannot separate intentional walking, traffic/turns, elevation or fatigue.</p></div></div>
+<div class="insight"><b>04</b><div><h3>Substantial cardiovascular load.</h3><p>Heart rate averaged 173 bpm, with 16:38 in Apple's Zone 4 and just 16 seconds in Zone 5. Heat and 91% humidity likely increased physiological stress; the assigned zones depend on the watch's configured thresholds.</p></div></div>
+<div class="insight"><b>05</b><div><h3>VO₂ max is a watch estimate, not a laboratory result.</h3><p>43.2 mL/kg/min is the value provided after this run. Its trend needs previous measurements under comparable conditions; this workout alone cannot establish whether VO₂ max increased.</p></div></div>
+<div class="insight"><b>06</b><div><h3>Training prescription: consistency before absolute speed.</h3><p>For a repeat of this workout, benchmark the eight non-outlier reps, aim for controlled, repeatable 400s, and standardize the 100m recoveries. The ninth-rep sprint demonstrates available finishing speed but does not define the best pace for every repetition.</p></div></div>
+</section>
+<section class="block wrap" id="lab">
+<div class="head"><div><span class="n">05 / INTERACTIVE LAB</span><h2>Plan the<br>next set.</h2></div><p>Move the sliders to model a nine-repetition session. The model is arithmetic only; it does not forecast your performance or training adaptation.</p></div>
+<div class="panel calculator">
+<div>
+<div class="calc-head"><label for="goalSec" class="label">Target per 400m</label><output id="goalOutput">1:48</output></div>
+<input id="goalSec" type="range" min="95" max="145" value="108" step="1" aria-label="Target time per 400 metres in seconds">
+<div class="ruler"><span>1:35 faster</span><span>2:25 slower</span></div>
+<div class="calc-head" style="margin-top:32px"><label for="restSec" class="label">Recovery per segment</label><output id="restOutput">0:49</output></div>
+<input id="restSec" type="range" min="30" max="90" value="49" step="1" aria-label="Recovery time in seconds">
+<div class="ruler"><span>0:30</span><span>1:30</span></div>
+</div>
+<div class="calc-result"><div class="label">Projected 9 × 400m + 9 recoveries</div><strong id="projected">23:33</strong><span>Under chosen constant split assumptions</span><div style="margin-top:25px;font-size:13px;color:var(--mute)" id="calcComparison"></div></div>
+</div>
+<div class="two" style="margin-top:16px">
+<div class="panel"><h3>Session route</h3><p style="font-size:12px;color:var(--mute)">Kingston, Jamaica · schematic, not georeferenced</p>
+<svg class="route-art" viewBox="0 0 750 300" role="img" aria-label="Abstract route schematic with a southward loop returning north"><defs><pattern id="street" width="85" height="62" patternUnits="userSpaceOnUse"><path d="M5 0V62M5 22H85M45 0V27M45 35V62M0 52H80" fill="none" stroke="#35505b" stroke-width="1" opacity=".5"/></pattern></defs><rect width="750" height="300" fill="url(#street)"/><path d="M390 48L334 80L320 140L331 183L333 244L384 230L361 170L352 102L388 49" stroke="#c4ff62" stroke-width="10" fill="none" stroke-linejoin="round" stroke-linecap="round"/><circle cx="390" cy="48" r="12" fill="#c4ff62" stroke="#101820" stroke-width="4"/><circle cx="387" cy="53" r="8" fill="#ff705d" stroke="#101820" stroke-width="3"/></svg>
+<div class="note">This schematic deliberately does not reveal precise start/finish coordinates on a public page. Refer to the Apple Fitness map for the recorded GPS trace.</div></div>
+<div class="panel"><h3>Source and limitations</h3><p style="font-size:13px;color:var(--mute);line-height:1.75">Source: screenshots of Apple Fitness, November 5, 2026, with VO₂ max 43.2 provided separately. Displayed split values are rounded. The 18 interval times total 23:59 while the recorded workout time is 24:04 (five seconds difference); reported interval distances total 4.494 km, which rounds to 4.50 km. HR-zone durations total 23:12, leaving 52 seconds outside those displayed totals. No raw FIT/GPX/HealthKit time series was supplied. Graphs built from interval rows represent grouped averages and must not be interpreted as high-frequency recordings.</p>
+<div class="export"><button class="btn" id="downloadBtn" type="button">Export run data</button><button class="btn" id="printBtn" type="button">Print report</button></div>
+</div></div>
+</section>
+</main>
+<footer class="footer"><div class="wrap"><strong style="letter-spacing:.13em;color:var(--text)">400 METRES.</strong><p>Independent personal training analysis · Nov 05, 2026 · Kingston. Figures transcribed from Apple Fitness screenshots. Not medical advice, not an official WRC publication.</p></div></footer>
+<script>
+(function(){
+"use strict";
+const work=[110,104,102,108,111,112,112,140,100];
+const workHR=[132,169,176,176,182,177,176,179,176];
+const rec=[40,40,47,48,45,47,58,65,50];
+const recHR=[165,174,176,178,178,176,180,165,185];
+const recMeters=[100,100,100,100,100,100,100,100,94];
+const notes=[
+'Opening repetition. Mean HR of 132 bpm is unusually low relative to later efforts; interpret cautiously.',
+'Pace quickened by six seconds from rep 1; mean HR rose to 169 bpm.',
+'Fastest of the first seven repetitions. Controlled 1:42 with HR 176 bpm.',
+'Maintained a 1:48 work split with HR 176 bpm.',
+'1:51 with the highest displayed work-segment mean HR, 182 bpm.',
+'1:52 and 177 bpm. Still close to the central pace of the set.',
+'Another 1:52 and 176 bpm, matching repetition 6.',
+'A significant 2:20 slowdown. Cause unknown; the following recovery also lengthened to 1:05.',
+'Session-best 1:40 after the slowest work segment. A strong closing rep, not proof of a new sustained pace.'
+];
+const $=id=>document.getElementById(id);
+const fmt=s=>{let v=Math.round(s);return Math.floor(v/60)+":"+String(v%60).padStart(2,"0")};
+const signed=s=>s<0?"−"+Math.abs(Math.round(s))+" s":s>0?"+"+Math.round(s)+" s":"0 s";
+const avg=a=>a.reduce((x,y)=>x+y,0)/a.length;
+const mean=avg(work);
+let selected=8,mode="time",exclude=false;
+const ns="http://www.w3.org/2000/svg";
+function summaryAvg(){return avg(work.filter((_,i)=>!exclude||i!==7))}
+function setSelected(i){selected=i;renderSelection();renderTable();renderChart();renderTimeline()}
+function renderSelection(){
+const t=work[selected],d=t-summaryAvg();
+$("focusLabel").textContent="REP "+String(selected+1).padStart(2,"0")+" / 400 M";
+$("focusTime").innerHTML=fmt(t)+' <small>min</small>';
+$("focusHeadline").textContent=selected===8?"Fastest effort.":selected===7?"Session slowdown.":selected===2?"Fast early repetition.":"Work interval "+(selected+1)+".";
+$("focusNarrative").textContent=notes[selected];
+$("focusPace").textContent=fmt(t*2.5)+"/km";
+$("focusHR").textContent=workHR[selected]+" bpm";
+$("focusRecovery").textContent=fmt(rec[selected])+(selected===8?" / 94m":" / 100m");
+$("focusVs").textContent=signed(d);
+}
+function renderTimeline(){
+const box=$("timeline");box.replaceChildren();
+work.forEach((t,i)=>{[t,rec[i]].forEach((secs,j)=>{const b=document.createElement("button");b.type="button";b.style.flex=secs;b.className=(j?"rest ":"")+(i===selected?"on":"");b.setAttribute("aria-label",(j?"Recovery":"Work")+" "+(i+1)+": "+fmt(secs));b.title=(j?"Recovery":"Work")+" "+(i+1)+" · "+fmt(secs);b.addEventListener("click",()=>setSelected(i));box.appendChild(b)})});
+}
+function renderChart(){
+const svg=$("effortChart");let x0=76,xstep=77,base=237,top=27;
+let parts=[];
+for(let i=0;i<4;i++){const v=90+i*20,y=base-(v-75)*1.32;parts.push('<line x1="57" x2="780" y1="'+y+'" y2="'+y+'" class="gridline"/><text x="47" y="'+(y+4)+'" text-anchor="end" class="axtext">'+fmt(v)+'</text>')}
+const pts=[];
+work.forEach((t,i)=>{
+let x=x0+i*xstep;const h=mode==="time"?(155-t)*1.32+27:(155-t)*1.32+27;
+let color=selected===i?"#c4ff62":i===7?"#777f81":"#789d4d";
+if(exclude&&i===7)color="#444e4a";
+parts.push('<rect data-rep="'+i+'" tabindex="0" role="button" aria-label="Select repetition '+(i+1)+'" class="bar" x="'+(x-23)+'" y="'+(base-h)+'" width="47" height="'+h+'" rx="5" fill="'+color+'"><title>Rep '+(i+1)+': '+fmt(t)+'; '+fmt(t*2.5)+'/km; '+workHR[i]+' bpm</title></rect>');
+parts.push('<text x="'+x+'" y="'+(base-h-9)+'" class="axtext" text-anchor="middle" fill="#fff">'+(mode==="time"?fmt(t):fmt(t*2.5))+'</text><text x="'+x+'" y="259" class="axtext" text-anchor="middle">'+(i+1)+'</text>');
+pts.push([x,230-(workHR[i]-120)*1.75]);
+});
+parts.push('<polyline points="'+pts.map(p=>p.join(",")).join(" ")+'" fill="none" stroke="#ff705d" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>');
+pts.forEach((p,i)=>parts.push('<circle cx="'+p[0]+'" cy="'+p[1]+'" r="5" fill="#ff705d" stroke="#151a1c" stroke-width="2"><title>Rep '+(i+1)+' mean HR '+workHR[i]+'</title></circle>'));
+parts.push('<text x="60" y="284" class="axtext">REP NUMBER</text><text x="781" y="284" text-anchor="end" class="axtext">'+(mode==="time"?"WORK TIME":"PACE PER KM")+' · LOWER IS FASTER</text>');
+svg.innerHTML=parts.join("");
+svg.querySelectorAll("[data-rep]").forEach(el=>{const i=+el.dataset.rep;el.addEventListener("click",()=>setSelected(i));el.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();setSelected(i)}})});
+$("summaryNote").innerHTML="<strong>"+(exclude?"Eight-rep trimmed mean":"Nine-rep mean")+": "+fmt(summaryAvg())+"</strong> per 400m. "+(exclude?"Rep 8 remains shown but is excluded from this summary, not erased from the session.":"Rep 8 adds 3.6 seconds to the average relative to the eight other efforts.");
+$("meanTop").textContent=fmt(summaryAvg());
+}
+function renderTable(){
+$("repTable").innerHTML=work.map((t,i)=>'<tr tabindex="0" role="button" data-idx="'+i+'" class="'+(i===selected?"chosen":"")+'"><td><strong>'+String(i+1).padStart(2,"0")+'</strong></td><td>'+fmt(t)+'</td><td class="pace">'+fmt(t*2.5)+'/km</td><td class="danger">'+workHR[i]+' bpm</td><td>'+fmt(rec[i])+' / '+recMeters[i]+'m</td><td>'+recHR[i]+' bpm</td><td>'+signed(t-mean)+'</td></tr>').join("");
+$("repTable").querySelectorAll("tr").forEach(row=>{const i=+row.dataset.idx;row.addEventListener("click",()=>setSelected(i));row.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();setSelected(i)}})});
+}
+function renderHR(){
+let segments=[],t=0;work.forEach((w,i)=>{t+=w/2;segments.push({t,h:workHR[i],work:true});t+=w/2+rec[i]/2;segments.push({t,h:recHR[i],work:false});t+=rec[i]/2});
+const w=820;let s=[];
+[140,160,180].forEach(h=>{const y=250-(h-120)*1.85;s.push('<line x1="57" y1="'+y+'" x2="785" y2="'+y+'" class="gridline"/><text x="48" y="'+(y+4)+'" text-anchor="end" class="axtext">'+h+'</text>')});
+const pts=segments.map(d=>[60+d.t/1439*718,250-(d.h-120)*1.85]);
+s.push('<polyline points="'+pts.map(p=>p.join(",")).join(" ")+'" fill="none" stroke="#ff705d" stroke-width="3" stroke-linejoin="round"/>');
+pts.forEach((p,i)=>s.push('<circle cx="'+p[0]+'" cy="'+p[1]+'" r="'+(i%2===0?6:4)+'" fill="'+(i%2===0?"#ff705d":"#ffae8d")+'" stroke="#15181a" stroke-width="2"><title>'+(i%2===0?"Work":"Recovery")+' '+(Math.floor(i/2)+1)+': '+segments[i].h+' bpm</title></circle>'));
+[0,6,12,18,24].forEach(m=>{const x=60+m/24*718;s.push('<text x="'+x+'" y="287" text-anchor="middle" class="axtext">'+m+':00</text>')});
+$("hrChart").innerHTML=s.join("");
+}
+function renderZones(){
+const zones=[["Zone 1",36,"<142 bpm","#65a8ff"],["Zone 2",18,"143–157 bpm","#70e8d5"],["Zone 3",324,"158–171 bpm","#c4ff62"],["Zone 4",998,"172–186 bpm","#ff9f4c"],["Zone 5",16,"187+ bpm","#fa477b"]];
+$("zones").innerHTML=zones.map(z=>'<div class="zone"><div class="zone-top"><span>'+z[0]+' · <strong>'+fmt(z[1])+'</strong></span><span>'+z[2]+' · '+(z[1]/1444*100).toFixed(1)+'%</span></div><div class="zone-track"><div style="background:'+z[3]+';width:'+ (z[1]/1444*100).toFixed(2)+'%"></div></div></div>').join("");
+}
+function renderRecovery(){
+const vals=[179,127,116],xs=[90,416,742],ys=vals.map(v=>185-(v-100)*1.6);let x=[];
+[100,140,180].forEach(v=>{const y=185-(v-100)*1.6;x.push('<line x1="75" x2="750" y1="'+y+'" y2="'+y+'" class="gridline"/><text x="65" y="'+(y+4)+'" text-anchor="end" class="axtext">'+v+'</text>')});
+x.push('<polyline points="'+xs.map((v,i)=>v+','+ys[i]).join(" ")+'" fill="none" stroke="#c4ff62" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>');
+xs.forEach((v,i)=>{x.push('<circle cx="'+v+'" cy="'+ys[i]+'" r="7" fill="#c4ff62"/><text x="'+v+'" y="'+(ys[i]-17)+'" text-anchor="middle" fill="#f0f4ef" font-size="20" font-weight="800">'+vals[i]+'</text><text x="'+v+'" y="208" text-anchor="middle" class="axtext">'+["FINISH","1 MIN","2 MIN"][i]+'</text>')});
+$("recoveryChart").innerHTML=x.join("");
+}
+function renderCalc(){
+const pace=+$("goalSec").value,r=+$("restSec").value;
+const goal=9*(pace+r);
+$("goalOutput").textContent=fmt(pace);$("restOutput").textContent=fmt(r);$("projected").textContent=fmt(goal);
+const d=goal-1444;
+$("calcComparison").textContent=(d>0?fmt(d)+" longer":d<0?fmt(-d)+" shorter":"The same duration")+" than the recorded 24:04 (assuming all nine recovery segments last the chosen duration).";
+}
+$("modeTime").addEventListener("click",()=>{mode="time";$("modeTime").classList.add("active");$("modePace").classList.remove("active");renderChart()});
+$("modePace").addEventListener("click",()=>{mode="pace";$("modePace").classList.add("active");$("modeTime").classList.remove("active");renderChart()});
+$("excludeEight").addEventListener("change",e=>{exclude=e.target.checked;renderChart();renderSelection()});
+["goalSec","restSec"].forEach(id=>$(id).addEventListener("input",renderCalc));
+$("printBtn").addEventListener("click",()=>window.print());
+$("shareBtn").addEventListener("click",async()=>{try{await navigator.share({title:document.title,url:location.href})}catch(e){if(e.name!=="AbortError"){try{await navigator.clipboard.writeText(location.href);$("shareBtn").textContent="Copied"}catch(_){$("shareBtn").textContent="Copy URL unavailable"}}}});
+$("downloadBtn").addEventListener("click",()=>{const data={title:"400m Speed Work",date:"2026-11-05",location:"Kingston, Jamaica",session:{durationSeconds:1444,distanceKm:4.50,averagePaceSecondsKm:320,averageHR:173,maximumHR:189,VO2MaxEstimate:43.2,temperatureC:24,humidityPercent:91,avgPowerW:280,avgCadenceSpm:152,verticalOscillationCm:10.4,groundContactMs:243,strideLengthM:1.3,elevationMinM:88,elevationMaxM:104},intervals:work.map((seconds,i)=>({rep:i+1,workDistanceM:400,workTimeSeconds:seconds,workAverageHR:workHR[i],recoveryDistanceM:recMeters[i],recoveryTimeSeconds:rec[i],recoveryAverageHR:recHR[i]})),zonesSeconds:{zone1:36,zone2:18,zone3:324,zone4:998,zone5:16},postWorkoutHR:{finish:179,oneMinute:127,twoMinutes:116},notes:"Transcribed from screenshots; raw time series unavailable."};const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});const link=document.createElement("a");link.href=URL.createObjectURL(blob);link.download="400m-speedwork-2026-11-05.json";link.click();setTimeout(()=>URL.revokeObjectURL(link.href),1500)});
+renderSelection();renderTimeline();renderChart();renderTable();renderHR();renderZones();renderRecovery();renderCalc();
+})();
+</script>
+</body></html>
