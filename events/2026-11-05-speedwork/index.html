@@ -143,6 +143,7 @@ input[type=range]{width:100%;accent-color:var(--acid);margin:16px 0}.calculator{
 "use strict";
 const work=[110,104,102,108,111,112,112,140,100];
 const workHR=[132,169,176,176,182,177,176,179,176];
+const workPace=["4:36","4:19","4:16","4:30","4:38","4:40","4:40","5:50","4:09"];
 const rec=[40,40,47,48,45,47,58,65,50];
 const recHR=[165,174,176,178,178,176,180,165,185];
 const recMeters=[100,100,100,100,100,100,100,100,94];
@@ -172,7 +173,7 @@ $("focusLabel").textContent="REP "+String(selected+1).padStart(2,"0")+" / 400 M"
 $("focusTime").innerHTML=fmt(t)+' <small>min</small>';
 $("focusHeadline").textContent=selected===8?"Fastest effort.":selected===7?"Session slowdown.":selected===2?"Fast early repetition.":"Work interval "+(selected+1)+".";
 $("focusNarrative").textContent=notes[selected];
-$("focusPace").textContent=fmt(t*2.5)+"/km";
+$("focusPace").textContent=workPace[selected]+"/km";
 $("focusHR").textContent=workHR[selected]+" bpm";
 $("focusRecovery").textContent=fmt(rec[selected])+(selected===8?" / 94m":" / 100m");
 $("focusVs").textContent=signed(d);
@@ -190,8 +191,8 @@ work.forEach((t,i)=>{
 let x=x0+i*xstep;const h=mode==="time"?(155-t)*1.32+27:(155-t)*1.32+27;
 let color=selected===i?"#c4ff62":i===7?"#777f81":"#789d4d";
 if(exclude&&i===7)color="#444e4a";
-parts.push('<rect data-rep="'+i+'" tabindex="0" role="button" aria-label="Select repetition '+(i+1)+'" class="bar" x="'+(x-23)+'" y="'+(base-h)+'" width="47" height="'+h+'" rx="5" fill="'+color+'"><title>Rep '+(i+1)+': '+fmt(t)+'; '+fmt(t*2.5)+'/km; '+workHR[i]+' bpm</title></rect>');
-parts.push('<text x="'+x+'" y="'+(base-h-9)+'" class="axtext" text-anchor="middle" fill="#fff">'+(mode==="time"?fmt(t):fmt(t*2.5))+'</text><text x="'+x+'" y="259" class="axtext" text-anchor="middle">'+(i+1)+'</text>');
+parts.push('<rect data-rep="'+i+'" tabindex="0" role="button" aria-label="Select repetition '+(i+1)+'" class="bar" x="'+(x-23)+'" y="'+(base-h)+'" width="47" height="'+h+'" rx="5" fill="'+color+'"><title>Rep '+(i+1)+': '+fmt(t)+'; '+workPace[i]+'/km; '+workHR[i]+' bpm</title></rect>');
+parts.push('<text x="'+x+'" y="'+(base-h-9)+'" class="axtext" text-anchor="middle" fill="#fff">'+(mode==="time"?fmt(t):workPace[i])+'</text><text x="'+x+'" y="259" class="axtext" text-anchor="middle">'+(i+1)+'</text>');
 pts.push([x,230-(workHR[i]-120)*1.75]);
 });
 parts.push('<polyline points="'+pts.map(p=>p.join(",")).join(" ")+'" fill="none" stroke="#ff705d" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>');
@@ -203,7 +204,7 @@ $("summaryNote").innerHTML="<strong>"+(exclude?"Eight-rep trimmed mean":"Nine-re
 $("meanTop").textContent=fmt(summaryAvg());
 }
 function renderTable(){
-$("repTable").innerHTML=work.map((t,i)=>'<tr tabindex="0" role="button" data-idx="'+i+'" class="'+(i===selected?"chosen":"")+'"><td><strong>'+String(i+1).padStart(2,"0")+'</strong></td><td>'+fmt(t)+'</td><td class="pace">'+fmt(t*2.5)+'/km</td><td class="danger">'+workHR[i]+' bpm</td><td>'+fmt(rec[i])+' / '+recMeters[i]+'m</td><td>'+recHR[i]+' bpm</td><td>'+signed(t-mean)+'</td></tr>').join("");
+$("repTable").innerHTML=work.map((t,i)=>'<tr tabindex="0" role="button" data-idx="'+i+'" class="'+(i===selected?"chosen":"")+'"><td><strong>'+String(i+1).padStart(2,"0")+'</strong></td><td>'+fmt(t)+'</td><td class="pace">'+workPace[i]+'/km</td><td class="danger">'+workHR[i]+' bpm</td><td>'+fmt(rec[i])+' / '+recMeters[i]+'m</td><td>'+recHR[i]+' bpm</td><td>'+signed(t-mean)+'</td></tr>').join("");
 $("repTable").querySelectorAll("tr").forEach(row=>{const i=+row.dataset.idx;row.addEventListener("click",()=>setSelected(i));row.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();setSelected(i)}})});
 }
 function renderHR(){
