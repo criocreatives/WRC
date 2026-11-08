@@ -7,8 +7,8 @@ Current canonical host: https://updates.wadadarunclub.com
 ## Adding a new page
 - Give it a unique, human-readable HTML title, a precise meta description, canonical URL, Open Graph tags, and an accessible primary heading.
 - Link the page from appropriate site navigation or a parent section.
-- Add the URL to `sitemap.xml` and set the last-modified date when its substantive content changes.
-- Preserve header navigation and skip link patterns from the existing pages; shared nav CSS is in `assets/wrc-shared.css`.
+- Run `python3 scripts/generate_sitemap.py` to refresh indexed URLs. Include a `wrc:content-updated` date only for verified substantive changes.
+- Use the shared navigation and footer partials through `scripts/build_site.py`; preserve accessibility and RUNLAB's existing visual accent.
 - Give images useful alt descriptions when informative, or `alt=""` when decorative. Use actual asset dimensions when available, load offscreen photos lazily, and prefer WebP.
 - Check at desktop and narrow-mobile widths and with keyboard only. Run Google PageSpeed Insights and Lighthouse before claiming performance improvements.
 - Check the policy links and the RUNLAB result exports after adjusting JS or print CSS.
@@ -18,6 +18,12 @@ Current canonical host: https://updates.wadadarunclub.com
 - Check external registration/shopping links, price changes, product availability, event details and gear comparisons.
 - Keep captions, previews and internal links aligned with actual page content.
 - Policy pages are separate: `/policies/`. Contact: wadadarunclub@gmail.com.
+
+## Sitemap generation
+- Run `python3 scripts/generate_sitemap.py` when publishing or removing a page. The quality workflow enforces `--check`.
+- Routes come from actual published HTML. Redirects and pages with `robots: noindex` are excluded.
+- Omit `lastmod` unless the page author explicitly adds `<meta name="wrc:content-updated" content="YYYY-MM-DD">` to certify a substantive edit. Stale hardcoded dates are worse than omitting this optional sitemap field.
+- Keep the current `updates.wadadarunclub.com` canonical domain until migration is approved.
 
 ## Indexing
 - Current host: https://updates.wadadarunclub.com; do not use the apex in metadata until migration is approved.

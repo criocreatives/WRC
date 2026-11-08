@@ -5,7 +5,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 import re
 import sys
-from build_site import is_standalone
+from build_site import is_standalone, published_pages
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -46,10 +46,7 @@ def check_reference(page, ref):
 def main():
     errors = []
     checked = 0
-    for page in sorted(ROOT.rglob("index.html")):
-        rel = page.relative_to(ROOT).as_posix()
-        if rel.startswith(("runlab/", "shoes/")):
-            continue
+    for page, rel in published_pages():
         checked += 1
         source = page.read_text(encoding="utf-8")
         doc = PageParser()
@@ -61,7 +58,8 @@ def main():
         if not is_standalone(page):
             if "<!-- WRC_NAV_BEGIN -->" not in source or "<!-- WRC_LEGAL_BEGIN -->" not in source:
                 errors.append(rel + ": generated shared components missing")
-            if re.search(r"<style\b", source, re.I):
+            # RUNLAB's calculator-specific UI remains page-scoped.
+            if not rel.startswith("runlab/") and re.search(r"<style\b", source, re.I):
                 errors.append(rel + ": inline CSS should live in assets/page-styles")
         for ref in doc.refs:
             missing = check_reference(page, ref)

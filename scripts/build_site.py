@@ -5,7 +5,7 @@ WRC uses regular GitHub Pages HTML. This build step checks shared partials into
 each page so navigation and policy links remain visible without JavaScript.
 Run: python3 scripts/build_site.py
 Validate: python3 scripts/build_site.py --check
-RUNLAB and legacy /shoes/ redirects are excluded; explicitly marked standalone reports skip shared components.
+Legacy /shoes/ redirects and explicitly marked standalone reports skip shared components.
 """
 from pathlib import Path
 import argparse
@@ -25,35 +25,55 @@ NAV_START, NAV_END = "<!-- WRC_NAV_BEGIN -->", "<!-- WRC_NAV_END -->"
 LEGAL_START, LEGAL_END = "<!-- WRC_LEGAL_BEGIN -->", "<!-- WRC_LEGAL_END -->"
 
 
-def content_pages():
-    for path in sorted(ROOT.rglob("index.html")):
+def published_pages():
+    """Published pages, including standalones and RUNLAB's non-index tools."""
+    pages = set(ROOT.rglob("index.html"))
+    pages.update([
+        ROOT / "runlab/fuel-calculator/daily-fuel.html",
+        ROOT / "runlab/fuel-calculator/run-fuel.html",
+    ])
+    for path in sorted(pages):
+        if not path.is_file():
+            raise FileNotFoundError("Missing published page: " + str(path))
         rel = path.relative_to(ROOT).as_posix()
-        if rel.startswith(("runlab/", "shoes/")):
-            continue
-        if is_standalone(path):
-            continue
-        if any(part.startswith(".") for part in path.relative_to(ROOT).parts):
+        if rel.startswith("shoes/") or any(
+            part.startswith(".") for part in path.relative_to(ROOT).parts
+        ):
             continue
         yield path, rel
+
+
+def content_pages():
+    """All pages governed by the WRC navigation and footer partials."""
+    for path, rel in published_pages():
+        if not is_standalone(path):
+            yield path, rel
 
 
 def active_href(rel):
     if rel == "index.html":
         return "/"
-    for section in ("calendar", "gear", "race-day", "policies"):
+    for section in ("calendar", "gear", "race-day", "policies", "runlab"):
         if rel.startswith(section + "/"):
             return "/" + section + "/"
     return None
 
 
 def navigation_for(rel, nav_source):
+    if rel.startswith("runlab/"):
+        nav_source = nav_source.replace(
+            'class="wrc-global-nav"',
+            'class="wrc-global-nav wrc-is-runlab"',
+            1,
+        )
     href = active_href(rel)
     if href is None:
         return nav_source
     key = '<a href="' + href + '"'
     if key not in nav_source:
         raise ValueError("Missing navigation destination " + href)
-    return nav_source.replace(key, key + ' aria-current="page"')
+    current = "location" if rel.startswith("runlab/") and rel != "runlab/index.html" else "page"
+    return nav_source.replace(key, key + ' aria-current="' + current + '"')
 
 
 def replace_block(document, start, end, markup, path):
