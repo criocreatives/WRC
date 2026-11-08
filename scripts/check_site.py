@@ -5,6 +5,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 import re
 import sys
+from build_site import is_standalone
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -57,10 +58,11 @@ def main():
             errors.append(rel + ": expected one H1, found " + str(doc.h1_count))
         if doc.images_missing_alt:
             errors.append(rel + ": " + str(doc.images_missing_alt) + " images missing alt")
-        if "<!-- WRC_NAV_BEGIN -->" not in source or "<!-- WRC_LEGAL_BEGIN -->" not in source:
-            errors.append(rel + ": generated shared components missing")
-        if re.search(r"<style\b", source, re.I):
-            errors.append(rel + ": inline CSS should live in assets/page-styles")
+        if not is_standalone(page):
+            if "<!-- WRC_NAV_BEGIN -->" not in source or "<!-- WRC_LEGAL_BEGIN -->" not in source:
+                errors.append(rel + ": generated shared components missing")
+            if re.search(r"<style\b", source, re.I):
+                errors.append(rel + ": inline CSS should live in assets/page-styles")
         for ref in doc.refs:
             missing = check_reference(page, ref)
             if missing:

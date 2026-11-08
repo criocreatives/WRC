@@ -5,7 +5,7 @@ WRC uses regular GitHub Pages HTML. This build step checks shared partials into
 each page so navigation and policy links remain visible without JavaScript.
 Run: python3 scripts/build_site.py
 Validate: python3 scripts/build_site.py --check
-RUNLAB and legacy /shoes/ redirect pages are excluded.
+RUNLAB and legacy /shoes/ redirects are excluded; explicitly marked standalone reports skip shared components.
 """
 from pathlib import Path
 import argparse
@@ -13,6 +13,14 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+
+# Independent reports can opt out of WRC navigation without disabling basic checks.
+STANDALONE_MARKER = '<meta name="wrc:page-type" content="standalone">'
+
+
+def is_standalone(page):
+    return STANDALONE_MARKER in page.read_text(encoding="utf-8")
+
 NAV_START, NAV_END = "<!-- WRC_NAV_BEGIN -->", "<!-- WRC_NAV_END -->"
 LEGAL_START, LEGAL_END = "<!-- WRC_LEGAL_BEGIN -->", "<!-- WRC_LEGAL_END -->"
 
@@ -21,6 +29,8 @@ def content_pages():
     for path in sorted(ROOT.rglob("index.html")):
         rel = path.relative_to(ROOT).as_posix()
         if rel.startswith(("runlab/", "shoes/")):
+            continue
+        if is_standalone(path):
             continue
         if any(part.startswith(".") for part in path.relative_to(ROOT).parts):
             continue

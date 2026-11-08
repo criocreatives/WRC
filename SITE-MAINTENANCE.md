@@ -30,3 +30,8 @@ Current canonical host: https://updates.wadadarunclub.com
 - Update the shared page navigation/footer through `site/partials/` and run `python3 scripts/build_site.py` when changing them.
 - Event registrant and payment data belong in a private system; never publish them as JavaScript/HTML in the public GitHub Pages repository.
 - Old event snapshots may remain accessible in Git commit history; deleting current files is not a history purge.
+
+## Standalone pages
+- Independent reports may opt out of generated WRC navigation by declaring `<meta name="wrc:page-type" content="standalone">` in the page head.
+- These pages are exempt from shared-component and external-style requirements but still receive H1, image-description and local-link validation.
+- Do not mark an ordinary WRC page as standalone to bypass a failed template check; repair the shared component instead.
