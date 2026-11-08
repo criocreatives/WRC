@@ -1,4 +1,4 @@
-name: WRC static quality checks
+name: WRC site quality checks
 on:
   push:
     branches: [main]
@@ -7,11 +7,36 @@ permissions:
   contents: read
 jobs:
   verify:
+    name: Site integrity
     runs-on: ubuntu-latest
     steps:
       - name: Check out WRC
         uses: actions/checkout@v4
       - name: Verify generated navigation and legal footer
         run: python3 scripts/build_site.py --check
-      - name: Check content pages and internal links
+      - name: Check pages and local resource links
         run: python3 scripts/check_site.py
+      - name: Verify indexed-page sitemap
+        run: python3 scripts/generate_sitemap.py --check
+      - name: Check public reports and event record exposure
+        run: python3 scripts/check_public_content.py
+      - name: Validate JavaScript syntax
+        run: |
+          find runlab -name '*.js' -print0 | xargs -0 -r -n 1 node --check
+  browser:
+    name: Browser function and responsive navigation
+    needs: verify
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out WRC
+        uses: actions/checkout@v4
+      - name: Prepare Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Playwright and Chromium headless shell
+        run: |
+          python3 -m pip install playwright==1.57.0
+          python3 -m playwright install chromium --only-shell
+      - name: Test WRC and RUNLAB in Chromium
+        run: python3 -m unittest discover -s tests -p 'test_browser.py' -v
