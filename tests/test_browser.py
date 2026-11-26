@@ -1,9 +1,10 @@
 """WRC browser-level regression tests: real DOM, JS and responsive navigation."""
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from threading import Thread
+import re
 import unittest
 
 from playwright.sync_api import sync_playwright
@@ -72,14 +73,57 @@ class WRCBrowserTests(unittest.TestCase):
     def test_calendar_archives_and_ios_downloads(self):
         page = self.visit("/calendar/")
         self.assertEqual(page.locator(".section-head").count(), 3)
-        self.assertEqual(page.locator("details.past-events").count(), 3)
-        details = page.locator("details.past-events").first
-        details.locator("summary").click()
-        self.assertTrue(details.evaluate("(node) => node.open"))
-        self.assertGreater(details.locator("article.card").count(), 0)
-        # Archived events are still readable without re-enabling old signup links.
-        self.assertTrue(details.locator(".date").first.is_visible())
-        self.assertGreater(page.locator("a.cal-os").count(), 15)
+        for details in page.locator("details.past-events").all():
+            details.locator("summary").click()
+            self.assertTrue(details.evaluate("(node) => node.open"))
+            self.assertGreater(details.locator("article.card").count(), 0)
+            # Archived events remain readable without active calendar links.
+            self.assertTrue(details.locator(".date").first.is_visible())
+            self.assertEqual(details.locator("a.cal-os[href]").count(), 0)
+
+    def test_club_archive_month_rollover(self):
+        # Exercise the production script with date-independent fixture cards.
+        # UTC crosses into January five hours before Jamaica.
+        source = (ROOT / "calendar/index.html").read_text(encoding="utf-8")
+        script = re.search(r"<script>\s*(.*?)\s*</script>", source, re.S).group(1)
+
+        def card(id, end):
+            return (f'<article class="card" id="{id}" data-event-end="{end}">'
+                    '<div class="date">Date</div>'
+                    '<a class="btn" href="/register/">REGISTER</a>'
+                    '<div class="cal-actions"><a class="cal-os" href="/event.ics">iOS</a></div>'
+                    '</article>')
+
+        fixture = (
+            '<main><div class="section-head"><h2>Club Events</h2></div>'
+            + card("old", "2026-11-30T23:59:59-05:00")
+            + card("last-day", "2026-12-31T20:00:00-05:00")
+            + card("future", "2027-01-02T23:59:59-05:00")
+            + '<div class="section-head"><h2>Race Calendar</h2></div>'
+            + card("old-race", "2026-11-30T23:59:59-05:00")
+            + '<div class="section-head"><h2>Other Community Runs</h2></div>'
+            + card("old-community", "2026-11-30T23:59:59-05:00")
+            + "</main><script>" + script + "</script>"
+        )
+        page = self.page
+        for instant, expected in [
+            ("2027-01-01T04:59:59+00:00", 1),
+            ("2027-01-01T05:00:00+00:00", 0),
+        ]:
+            with self.subTest(instant=instant):
+                page.clock.set_fixed_time(datetime.fromisoformat(instant))
+                page.set_content(fixture)
+                club = page.locator("details.past-events").filter(has_text="Past club events")
+                self.assertEqual(club.count(), expected)
+                self.assertEqual(page.locator("#old").count(), 0)
+                self.assertEqual(page.locator("#last-day").count(), expected)
+                self.assertEqual(page.locator("#future .cal-os[href]").count(), 1)
+                self.assertEqual(page.locator("details #old-race").count(), 1)
+                self.assertEqual(page.locator("details #old-community").count(), 1)
+                if expected:
+                    self.assertEqual(club.locator(".past-events-count").inner_text(), "1 event")
+                    self.assertEqual(club.locator("#last-day").count(), 1)
+                    self.assertEqual(club.locator("a[href]").count(), 0)
 
     def test_runlab_shared_navigation_and_footer(self):
         paths = [
